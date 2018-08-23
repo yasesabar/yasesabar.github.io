@@ -1,0 +1,807 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/spig.js"></script>
+<link rel="stylesheet" href="css/lib/spigPet.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<div id="spig" class="spig">
+    <div id="message"></div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+ 
+    
+
+    <title>无线渗透测试小识 | 知秋’s blog</title>
+    <meta name="author" content="知秋">
+    
+    <meta name="description" content="知秋">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="无线渗透测试小识"/>
+    <meta property="og:site_name" content="知秋"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="知秋" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-blue.min.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<script type="text/javascript" src="../../js/love.js"></script>  
+ 
+<script type="text/javascript"
+color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
+ 
+  
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/background1.JPG); background-repeat: no-repeat;
+  background-size: 100% 100%;">
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+   
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">知秋</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            Home
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            Archives
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            Reading
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            About
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            Search
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="../../images/touxiang.jpeg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">知秋</p>
+                        <p class="desc">安全小白</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    Home
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    Archives
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    Categories
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    Reading
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    About
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    Search
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/essay/">
+                    essay <span class="right">5</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/ctf/">
+                    ctf <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/web/">
+                    web <span class="right">11</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/writeup/">
+                    writeup <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/knowledge/">
+                    knowledge <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/note/">
+                    note <span class="right">8</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/crypt/">
+                    crypt <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/vulnerability/">
+                    vulnerability <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/life/">
+                    life <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">Search</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+	<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+<script>
+(function($){$.fn.snow=function(options){var $flake=$('<div id="flake" />').css({'position':'absolute','top':'-50px'}).html('&#10052;'),documentHeight=$(document).height(),documentWidth=$(document).width(),defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"},options=$.extend({},defaults,options);var interval=setInterval(function(){var startPositionLeft=Math.random()*documentWidth-100,startOpacity=0.5+Math.random(),sizeFlake=options.minSize+Math.random()*options.maxSize,endPositionTop=documentHeight-40,endPositionLeft=startPositionLeft-100+Math.random()*200,durationFall=documentHeight*10+Math.random()*5000;$flake.clone().appendTo('body').css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor}).animate({top:endPositionTop,left:endPositionLeft,opacity:0.2},durationFall,'linear',function(){$(this).remove()});},options.newOn);};})(jQuery);
+$.fn.snow({ minSize: 10, maxSize: 60, newOn: 1000, flakeColor: '#FFF' });
+</script>
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/knowledge/">knowledge</a><a class="breadcrumb" href="/categories/knowledge/note/">note</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>无线渗透测试小识</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2018-04-05T11:04:00.000Z"><a href="/posts/8599fc6c.html">2018-04-05</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/knowledge/" class="chip pink lighten-1">knowledge</a>
+        
+            <a href="/tags/note/" class="chip pink lighten-1">note</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#监听wifi"><span class="section table-of-contents-text">监听wifi</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#分析数据包"><span class="section table-of-contents-text">分析数据包</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#WPS加密"><span class="section table-of-contents-text">WPS加密</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#WEP加密模式"><span class="section table-of-contents-text">WEP加密模式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#WPA加密模式"><span class="section table-of-contents-text">WPA加密模式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#WPA-RADIUS加密模式"><span class="section table-of-contents-text">WPA+RADIUS加密模式</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h1 id="监听wifi"><a href="#监听wifi" class="headerlink" title="监听wifi"></a>监听wifi</h1><p>无线网络中的信号是以广播模式发送的，所有用户就可以在传送管程中截获到这些信息。<br>1.网卡的工作模式<br>无线网卡是采用无线信号进行数据传输的终端。<br>4种模式：<br>广播模式：它的物理地址是0xffffff的帧为广播帧，工作在广播模式的网卡接受广播帧<br>多播传送：多播传送地址作为目的物理地址的帧可以被组内的其他主机同时接收，而组外主机却接收不到。但是如果将网卡设置为多播传送模式，它可以接收所有的多播传送帧，而不论它是不是组内成员。<br>直接模式：工作在混杂模式下的网卡只接收目的地址是自己mac地址的帧。<br>混杂模式：工作在混杂模式下的网卡，接受所有的流过网卡的帧。通信包捕获程序就是在这种模式下运行的。<br>2.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iwconfig 查看无线接口的配置信息 </span><br><span class="line">ifconfig 查看接口的配置信息</span><br></pre></td></tr></table></figure></p>
+<p>3.Aircrack-ng套件中的小工具<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">aircrack-ng    破解WEP,以及WPA(字典攻击)密钥  </span><br><span class="line">airdecap-ng    通过已经知道密钥来解密WEP或WPA嗅探数据  </span><br><span class="line">airmon-ng      将网卡设定为监听模式 </span><br><span class="line">aireplay-ng    数据包注入工具</span><br><span class="line">airodump-ng    数据包嗅探，将无线网络数据输送到PCAP或IVS文件并显示网络信息</span><br><span class="line">airtun-ng      创建虚拟管道 </span><br><span class="line">airolib-ng     保存、管理ESSID密码列表 </span><br><span class="line">packetforge-ng  创建数据包注入用的加密包 </span><br><span class="line">Tools          混合、转换工具</span><br><span class="line">airbase-ng    软件模拟AP</span><br><span class="line">airdecloak-ng 消除pcap文件中的WEP加密包 </span><br><span class="line">airdriver-ng  无线设备驱动管理工具 </span><br><span class="line">airolib-ng    保存、管理ESSID密码列表、计算对应的密钥 </span><br><span class="line">airserv-ng    允许不同的进程访问无线网卡</span><br><span class="line">buddy-ng     easside-ng文件的描述</span><br><span class="line">esside-ng    和AP接入点通信（无WEP）</span><br><span class="line">tkiptun-ng   WPS/TKIP攻击 </span><br><span class="line">wesside-ng   自动破解WEP密钥</span><br></pre></td></tr></table></figure></p>
+<p>4<br>1）将无线网卡启动监听模式<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airmon-ng start interface[channel] 启动监听模式</span><br><span class="line">airmon-ng stop interface[channel] 关闭监听模式</span><br></pre></td></tr></table></figure></p>
+<p>2）将网卡设置为混杂模式<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airmon-ng start wlan0</span><br></pre></td></tr></table></figure></p>
+<p>3）扫描网络范围   </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airodump-ng [选项] wlan0mon</span><br><span class="line">-c   指定目标AP的工作信道</span><br><span class="line">-i,-ivs  仅保存可用于破解的IVS数据报文 </span><br><span class="line">-w  指定一个自己希望保存的文件名，用来保存有效的IVS数据报文</span><br></pre></td></tr></table></figure>
+<p>参数解读<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">BSSID 	表示无线AP的mac地址 </span><br><span class="line">PWR   	网卡报告的信号水平，它主要取决于驱动。AP离计算机，信号越高。如果部分客户端的PWR为-1，那么说明该客户端不在当前网卡能监听到的范围内，但是能捕获到AP发往客户端的数据。如果所有的客户端PWR值都为-1，那么说明网卡驱动不支持信号水平报告。    </span><br><span class="line">Beasons   无线AP 发出的编号，每个AP在最低速率（1M）时差不多每秒会发送10个左右的beacon。    </span><br><span class="line"><span class="comment">#Data  被捕捉到的数据分组分量  </span></span><br><span class="line"><span class="comment">#/s    过去10秒内每秒捕获数据分组的数量  </span></span><br><span class="line">CH     信道号</span><br><span class="line">MB     无线AP所支持的最大速率  </span><br><span class="line">ENC    使用的几码算法体系。OPN表示无加密，WEP？表示wep或者wpa/wpa2  </span><br><span class="line">CIPHER 检测到的加密算法  </span><br><span class="line">AUTH   使用认证协议 常用的有MGT(WPS/WPA2使用独立的认证服务器，平时我们常说的802.1x、radius、eap等),SKA（WEP的共享密钥），PSK(WPA/WPA2的预共享密钥) 或者OPN(WEP开放式）     </span><br><span class="line">ESSID   也就是所谓的SSID号   </span><br><span class="line">STATION 客户端的mac地址 </span><br><span class="line">Rate    输出速率 </span><br><span class="line">Lost    在过去10秒内丢失的数据分组，基于序列号检测。  </span><br><span class="line">Frames  客户端发送的数据分组数量  </span><br><span class="line">Probe    v被客户端查探的ESSID.</span><br></pre></td></tr></table></figure></p>
+<p>5<br>强制客户端下线<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mdk3 interface mode options </span><br><span class="line">mode： 指定测试模式。  </span><br><span class="line">a   dos模式  </span><br><span class="line">b   beacon洪水模式 </span><br><span class="line">d   解除验证/解除关联暴力模式   </span><br><span class="line">f   mac过滤暴力模式  </span><br><span class="line">g   wpa 降级测试  </span><br><span class="line">m   关闭开发  </span><br><span class="line">p   基本探测和ESSID暴力模式</span><br><span class="line">w   WIDS/WIPS混乱  </span><br><span class="line">x   802.1测试</span><br></pre></td></tr></table></figure></p>
+<p>例子：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mdk3 mon0 d -s 120 0 -c 1,6,11</span><br></pre></td></tr></table></figure></p>
+<h1 id="分析数据包"><a href="#分析数据包" class="headerlink" title="分析数据包"></a>分析数据包</h1><p>1.过滤<br>比较运算符<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">eq     ==</span><br><span class="line">ne     !=</span><br><span class="line">gt     &gt;</span><br><span class="line">lt     &lt;</span><br><span class="line">ge     &gt;=v</span><br><span class="line">le     &lt;=</span><br></pre></td></tr></table></figure></p>
+<p>1)ip过滤<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ip.addr==ip   </span><br><span class="line">ip.src_host==ip  显示来源ip </span><br><span class="line">ip.dst_host==ip  显示目标ip</span><br></pre></td></tr></table></figure></p>
+<p>2)端口过滤   </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tcp.port </span><br><span class="line">tcp.dstport==80</span><br><span class="line">tcp.srcport==80</span><br></pre></td></tr></table></figure>
+<p>3)协议过滤<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">udp arp icmp http smtp ftp dns msnms ip ssl 等  </span><br><span class="line">排除udp  !udp或者not udp</span><br></pre></td></tr></table></figure></p>
+<p>4)包长度过滤<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">udp.length==26  udp本身固定长度8加上udp下面那块数据包之和</span><br><span class="line">tcp.len&gt;=7      表示ip数据包(tcp下面那块数据）不包括tcp本身  </span><br><span class="line">ip.len==94      除了以太网头固定长度14，其他都是ip.len,即从ip本身到最后  </span><br><span class="line">frame.len==119   表示整个数据包长度，从eth开始到最后</span><br></pre></td></tr></table></figure></p>
+<p>5)http模式过滤<br>指定get包<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http.request.method==<span class="string">"GET"</span> &amp;&amp; http contains <span class="string">"host"</span></span><br><span class="line">http.request.method==<span class="string">"GET"</span> &amp;&amp; http contains <span class="string">"User-Agent"</span></span><br></pre></td></tr></table></figure></p>
+<p>指定post包 如上<br>指定响应包<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http contains <span class="string">"HTTP/1.1 200 OK"</span> &amp;&amp; http contains <span class="string">"Content-Type:"</span></span><br></pre></td></tr></table></figure></p>
+<p>6)表达式  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">!(arp.src==192.168.1.1) and !(arp.dst.proto_ipv4==192.168.1.11</span><br></pre></td></tr></table></figure>
+<p>2.802.11数据结构<br>无线数据包和有限数据包的主要不同在于额外的802.11头部。这是一个第二层的头部，包含与数据包和传输介质有关的额外信息。<br>802.11数据包的三种类型：管理帧、控制帧、数据帧<br>分析特定的包类型<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wc.fc.type_subtype</span><br></pre></td></tr></table></figure></p>
+<p>分析特定频率的包<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">radiotap.channel.freq</span><br><span class="line"></span><br><span class="line">信道     中心频率 </span><br><span class="line">1        2412</span><br><span class="line">2        2317</span><br><span class="line">13       2472</span><br></pre></td></tr></table></figure></p>
+<p>3.wep认证包<br>4.wpa认证包<br>5.RSSI 显示捕获数据包的射频信号强度<br> TX Rate 显示捕获数据包的数据率<br> Frequency/Channel 显示捕获数据包的频率和信道<br>6 qq使用ociq协议   </p>
+<h1 id="WPS加密"><a href="#WPS加密" class="headerlink" title="WPS加密"></a>WPS加密</h1><p>1.wps支持两种模式：个人识别码模式和按钮模式<br>2.wps在某些设备上也是QQS<br>3.reaver是一个暴力破解wps加密的工具<br>将无线网卡设置为监听模式<br>例子：已知PIN码是12345678<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">reaver -i mon0 -b ap的mac地址 -p 12345678</span><br></pre></td></tr></table></figure></p>
+<p>不知时，暴力破解<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">reaver -i mon0 -b ap的mac地址 -vv</span><br></pre></td></tr></table></figure></p>
+<p>4.wifite是一款自动化wep和wpa破解工具<br>启动WiFite<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wifite -pps 660</span><br></pre></td></tr></table></figure></p>
+<p>ctrl +c 停止扫描<br>选择ap编号<br>5.fern wifr cracker 可以破解并恢复wep、wpa和wps的无线网络密码<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fern-wifi-cracker</span><br></pre></td></tr></table></figure></p>
+<h1 id="WEP加密模式"><a href="#WEP加密模式" class="headerlink" title="WEP加密模式"></a>WEP加密模式</h1><p><img src="http://p4gdp8beq.bkt.clouddn.com/1asdfasdfsd.png" alt=""><br>1.wpd加密认证类型：<br>开放系统认证<br>共享密钥认证<br>2.Aircrack-ng工具主要是用于网络侦测、数据包嗅探以及wep和wpa/wpa2-pskf破解。<br>1)查看系统中的无限网路接口<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iwconfig</span><br></pre></td></tr></table></figure></p>
+<p>2)将该无线网卡设置为监听模式<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airmon-ng start mon0</span><br></pre></td></tr></table></figure></p>
+<p>3)扫描附近的wifi网络<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airodump-ng wlan0mon0</span><br></pre></td></tr></table></figure></p>
+<p>4)选择wep模式加密的目标,捕获数据包，生成wireless-o1.ivs文件<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airodump-ng --ivs -w wireless --bssid ap的mac  -c 6 wlan0mon </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">--ivs     设置过滤，保存可用于破解的ivs包 </span><br><span class="line">-w        指定捕获数据包要保存的文件名  </span><br><span class="line">--bssid   来指定攻击目标的BSSID </span><br><span class="line">-c        指定攻击目标ap的工作频道</span><br></pre></td></tr></table></figure></p>
+<p>5）捕获一定的数据包后，开始进行破解<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">aircrack-ng wireless-01.ivs</span><br></pre></td></tr></table></figure></p>
+<p>3.wifite工具，进行破解 </p>
+<h1 id="WPA加密模式"><a href="#WPA加密模式" class="headerlink" title="WPA加密模式"></a>WPA加密模式</h1><p>1.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">crunch 1 6 abcdef -o password.txt</span><br></pre></td></tr></table></figure></p>
+<p>2.pwgen工具可以说横溢难以忘记的随机密码或容易记住的密码<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pwgen -1 -y</span><br></pre></td></tr></table></figure></p>
+<p>3.RainbowCrack创建彩虹表<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rtgen 彩虹表生成工具，生成口令、散列值对照表 </span><br><span class="line">rtsort 排序彩虹表，为rcrack提供输入  </span><br><span class="line">rcrack  使用排好序的彩虹表进行口令破解</span><br></pre></td></tr></table></figure></p>
+<p>例子：<br>1)创建一个md5算法加密的彩虹表,文件保存在/usr/share/rainbowcrack下。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rtgen md5 numeric 5 5 0 100 200 0</span><br></pre></td></tr></table></figure></p>
+<p>2）对生成的彩虹表进行排序 </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rtsort md5_numeric<span class="comment">#5-5_0_100x200_0.rt</span></span><br></pre></td></tr></table></figure>
+<p>3)破解哈希值md5(11111)= b0baee9d279d34fa1dfd71aadb908c3f<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rcrack  md5_numeric<span class="comment">#5-5_0_100x200_0.rt -h b0baee9d279d34fa1dfd71aadb908c3f</span></span><br></pre></td></tr></table></figure></p>
+<p>4.Aircrack-ng工具破解<br>修改当前无线网卡的mac地址<br>1）查看本机无线网络接口<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airmon-ng</span><br></pre></td></tr></table></figure></p>
+<p>2)停止无线网络接口<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airmon-ng stop wlan0</span><br></pre></td></tr></table></figure></p>
+<p>3)修改无线网卡的mac地址为00:11:22:33:44:55<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">macchanger --mac 00:11:22:33:44:55</span><br></pre></td></tr></table></figure></p>
+<p>4)启用无线网络接口<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arimon-ng start wlan0</span><br></pre></td></tr></table></figure></p>
+<p>5)捕获数据包<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airodump-ng wlan0mon</span><br></pre></td></tr></table></figure></p>
+<p>6)捕获test无线网络的数据包，成功捕获握手包后，生成的文件名为wpa-01.cap<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airodump-ng -c 1 -w wpa -bssid 目标ap的mac  wlan0mon`</span><br></pre></td></tr></table></figure></p>
+<p>如果一直没有捕获到握手包 可以使用aireplay-ng命令进行Deauth攻击，强制客户端重新连接到wifi网络<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">aireplay-ng -0 1 -a ap的mac地址 -c 客户端的mac地址 wlan0mon</span><br></pre></td></tr></table></figure></p>
+<p>7)Deauth攻击<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">aireplay-ng -0 1 -a ap的mac地址 -c 客户端的mac地址 wlan0mon</span><br></pre></td></tr></table></figure></p>
+<p>8）破解密码<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">aircrack-ng -w dic 捕获的<span class="built_in">cap</span>文件</span><br></pre></td></tr></table></figure></p>
+<p>5.wifite<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wifite -dict passowrd.txt</span><br></pre></td></tr></table></figure></p>
+<h1 id="WPA-RADIUS加密模式"><a href="#WPA-RADIUS加密模式" class="headerlink" title="WPA+RADIUS加密模式"></a>WPA+RADIUS加密模式</h1><p> <br><br>  <br><br>   <br><br>    <br><br>    参考文章:<br>    <a href="http://www.tup.tsinghua.edu.cn/booksCenter/book_06720901.html" target="_blank" rel="noopener">http://www.tup.tsinghua.edu.cn/booksCenter/book_06720901.html</a></p>
+
+                
+<p class="pink-link-context">
+    <a href="/posts/bb6c190a.html" rel="next" title="web渗透技术知识小记">
+    Prev: web渗透技术知识小记
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/posts/c617af63.html" rel="next" title="xss闯关小游戏">
+    Next: xss闯关小游戏
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+    <script src="../../js/av-min.js"></script>
+    <script src='../../js/Valine.min.js'></script>
+	<div style="background-color: #FFFFFF">
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments' ,
+			appId: 'ul15fj2BGxFoWtoSlntkMlMf-gzGzoHsz',
+			appKey: 'vvdd3JD38t8gwf4ytlq3ON3H',
+			notify: false, 
+			verify: false, 
+			avatar: 'wavatar', 
+			placeholder: 'ε = = (づ′▽`)づ '
+        })
+    </script>
+  </div>
+
+</div>
+
+		 
+		 
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="Return to top"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="Menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">Social</h5>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">Links</h5>
+                
+                    <a class="social-link" href="https://blog.csdn.net/Wuzebiao2016" target="_blank">wuzebiao</a>
+                
+                    <a class="social-link" href="http://www.ifuryst.com/" target="_blank">iFurySt</a>
+                
+                    <a class="social-link" href="http://daikersec.com/" target="_blank">daiker</a>
+                
+                    <a class="social-link" href="http://blog.dedsec.club" target="_blank">dedsec</a>
+                
+                    <a class="social-link" href="https://www.leavesongs.com/" target="_blank">离别歌</a>
+                
+                    <a class="social-link" href="https://www.sec-wiki.com/" target="_blank">Secwiki</a>
+                
+                    <a class="social-link" href="https://zhuanlan.kanxue.com/" target="_blank">看雪专栏</a>
+                
+                    <a class="social-link" href="http://www.itxueke.com/SecNavi/#3782" target="_blank">IT学客安全导航</a>
+                
+                    <a class="social-link" href="http://www.freebuf.com/" target="_blank">安全客</a>
+                
+                    <a class="social-link" href="https://yq.aliyun.com/articles/?spm=a2c4e.11155573.minheadermenu.3.6cd475c6d2FQvQ" target="_blank">云栖社区</a>
+                
+                    <a class="social-link" href="https://paper.seebug.org/" target="_blank">知道创宇</a>
+                
+                    <a class="social-link" href="https://www.waitalone.cn/pentest" target="_blank">独自等待</a>
+                
+                    <a class="social-link" href="https://3gstudent.github.io/3gstudent.github.io/" target="_blank">三好学生</a>
+                
+                    <a class="social-link" href="http://paper.tuisec.win/index.jsp" target="_blank">先知社区文章</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('menu-home, menu-archive, .menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-124439084-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+	
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/APP_ID.js","daovoice");</script>
+<script>
+  daovoice('init', {
+    app_id: "45fb937d",
+  });
+  daovoice('update');
+</script>	
+</body>
+</html>

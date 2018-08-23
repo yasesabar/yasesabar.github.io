@@ -1,0 +1,799 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/spig.js"></script>
+<link rel="stylesheet" href="css/lib/spigPet.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<div id="spig" class="spig">
+    <div id="message"></div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+ 
+    
+
+    <title>16位汇编语言学习笔记 | 知秋’s blog</title>
+    <meta name="author" content="知秋">
+    
+    <meta name="description" content="知秋">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="16位汇编语言学习笔记"/>
+    <meta property="og:site_name" content="知秋"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="知秋" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-blue.min.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<script type="text/javascript" src="../../js/love.js"></script>  
+ 
+<script type="text/javascript"
+color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
+ 
+  
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/background1.JPG); background-repeat: no-repeat;
+  background-size: 100% 100%;">
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+   
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">知秋</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            Home
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            Archives
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            Reading
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            About
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            Search
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="../../images/touxiang.jpeg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">知秋</p>
+                        <p class="desc">安全小白</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    Home
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    Archives
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    Categories
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    Reading
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    About
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    Search
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/essay/">
+                    essay <span class="right">5</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/ctf/">
+                    ctf <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/web/">
+                    web <span class="right">11</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/writeup/">
+                    writeup <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/knowledge/">
+                    knowledge <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/note/">
+                    note <span class="right">8</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/crypt/">
+                    crypt <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/vulnerability/">
+                    vulnerability <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/life/">
+                    life <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">Search</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+	<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+<script>
+(function($){$.fn.snow=function(options){var $flake=$('<div id="flake" />').css({'position':'absolute','top':'-50px'}).html('&#10052;'),documentHeight=$(document).height(),documentWidth=$(document).width(),defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"},options=$.extend({},defaults,options);var interval=setInterval(function(){var startPositionLeft=Math.random()*documentWidth-100,startOpacity=0.5+Math.random(),sizeFlake=options.minSize+Math.random()*options.maxSize,endPositionTop=documentHeight-40,endPositionLeft=startPositionLeft-100+Math.random()*200,durationFall=documentHeight*10+Math.random()*5000;$flake.clone().appendTo('body').css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor}).animate({top:endPositionTop,left:endPositionLeft,opacity:0.2},durationFall,'linear',function(){$(this).remove()});},options.newOn);};})(jQuery);
+$.fn.snow({ minSize: 10, maxSize: 60, newOn: 1000, flakeColor: '#FFF' });
+</script>
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/knowledge/">knowledge</a><a class="breadcrumb" href="/categories/knowledge/note/">note</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>16位汇编语言学习笔记</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2018-03-27T12:01:00.000Z"><a href="/posts/74313cf1.html">2018-03-27</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/knowledge/" class="chip pink lighten-1">knowledge</a>
+        
+            <a href="/tags/note/" class="chip pink lighten-1">note</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#基础知识"><span class="section table-of-contents-text">基础知识</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#寄存器的内存访问"><span class="section table-of-contents-text">寄存器的内存访问</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#程序"><span class="section table-of-contents-text">程序</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#数据处理"><span class="section table-of-contents-text">数据处理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#转移指令的原理"><span class="section table-of-contents-text">转移指令的原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#标记寄存器"><span class="section table-of-contents-text">标记寄存器</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#内中断"><span class="section table-of-contents-text">内中断</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#外中断"><span class="section table-of-contents-text">外中断</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>最近，不知道是心血来潮，还是有点厌倦web,突然想学一学逆向，未知的领域，有点儿神秘，有了一种想探索的欲望，这学期，也挺闲的，就给自己找点事做，学一下逆向，逆向探索之旅，就此开始吧！<br><a id="more"></a></p>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>1.地址总线：cpu是通过地址总线来制定存储单元的。<br> 数据总线：cpu与内存或其他器件之间的数据传送，。<br> 控制总线： cpu对外部器件的控制<br>2.cpu包括运算器、控制器、寄存器等器件<br>运算器进行信息处理<br>寄存器进行信息存储<br>控制器控制各种器件进行工作<br>内部总线连接各种器件，进行数据的传送<br>3.8086cpu的所有寄存器是16位的，存放两个字节。<br>AX、BX、CX 、DX是通用寄存器，用来存放一般的数据<br>AX可分为AH和BL,其他同理。<br>4.字节，记为byte，一个字节有8个bit组成，可以存在8位寄存器中。<br>字：记为word,一个字由连个字节组成，这两个字节分别称为高位字节和低位字节。<br>5.cpu在执行指令时，会认为ah和al是两个不相关的寄存器。<br>在进行数据传送或运算时，要注意指令的两个操作对象的位数应当一致的：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mov ax,2000H 正确的。  </span><br><span class="line">mov al,2000H 错误的。</span><br></pre></td></tr></table></figure></p>
+<p>6.8086cpu有20位地址总线。<br>物理地址=段地址x16+偏移地址<br>cpu可以使用不同的段地址和偏移地址形成同一个物理地址<br>7.8086cpu有4个段寄存器：CS DS SS ES<br>8.jmp 段地址：偏移地址  功能是用指令中给出的段地址修改CS，偏移地址修改IP.<br>jmp 某一合法寄存器    功能是用寄存器中的值修改ip.<br>9.debug的功能<br>R查看、改变cpu寄存器的内容<br>D查看内存中的内容<br>E改写内容内存中的内容<br>U将内存中的机器指令翻译成汇编指令<br>T执行一天机器指令<br>A以汇编指令的格式在内存中写入一条机器指令    </p>
+<h1 id="寄存器的内存访问"><a href="#寄存器的内存访问" class="headerlink" title="寄存器的内存访问"></a>寄存器的内存访问</h1><p>1.字单元，即存放一个字型数据（16位）的内存单元，由两个地址连续的内存单元组成。<br>2.DS存放要访问数据的段地址，8086cpu不支持将数据直接送入段寄存器。<br>例子：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mov bx,1000H   </span><br><span class="line">mov ds,bx  </span><br><span class="line">mov al,[0]</span><br><span class="line">mov [0], cx</span><br></pre></td></tr></table></figure></p>
+<p>3.栈的push和pop都是以字为单元进行的。<br>4.栈顶的段地址存放在SS中，偏移地址存放在SP中，任意时刻，SS:SP 指向栈顶元素，push指令和pop指令执行时，cpu从ss和sp中得到栈顶的地址。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">push 寄存器 将一个寄存器中的数据入栈 </span><br><span class="line">push 段寄存器  </span><br><span class="line">push 内存单元  </span><br><span class="line">pop同理</span><br></pre></td></tr></table></figure></p>
+<p>5.8086cpu只记录栈顶，栈空间的大小要我们自己管理  </p>
+<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><p>1.汇编指令，有对应的机械码的指令，可以被编译为机器指令，最终为cpu执行<br>伪指令：没有对应的机器码，最终不被cpu所执行，由编译器执行<br>（1）一个段的开始和结束<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">段名 segment</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">段名 ends</span><br></pre></td></tr></table></figure></p>
+<p>（2）end 是一个汇编程序的结束标记<br>（3）assume将有特定用途的段和相关的段寄存器关联起来即可。<br>2.我们在这里定义（）来表示一个寄存器或一个内存单元中的内容<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mov ax [bx]  bx中存放的数据作为一个偏移地址EA，段地址SA默认在ds中</span><br><span class="line">inc bx,1  是bx中的内容加1</span><br></pre></td></tr></table></figure></p>
+<p>3.loop指令来实现循环功能，cx中存放循环次数。<br>例子计算2^12：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">assume cs:code  </span><br><span class="line">code segment </span><br><span class="line">	mov ax,2</span><br><span class="line">    mov cx,11</span><br><span class="line">s:add ax,ax</span><br><span class="line">	loop s</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>4.大于9FFF的十六进制数据A000H等，在汇编源程序中，数据不能以字母开头，所以要在前面加0<br>所以汇编程序中要写0A000H<br>5.debug和汇编编译器masm对指令的不同处理：<br>在汇编源程序中，指令mov ax,[0] 被编译器当做指令mov,ax,0 处理<br>6.汇编源程序中以下指令的含义<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mov al,[0] 将常量0送入al中</span><br><span class="line">mov al,ds:[0]  含义：（al）=((ds)*16+0),将内存单元中的数据送入al中</span><br><span class="line">mov al,[bx]   （al）=((ds)*16+（bx)),将内存单元中的数据送入al中  </span><br><span class="line">mov al,ds:[bx] 与mov al,[bx]相同</span><br></pre></td></tr></table></figure></p>
+<p>7.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">inc ax   在ax中加1</span><br><span class="line">dw 0123h,0456h,……  dw定义的数据处于代码段的开始，所以偏移地址为0。 </span><br><span class="line">db <span class="string">'unIX'</span> 相当于 db 66H,6EH,49H,58H</span><br></pre></td></tr></table></figure></p>
+<p>8.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[bx+idata]  表示一个内存单元，他的偏移地址为(bx)+idata </span><br><span class="line">也可以写成如下形式：</span><br><span class="line">200[bx]</span><br><span class="line">[bx].200</span><br></pre></td></tr></table></figure></p>
+<p>9.si和di与bx功能相近的寄存器，si和di不能够分成两个8位寄存器来使用<br>10.[bx+si]或[bx+di] 表示一个内存单元，它的偏移笛子为（bx）+(si) </p>
+<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><p>1.bx,si,di,bp:<br>1）在8086cpu中只有bx、si di bp4个寄存器可以用来[]中来进行内存单元的寻址。<br>例子：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mov ax,[bx]  正确 </span><br><span class="line">mov ax,[cx]  错误</span><br></pre></td></tr></table></figure></p>
+<p>2）在[]中，这4个寄存器可以单个出现，或只能以4中组合出现：bx和si、bx和di、bp和si、bp和di<br>3）只要在[]中使用寄存器bp,而只李宁中没有显性地给出段地址，段地址就默认在ss中<br>2.寄存器寻址方式：直接寻址 寄存器间接寻址 寄存器相对寻址 基址变址寻址 相对基址变址寻址<br>3.指令处理数据的长度<br>1）通过寄存器名指明指令进行的是字操作或者字节操作<br>2）在没有寄存器名存在的情况下，用X ptr 指令内存的长度<br>例子：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mov word ptr ds:[0],1 </span><br><span class="line">inc word ptr [bx]</span><br><span class="line">mov byte ptr ds:[0],1</span><br><span class="line">inc byte ptr [bx]</span><br></pre></td></tr></table></figure></p>
+<p>4.div<br>1)除数有8，16位<br>2）被除数：默认放在AX或DX和AX中，<br>如果除数为8位，被除数则为16位，默认在AX中存放<br>如除数为16位，被除数则为32位，默认放在DX和AX中<br>3）结果：如果除数为8位，则AL存储除法操作的商，AH存储除法操作的余数<br>如果除数为16位，则AX存储除法操作的商，DX存储除法操作的余数<br>例子：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">div byte ptr ds:[0] </span><br><span class="line">含义：(al)=(ax)/((ds)*16+0)的商</span><br><span class="line">     (ah)=(ax)/((ds)*16+0)的余数</span><br><span class="line">div word ptr es:[0] </span><br><span class="line">含义：(ax)=[(dx)*10000H+(ax)]/((es)*16+0)的商</span><br><span class="line">     (dx)=[(dx)*10000H+(ax)]/((es)*16+0)的余数</span><br></pre></td></tr></table></figure></p>
+<p>5<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">db 定义字节型数据 ，占用一个字节</span><br><span class="line">dw 定义字型数据 ，占用一个字</span><br><span class="line">dd 定义双字型数据 ，占用两个字</span><br></pre></td></tr></table></figure></p>
+<p>6.dup用来数据的重复<br>例子：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">db 3 dup (0) 相当于db 0,0,0</span><br></pre></td></tr></table></figure></p>
+<h1 id="转移指令的原理"><a href="#转移指令的原理" class="headerlink" title="转移指令的原理"></a>转移指令的原理</h1><p>1.offset 取得标号的偏移地址<br>2.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jmp short 标号  转到标号处执行指令 </span><br><span class="line">jmp near ptr 标号  实现段内转移 </span><br><span class="line">jmp far ptr 标号 实现的是段间转移，又称为远转移</span><br><span class="line">jmp word ptr 内存单元   从内存单元地址处开始存放一个字，是转移的目的地址的偏移地址。</span><br><span class="line">jmmp dword ptr 内存单元  从内存单元地址处开始存放两个字，高地址处的字是转移目的段地址，低地址处是转移的目的偏移地址</span><br><span class="line">jcxz 标号 如果（cx）=0   转移到标号处执行</span><br></pre></td></tr></table></figure></p>
+<p>3.ret指令用栈中的数据，修改ip的内容，从而实现 近转移<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(ip)=((ss)*16+(sp))</span><br><span class="line">(sp)=(sp)+2</span><br></pre></td></tr></table></figure></p>
+<p>retf指令用栈中的数据，修改cs和ip的内容，从而实现远转移<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(ip)=((ss)*16+(sp))</span><br><span class="line">(sp)=(sp)+2</span><br><span class="line">(cs)=((ss)*16+(sp))</span><br><span class="line">(sp)=(sp)+2</span><br></pre></td></tr></table></figure></p>
+<p>4.<br>1）call 标号 将当前的ip压栈后，转到标号处执行指令<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(sp)=(sp)-2</span><br><span class="line">((ss)*16+(sp))=(ip)</span><br><span class="line"></span><br><span class="line">(ip)=(ip)+16 位位移</span><br></pre></td></tr></table></figure></p>
+<p>相当于进行<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">push ip</span><br><span class="line">jmp near ptr 标号</span><br></pre></td></tr></table></figure></p>
+<p>2）call far ptr 标号  实现的的段间转移<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(sp)=(sp)-2</span><br><span class="line">((ss)*16+(sp))=(cs)</span><br><span class="line">(sp)=(sp)-2</span><br><span class="line">((ss)*16+(sp))=(ip)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(cs)=标号所在段的短地址</span><br><span class="line">(ip)=标号在段中的段地址</span><br></pre></td></tr></table></figure></p>
+<p>相当于进行<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">push cs </span><br><span class="line">push ip</span><br><span class="line">jmp near ptr 标号</span><br></pre></td></tr></table></figure></p>
+<p>3) call 16位reg<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(sp)=(sp)-2</span><br><span class="line">((ss)*16+(sp))=(ip)</span><br><span class="line">(ip)=(16位reg)</span><br></pre></td></tr></table></figure></p>
+<p>功能：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">push IP</span><br><span class="line">jmp 16位reg</span><br></pre></td></tr></table></figure></p>
+<p>4)call word ptr 内存单元地址<br>相当于：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">push Ip</span><br><span class="line">jmp word ptr 内存单元地址</span><br></pre></td></tr></table></figure></p>
+<p>5）call dword ptr 内存单元地址<br>相当于：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">push cs</span><br><span class="line">push Ip</span><br><span class="line">jmp dword ptr 内存单元地址</span><br></pre></td></tr></table></figure></p>
+<p>5.<br>1)两个相乘的数：两个数相乘，要么8位，要么16位，如果是8位，一个默认放在AL中，另一个放在8位reg或内存字节单元中；如果是16位，一个默认在AX中，另一个放在16位reg或内存字单元中。<br>2)结果：如果是8位乘法，结果默认放在AX中；如果是16位乘法，结果高位默认在DX中存放，低位在AX中放。<br>格式<br>mul reg<br>mul 内存单元<br>例子：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mul byte ptr ds:[0]  含义：(ax)=(al)*((ds)*16+0)</span><br><span class="line">mul word ptr [bx+si+8] </span><br><span class="line">含义：(ax)=(ax)*((ds)*16+(bx)+(si)+8)结果的低16位</span><br><span class="line">      (dx)=(ax)*((ds)*16+(bx)+(si)+8)结果的高16位</span><br></pre></td></tr></table></figure></p>
+<ol start="6">
+<li>divdw<br>功能：进行不会溢出的除法运算，被除数位dword型，除数为word型，结果为dword型。<br>参数：<br>（ax）=dword型数据的低16位<br>（dx）=dword型数据的高16位<br>（cx）=除数<br>返回：<br>（dx）=结果的高16位，（ax）结果的低16位<br>（cx）=余数<br>7.dtoc<br>功能：将word型数据转变为表示十进制数的字符串，字符串以0位结尾符。<br>参数：(ax)=word型数据<br>ds:si指向字符串的首地址<br>返回：无 <h1 id="标记寄存器"><a href="#标记寄存器" class="headerlink" title="标记寄存器"></a>标记寄存器</h1>1.zf标志：flag的第六位，零标志位，记录相关指令执行后，结果是否为0。为0,zf=1,否则zf=0<br>pf标志：flag的第二位，奇偶标志位。记录相关指令执行后，结果的所有bit位中1的个数是否为偶数，是pf=1,否pf=0<br>sf标志：第七位，符号标志位，记录相关指令执行后，其结果是否为负。负为1，否为0<br>cf标志：第零位，进位标志位。一般情况下，在进行无符号运算的时候它记录了运算结果的最高有效位想更高位的进位值，或从更高位的借位值。<br>of标志：第11位，溢出标志。发生溢出，of=1,否则of=0<br>df标志：第10位，方向标志位.df=0,每次操作后si、di递增；df=1,每次操作后si、di递减。<br>2.adc带进位的的加法指令<br>3.sbb是借位减法指令，它利用了cf位上记录的借位值。<br>4.cmp是比较指令，相当于减法指令，只是不保存结果。<br>5.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">指令          含义           检测的相关标志位</span><br><span class="line">je         等于则转移        zf=1</span><br><span class="line">jne        不等于            zf=0</span><br><span class="line">jb         低于              cf=1</span><br><span class="line">jnb        不低于            cf=0</span><br><span class="line">ja         高于              cf=0或zf=0</span><br><span class="line">jna        不高于            cf=1或zf=1</span><br></pre></td></tr></table></figure>
+<p>6.movsb<br>相当于<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">((es)*16+(di))=((ds)*16+(si))</span><br><span class="line">如果 df=0,则：</span><br><span class="line">      (si)=(si)+1</span><br><span class="line">      (di)=(di)+1</span><br><span class="line">否则：</span><br><span class="line">      (si)=(si)-1</span><br><span class="line">      (di)=(di)-1</span><br></pre></td></tr></table></figure></p>
+<p>movsw的功能将ds:si指向的内存字单元中的字送入es:di中，然后根据标志寄存器df的值，将si和di递增2或递减2<br>7.rep movsb<br>相当于<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">s：movsb</span><br><span class="line">  loop s</span><br></pre></td></tr></table></figure></p>
+<p>cld指令：将df位置0<br>std指令：将df位置1<br>8.pushf将标志寄存器的值压栈，<br>popf是从栈中弹出数据，送入标志寄存器中。   </p>
+<h1 id="内中断"><a href="#内中断" class="headerlink" title="内中断"></a>内中断</h1><p>1.内中断的产生：<br>1）除法错误<br>2）单步执行<br>3）执行into指令<br>4）执行int指令<br>2.iret指令的功能用汇编语法描述为：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pop IP</span><br><span class="line">pop CS </span><br><span class="line">popf</span><br></pre></td></tr></table></figure></p>
+<p>3.int n<br>n为中断类型码，引发中断<br>执行过程：<br>1）取中断类型码n<br>2)标志寄存器入栈，IF=0,TF=0<br>3)CS、IP入栈<br>4)(IP)=(n<em>4),(CS)=(n</em>4+2)<br>4.端口的读写指令只有两条：in和out<br>5.shl逻辑左移指令<br>shr逻辑右移指令  </p>
+<h1 id="外中断"><a href="#外中断" class="headerlink" title="外中断"></a>外中断</h1><p>1.可屏蔽中断是cpu可以不响应的外中断。<br>sti,设置IF=1<br>cli，设置IF=0<br>2.键盘的输入<br>断码=通码+80h   </p>
+<p><br></p>
+<p>参考书籍：<br><a href="https://book.douban.com/subject/25726019/" target="_blank" rel="noopener">https://book.douban.com/subject/25726019/</a></p>
+
+                
+<p class="pink-link-context">
+    <a href="/posts/761c3e82.html" rel="next" title="实验吧web题">
+    Prev: 实验吧web题
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/posts/49ca178a.html" rel="next" title="metasploit学习小记">
+    Next: metasploit学习小记
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+    <script src="../../js/av-min.js"></script>
+    <script src='../../js/Valine.min.js'></script>
+	<div style="background-color: #FFFFFF">
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments' ,
+			appId: 'ul15fj2BGxFoWtoSlntkMlMf-gzGzoHsz',
+			appKey: 'vvdd3JD38t8gwf4ytlq3ON3H',
+			notify: false, 
+			verify: false, 
+			avatar: 'wavatar', 
+			placeholder: 'ε = = (づ′▽`)づ '
+        })
+    </script>
+  </div>
+
+</div>
+
+		 
+		 
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="Return to top"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="Menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">Social</h5>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">Links</h5>
+                
+                    <a class="social-link" href="https://blog.csdn.net/Wuzebiao2016" target="_blank">wuzebiao</a>
+                
+                    <a class="social-link" href="http://www.ifuryst.com/" target="_blank">iFurySt</a>
+                
+                    <a class="social-link" href="http://daikersec.com/" target="_blank">daiker</a>
+                
+                    <a class="social-link" href="http://blog.dedsec.club" target="_blank">dedsec</a>
+                
+                    <a class="social-link" href="https://www.leavesongs.com/" target="_blank">离别歌</a>
+                
+                    <a class="social-link" href="https://www.sec-wiki.com/" target="_blank">Secwiki</a>
+                
+                    <a class="social-link" href="https://zhuanlan.kanxue.com/" target="_blank">看雪专栏</a>
+                
+                    <a class="social-link" href="http://www.itxueke.com/SecNavi/#3782" target="_blank">IT学客安全导航</a>
+                
+                    <a class="social-link" href="http://www.freebuf.com/" target="_blank">安全客</a>
+                
+                    <a class="social-link" href="https://yq.aliyun.com/articles/?spm=a2c4e.11155573.minheadermenu.3.6cd475c6d2FQvQ" target="_blank">云栖社区</a>
+                
+                    <a class="social-link" href="https://paper.seebug.org/" target="_blank">知道创宇</a>
+                
+                    <a class="social-link" href="https://www.waitalone.cn/pentest" target="_blank">独自等待</a>
+                
+                    <a class="social-link" href="https://3gstudent.github.io/3gstudent.github.io/" target="_blank">三好学生</a>
+                
+                    <a class="social-link" href="http://paper.tuisec.win/index.jsp" target="_blank">先知社区文章</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('menu-home, menu-archive, .menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-124439084-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+	
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/APP_ID.js","daovoice");</script>
+<script>
+  daovoice('init', {
+    app_id: "45fb937d",
+  });
+  daovoice('update');
+</script>	
+</body>
+</html>

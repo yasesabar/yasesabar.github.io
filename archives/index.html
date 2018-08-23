@@ -1,0 +1,886 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/spig.js"></script>
+<link rel="stylesheet" href="css/lib/spigPet.css" type="text/css"/>
+<script type="text/javascript">
+var isindex = true;
+var visitor = true;
+</script>
+
+
+<div id="spig" class="spig">
+    <div id="message"></div>
+    <div id="mumu" class="mumu"></div>
+</div>
+
+ 
+    
+
+    <title>Archives | 知秋’s blog</title>
+    <meta name="author" content="知秋">
+    
+    <meta name="description" content="知秋">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <meta property="og:site_name" content="知秋"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="知秋" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/tomorrow-night-blue.min.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<script type="text/javascript" src="../../js/love.js"></script>  
+ 
+<script type="text/javascript"
+color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
+ 
+  
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/background1.JPG); background-repeat: no-repeat;
+  background-size: 100% 100%;">
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+   
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">知秋</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            Home
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            Archives
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            Reading
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            About
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            Search
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="../../images/touxiang.jpeg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">知秋</p>
+                        <p class="desc">安全小白</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    Home
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    Archives
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    Categories
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    Reading
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    About
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    Search
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/essay/">
+                    essay <span class="right">5</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/ctf/">
+                    ctf <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/web/">
+                    web <span class="right">11</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/ctf/writeup/">
+                    writeup <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/knowledge/">
+                    knowledge <span class="right">12</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/note/">
+                    note <span class="right">8</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/crypt/">
+                    crypt <span class="right">1</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/knowledge/vulnerability/">
+                    vulnerability <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/life/">
+                    life <span class="right">3</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">Search</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+	<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+<script>
+(function($){$.fn.snow=function(options){var $flake=$('<div id="flake" />').css({'position':'absolute','top':'-50px'}).html('&#10052;'),documentHeight=$(document).height(),documentWidth=$(document).width(),defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"},options=$.extend({},defaults,options);var interval=setInterval(function(){var startPositionLeft=Math.random()*documentWidth-100,startOpacity=0.5+Math.random(),sizeFlake=options.minSize+Math.random()*options.maxSize,endPositionTop=documentHeight-40,endPositionLeft=startPositionLeft-100+Math.random()*200,durationFall=documentHeight*10+Math.random()*5000;$flake.clone().appendTo('body').css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor}).animate({top:endPositionTop,left:endPositionLeft,opacity:0.2},durationFall,'linear',function(){$(this).remove()});},options.newOn);};})(jQuery);
+$.fn.snow({ minSize: 10, maxSize: 60, newOn: 1000, flakeColor: '#FFF' });
+</script>
+    <main>
+        <div class="container main-container">
+    
+
+<nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Archives)</span>
+        
+
+        
+    </div>
+</nav>
+
+
+
+    <ul class="collapsible mt-0" data-collapsible="accordion">
+        
+        
+            <li>
+                <div class="collapsible-header active">
+                    <i class="fa fa-archive"></i>2018
+                </div>
+                <div class="collapsible-body">
+                    <div class="collection">
+                        
+                            <a href="/posts/390158a6.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-06-02T12:28:00.000Z">2018-06-02</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                绕过校园网认证，实现校园防断网
+                            </a>
+                        
+                            <a href="/posts/caffa366.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-06-01T10:54:00.000Z">2018-06-01</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                永恒之蓝、永恒浪漫、永恒冠军复现
+                            </a>
+                        
+                            <a href="/posts/9cda70be.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-04-30T09:26:00.000Z">2018-04-30</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                namp工具的细究
+                            </a>
+                        
+                            <a href="/posts/9e35f352.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-04-28T13:19:00.000Z">2018-04-28</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                metasploit续
+                            </a>
+                        
+                            <a href="/posts/11dc13a6.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-04-21T15:53:00.000Z">2018-04-21</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                三秒钟的记忆
+                            </a>
+                        
+                            <a href="/posts/d851c108.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-04-21T13:54:00.000Z">2018-04-21</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                混生活吗？
+                            </a>
+                        
+                            <a href="/posts/bb6c190a.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-04-20T11:05:00.000Z">2018-04-20</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                web渗透技术知识小记
+                            </a>
+                        
+                            <a href="/posts/8599fc6c.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-04-05T11:04:00.000Z">2018-04-05</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                无线渗透测试小识
+                            </a>
+                        
+                            <a href="/posts/c617af63.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-04-01T14:10:00.000Z">2018-04-01</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                xss闯关小游戏
+                            </a>
+                        
+                            <a href="/posts/761c3e82.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-28T10:48:00.000Z">2018-03-28</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                实验吧web题
+                            </a>
+                        
+                            <a href="/posts/74313cf1.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-27T12:01:00.000Z">2018-03-27</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                16位汇编语言学习笔记
+                            </a>
+                        
+                            <a href="/posts/49ca178a.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-19T01:45:00.000Z">2018-03-19</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                metasploit学习小记
+                            </a>
+                        
+                            <a href="/posts/8a554d22.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-17T06:54:00.000Z">2018-03-17</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                审计以及漏洞知识点小整理
+                            </a>
+                        
+                            <a href="/posts/6faad9f0.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-15T00:53:00.000Z">2018-03-15</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                owasp juice shop
+                            </a>
+                        
+                            <a href="/posts/523c96b0.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-12T05:56:00.000Z">2018-03-12</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                webug 靶场
+                            </a>
+                        
+                            <a href="/posts/d4a99024.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-09T13:00:00.000Z">2018-03-09</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                jarvis oj web
+                            </a>
+                        
+                            <a href="/posts/ecb3eea4.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-08T11:40:00.000Z">2018-03-08</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                bugku的代码审计和社工
+                            </a>
+                        
+                            <a href="/posts/b1db4319.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-07T15:32:00.000Z">2018-03-07</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                bugku的web进阶
+                            </a>
+                        
+                            <a href="/posts/e1368ef8.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-03T14:30:00.000Z">2018-03-03</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                BugKu的web题
+                            </a>
+                        
+                            <a href="/posts/a8ea2937.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-02T04:48:00.000Z">2018-03-02</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                文章和笔记资料
+                            </a>
+                        
+                            <a href="/posts/797044d1.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-01T14:34:00.000Z">2018-03-01</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                Online decryption
+                            </a>
+                        
+                            <a href="/posts/2c81768d.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-01T14:27:00.000Z">2018-03-01</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                一些靶场
+                            </a>
+                        
+                            <a href="/posts/593de28d.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-03-01T12:15:00.000Z">2018-03-01</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                moctf平台的web题
+                            </a>
+                        
+                            <a href="/posts/dc43a318.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-02-28T12:40:00.000Z">2018-02-28</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                南京邮电大学ctf的web题
+                            </a>
+                        
+                            <a href="/posts/53139f85.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-02-24T06:55:00.000Z">2018-02-24</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                网络信息安全攻防
+                            </a>
+                        
+                            <a href="/posts/90656973.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-02-22T07:33:00.000Z">2018-02-22</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                RedTigers Hackit writeup
+                            </a>
+                        
+                            <a href="/posts/472f3104.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-02-19T13:37:00.000Z">2018-02-19</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                QQ自动抢红包和查看别人撤回的消息
+                            </a>
+                        
+                            <a href="/posts/d615baa4.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-02-18T01:52:00.000Z">2018-02-18</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                无法忍受云盘的限速
+                            </a>
+                        
+                            <a href="/posts/5a2301f5.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-02-17T15:02:00.000Z">2018-02-17</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                你还在买vip看视频吗
+                            </a>
+                        
+                            <a href="/posts/b884f343.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-02-17T09:15:00.000Z">2018-02-17</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                电脑系统的重装和激活
+                            </a>
+                        
+                            <a href="/posts/58504f2f.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-02-17T04:24:00.000Z">2018-02-17</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                moctf迎春赛部分writeup
+                            </a>
+                        
+                            <a href="/posts/3b00664c.html" class="collection-item grey-text text-darken-1">
+                                <time datetime="2018-02-17T01:40:00.000Z">2018-02-17</time>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                你的忙碌是为了忙碌吗
+                            </a>
+                        
+                    </div>
+                </div>
+            </li>
+        
+    </ul>
+
+
+</div>
+
+		 
+		 
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="Return to top"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="Menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">Social</h5>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="#" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">Links</h5>
+                
+                    <a class="social-link" href="https://blog.csdn.net/Wuzebiao2016" target="_blank">wuzebiao</a>
+                
+                    <a class="social-link" href="http://www.ifuryst.com/" target="_blank">iFurySt</a>
+                
+                    <a class="social-link" href="http://daikersec.com/" target="_blank">daiker</a>
+                
+                    <a class="social-link" href="http://blog.dedsec.club" target="_blank">dedsec</a>
+                
+                    <a class="social-link" href="https://www.leavesongs.com/" target="_blank">离别歌</a>
+                
+                    <a class="social-link" href="https://www.sec-wiki.com/" target="_blank">Secwiki</a>
+                
+                    <a class="social-link" href="https://zhuanlan.kanxue.com/" target="_blank">看雪专栏</a>
+                
+                    <a class="social-link" href="http://www.itxueke.com/SecNavi/#3782" target="_blank">IT学客安全导航</a>
+                
+                    <a class="social-link" href="http://www.freebuf.com/" target="_blank">安全客</a>
+                
+                    <a class="social-link" href="https://yq.aliyun.com/articles/?spm=a2c4e.11155573.minheadermenu.3.6cd475c6d2FQvQ" target="_blank">云栖社区</a>
+                
+                    <a class="social-link" href="https://paper.seebug.org/" target="_blank">知道创宇</a>
+                
+                    <a class="social-link" href="https://www.waitalone.cn/pentest" target="_blank">独自等待</a>
+                
+                    <a class="social-link" href="https://3gstudent.github.io/3gstudent.github.io/" target="_blank">三好学生</a>
+                
+                    <a class="social-link" href="http://paper.tuisec.win/index.jsp" target="_blank">先知社区文章</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('menu-home, menu-archive, .menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-124439084-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+	
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/APP_ID.js","daovoice");</script>
+<script>
+  daovoice('init', {
+    app_id: "45fb937d",
+  });
+  daovoice('update');
+</script>	
+</body>
+</html>
