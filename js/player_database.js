@@ -4,10 +4,11 @@ var myPlaylist = new jPlayerPlaylist({
 		cssSelectorAncestor: "#jp_container_N"
 	},
      [
-		 { title: "梦呓 ", artist: "王宇良", mp3:"../../music/mengyi.mp3", poster: "../../images/music/se.jpg"},	 
-		 { title: "告白气球 ", artist: "周杰伦", mp3:"../../music/gaobai.mp3", poster: "../../images/music/gaobai.jpg"},
-		 { title: "默", artist: "那英", mp3:"http://music.163.com/song/media/outer/url?id=31473269.mp3 ", poster: "http://p1.music.126.net/OCGt5ln0lPPtPbVJ3VEKtA==/109951163020570422.jpg?param=130y130"},
-		 { title: "Fire", artist: "Said The Sky", mp3:"http://music.163.com/song/media/outer/url?id=435289279.mp3", poster: "http://p1.music.126.net/tg2zke_mrqwuOPlEIEUjGg==/18294773975127592.jpg?param=130y130"}
+		 { title: "梦呓 ", artist: "王宇良", mp3: "../../music/mengyi.mp3", poster: "../../images/music/se.jpg"},	 
+		 { title: "告白气球 ", artist: "周杰伦", mp3: "../../music/gaobai.mp3", poster: "../../images/music/gaobai.jpg"},
+		 { title: "That Girl", artist: "Olly Murs", mp3: "../../music/thatgirl.mp3 ", poster: "../../images/music/thatgril.jpg"},
+	     { title: "Nonono", artist: "Apink", mp3: "../../music/nonono.mp3 ", poster: "../../images/music/nono.jpg"},
+		 { title: "小さな恋のうた", artist: "高橋李依", mp3: "../../music/manhua.mp3", poster: "../../images/music/manhua.jpg"}
 	 ],
 		{playlistOptions:{enableRemoveControls: true},
 		swfPath: "js/",
