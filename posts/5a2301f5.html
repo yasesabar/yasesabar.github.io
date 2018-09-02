@@ -220,16 +220,16 @@ color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-ne
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/knowledge/crypt/">
-                    crypt <span class="right">1</span></a>
+                <a class="no-padding" href="/categories/knowledge/note/">
+                    note <span class="right">8</span></a>
                 </a>
             </li>
 
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/knowledge/note/">
-                    note <span class="right">8</span></a>
+                <a class="no-padding" href="/categories/knowledge/crypt/">
+                    crypt <span class="right">1</span></a>
                 </a>
             </li>
 
@@ -295,6 +295,36 @@ color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-ne
     <div class="card">
         <div class="card-content">
             
+            <script type="text/javascript">
+
+var thehits=document.getElementById("thehit");
+if (thehits!=null){
+thehits.innerHTML="22936";
+}
+
+document.body.oncopy = function ()
+{
+    setTimeout(
+        function ()
+        {
+            var text = clipboardData.getData("text");
+            if (text)
+            {
+                text = text + "\r\n 知秋的博客"+location.href;
+                clipboardData.setData("text", text);
+            }
+        },
+        100
+    )
+}
+window.onload = function()
+{
+    this.focus();
+}
+</script>
+
+          
+		   
 
             <div class="article-title">
                 
@@ -354,6 +384,7 @@ color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-ne
             </div>
 			
         </div>
+		
     </div>
 </article>
 
@@ -579,17 +610,21 @@ var visitor = true;
                 
                     <a class="social-link" href="http://www.itxueke.com/SecNavi/#3782" target="_blank">IT学客安全导航</a>
                 
-                    <a class="social-link" href="http://www.freebuf.com/" target="_blank">安全客</a>
+                    <a class="social-link" href="http://www.freebuf.com/" target="_blank">Freebuf</a>
                 
                     <a class="social-link" href="https://yq.aliyun.com/articles/?spm=a2c4e.11155573.minheadermenu.3.6cd475c6d2FQvQ" target="_blank">云栖社区</a>
+                
+                    <a class="social-link" href="https://xz.aliyun.com/" target="_blank">先知社区</a>
                 
                     <a class="social-link" href="https://paper.seebug.org/" target="_blank">知道创宇</a>
                 
                     <a class="social-link" href="https://www.waitalone.cn/pentest" target="_blank">独自等待</a>
                 
+                    <a class="social-link" href="http://paper.tuisec.win/index.jsp" target="_blank">paper文章搜索</a>
+                
                     <a class="social-link" href="https://3gstudent.github.io/3gstudent.github.io/" target="_blank">三好学生</a>
                 
-                    <a class="social-link" href="http://paper.tuisec.win/index.jsp" target="_blank">先知社区文章</a>
+                    <a class="social-link" href="https://www.anquanke.com/" target="_blank">安全客</a>
                 
             </div>
             
