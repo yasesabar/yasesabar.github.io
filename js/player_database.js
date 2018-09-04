@@ -3,7 +3,9 @@ var myPlaylist = new jPlayerPlaylist({
 		jPlayer: "#jquery_jplayer_N",
 		cssSelectorAncestor: "#jp_container_N"
 	},
-     [
+     [    
+	     { title: "往后余生 ", artist: "王贰良", mp3: "../../music/wanghouyvsheng.mp3", poster: "../../images/music/wanghou.jpg"},	 
+		 { title: "纸短情长 ", artist: "烟把儿", mp3: "../../music/zhiduanqingchang.mp3", poster: "../../images/music/zhiduan.jpg"},
 		 { title: "梦呓 ", artist: "王宇良", mp3: "../../music/mengyi.mp3", poster: "../../images/music/se.jpg"},	 
 		 { title: "告白气球 ", artist: "周杰伦", mp3: "../../music/gaobai.mp3", poster: "../../images/music/gaobai.jpg"},
 		 { title: "That Girl", artist: "Olly Murs", mp3: "../../music/thatgirl.mp3 ", poster: "../../images/music/thatgril.jpg"},
