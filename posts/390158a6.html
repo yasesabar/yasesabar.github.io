@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-06-02T12:28:00.000Z"><a href="/posts/390158a6.html">2018-06-02</a></time>
+            <time class="red-link-context" datetime="2018-06-02T12:28:00.000Z"><a href="/posts/390158a6.html">2018-06-02</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -413,12 +413,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#实现原理"><span class="section table-of-contents-text">实现原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#环境检测"><span class="section table-of-contents-text">环境检测</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#准备"><span class="section table-of-contents-text">准备</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#softether-服务端的搭建"><span class="section table-of-contents-text">softether 服务端的搭建</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#softether-服务端的管理"><span class="section table-of-contents-text">softether 服务端的管理</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#管理服务端"><span class="section table-of-contents-text">管理服务端</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#新建hub"><span class="section table-of-contents-text">新建hub</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#新建用户"><span class="section table-of-contents-text">新建用户</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#启动SecureNAT"><span class="section table-of-contents-text">启动SecureNAT</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#勾选VPN-over-ICMP-DNS的配置"><span class="section table-of-contents-text">勾选VPN over ICMP/DNS的配置</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#客户端的连接"><span class="section table-of-contents-text">客户端的连接</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#softether-client"><span class="section table-of-contents-text">softether client</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#L2TP加密协议连接"><span class="section table-of-contents-text">L2TP加密协议连接</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#手机端的连接"><span class="section table-of-contents-text">手机端的连接</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#window系统的连接"><span class="section table-of-contents-text">window系统的连接</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#VPN-Azure连接"><span class="section table-of-contents-text">VPN Azure连接</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#openVPN连接"><span class="section table-of-contents-text">openVPN连接</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#pc端防断网测试"><span class="section table-of-contents-text">pc端防断网测试</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#网速测试"><span class="section table-of-contents-text">网速测试</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <p>我的学校晚上十一点后就断网了，对于我这没有办理手机无限流量套餐的，看着可怜少之又少的流量套餐，断网后，就是一件悲催的事情，不能追剧，不能看动漫，不能刷漫画,很是无奈。最近，听说有位学弟实现了校园防断网，立马请教，学弟发了几片文章让我参考去实现，搞了一两天，感觉我真的手挺拙的，只能时不时地麻烦学弟,折腾了好几种防断网的方式，最后感觉搭建SoftEther实现防断网的方式比较稳。<br><a id="more"></a></p>
 <h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><p>校园网的web认证，我们电脑连接这个wifi或者插上网线实现认证之前，电脑就已经被分配到了一个ip地址，当我们想要上网的时候，网关会修改我们的http数据包，让我们重定向到一个提示要打开网络认证或直接到网络认证的页面。如果没有认证成功，无法得知网关的arp信息，也就无法发送跨网段的tcp连接和http请求，当然无法上网。但是，开启web认证交换机设备默认是放行DHCP和DNS报文,也是就udp53和udp67。当然，这就是我们实现防断网要利用的重点。如果没有对udp53和udp67发送的任何数据包进行拦截，我们可以利用udp53和udp67发送任何形式的数据包，实现不用锐捷认证，就可以上网。<br>这里有篇web认证的详细说明<br><a href="http://www.ruijie.com.cn/fw/wt/36502" target="_blank" rel="noopener">http://www.ruijie.com.cn/fw/wt/36502</a></p>
 <h1 id="环境检测"><a href="#环境检测" class="headerlink" title="环境检测"></a>环境检测</h1><p>电脑先连上wifi或者插上网线，不要认证。<br>打开cmd命令行，输入<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nslookup wwww.baidu.com</span><br></pre></td></tr></table></figure></p>
@@ -458,7 +458,7 @@ window.onload = function()
 <p>参考文章：<br><a href="https://www.bennythink.com/softether-vpnserver.html" target="_blank" rel="noopener">https://www.bennythink.com/softether-vpnserver.html</a><br><a href="https://www.bennythink.com/udp53.html" target="_blank" rel="noopener">https://www.bennythink.com/udp53.html</a></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/90656947.html" rel="next" title="php常见函数绕过">
     Prev: php常见函数绕过
   </a>
@@ -466,7 +466,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/caffa366.html" rel="next" title="永恒之蓝、永恒浪漫、永恒冠军复现">
     Next: 永恒之蓝、永恒浪漫、永恒冠军复现
   </a>
@@ -692,7 +692,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -868,7 +868,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -890,7 +890,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

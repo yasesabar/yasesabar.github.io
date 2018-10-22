@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-09-18T13:21:00.000Z"><a href="/posts/90656947.html">2018-09-18</a></time>
+            <time class="red-link-context" datetime="2018-09-18T13:21:00.000Z"><a href="/posts/90656947.html">2018-09-18</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -415,12 +415,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#extract"><span class="section table-of-contents-text">extract()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#strcmp"><span class="section table-of-contents-text">strcmp()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#md5"><span class="section table-of-contents-text">md5()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#ereg"><span class="section table-of-contents-text">ereg()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#is-numeric"><span class="section table-of-contents-text">is_numeric()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#sha1"><span class="section table-of-contents-text">sha1()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#strpos"><span class="section table-of-contents-text">strpos()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#变量本身的key"><span class="section table-of-contents-text">变量本身的key</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#preg-match"><span class="section table-of-contents-text">preg_match()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#字符串比较"><span class="section table-of-contents-text">字符串比较</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#parse-str"><span class="section table-of-contents-text">parse_str()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#unset"><span class="section table-of-contents-text">unset()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#intval"><span class="section table-of-contents-text">intval()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#switch"><span class="section table-of-contents-text">switch()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#in-array"><span class="section table-of-contents-text">in_array()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#serialize-和-unserialize漏洞"><span class="section table-of-contents-text">serialize 和 unserialize漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#session-反序列化漏洞"><span class="section table-of-contents-text">session 反序列化漏洞</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <h1 id="extract"><a href="#extract" class="headerlink" title="extract()"></a><a href="http://php.net/manual/zh/function.extract.php" target="_blank" rel="noopener">extract()</a></h1><p>extract()这个函数在指定参数为EXTR_OVERWRITE或者没有指定函数可以导致变量覆盖<br>kugku例题：<br> <a href="http://120.24.86.145:9009/1.php" target="_blank" rel="noopener">http://120.24.86.145:9009/1.php</a></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"><span class="variable">$flag</span>=<span class="string">'xxx'</span>;</span><br><span class="line">extract(<span class="variable">$_GET</span>);</span><br><span class="line"><span class="keyword">if</span>(isset(<span class="variable">$shiyan</span>))</span><br><span class="line">&#123;</span><br><span class="line"><span class="variable">$content</span>=trim(file_get_contents(<span class="variable">$flag</span>));</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$shiyan</span>==<span class="variable">$content</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">echo</span><span class="string">'flag&#123;xxx&#125;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">echo</span><span class="string">'Oh.no'</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <p>解题：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">?shiyan=&amp;flag=</span><br></pre></td></tr></table></figure></p>
@@ -475,7 +475,7 @@ window.onload = function()
 <p> <a href="https://blog.csdn.net/qq_31481187/article/details/60968595/" target="_blank" rel="noopener">https://blog.csdn.net/qq_31481187/article/details/60968595/</a></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/797044da.html" rel="next" title="dedecms">
     Prev: dedecms
   </a>
@@ -483,7 +483,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/390158a6.html" rel="next" title="绕过校园网认证，实现校园防断网">
     Next: 绕过校园网认证，实现校园防断网
   </a>
@@ -709,7 +709,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -885,7 +885,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -907,7 +907,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

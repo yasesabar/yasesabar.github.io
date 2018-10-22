@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-03-27T12:01:00.000Z"><a href="/posts/74313cf1.html">2018-03-27</a></time>
+            <time class="red-link-context" datetime="2018-03-27T12:01:00.000Z"><a href="/posts/74313cf1.html">2018-03-27</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -413,12 +413,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#基础知识"><span class="section table-of-contents-text">基础知识</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#寄存器的内存访问"><span class="section table-of-contents-text">寄存器的内存访问</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#程序"><span class="section table-of-contents-text">程序</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#数据处理"><span class="section table-of-contents-text">数据处理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#转移指令的原理"><span class="section table-of-contents-text">转移指令的原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#标记寄存器"><span class="section table-of-contents-text">标记寄存器</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#内中断"><span class="section table-of-contents-text">内中断</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#外中断"><span class="section table-of-contents-text">外中断</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <p>最近，不知道是心血来潮，还是有点厌倦web,突然想学一学逆向，未知的领域，有点儿神秘，有了一种想探索的欲望，这学期，也挺闲的，就给自己找点事做，学一下逆向，逆向探索之旅，就此开始吧！<br><a id="more"></a></p>
 <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>1.地址总线：cpu是通过地址总线来制定存储单元的。<br> 数据总线：cpu与内存或其他器件之间的数据传送，。<br> 控制总线： cpu对外部器件的控制<br>2.cpu包括运算器、控制器、寄存器等器件<br>运算器进行信息处理<br>寄存器进行信息存储<br>控制器控制各种器件进行工作<br>内部总线连接各种器件，进行数据的传送<br>3.8086cpu的所有寄存器是16位的，存放两个字节。<br>AX、BX、CX 、DX是通用寄存器，用来存放一般的数据<br>AX可分为AH和BL,其他同理。<br>4.字节，记为byte，一个字节有8个bit组成，可以存在8位寄存器中。<br>字：记为word,一个字由连个字节组成，这两个字节分别称为高位字节和低位字节。<br>5.cpu在执行指令时，会认为ah和al是两个不相关的寄存器。<br>在进行数据传送或运算时，要注意指令的两个操作对象的位数应当一致的：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mov ax,2000H 正确的。  </span><br><span class="line">mov al,2000H 错误的。</span><br></pre></td></tr></table></figure></p>
 <p>6.8086cpu有20位地址总线。<br>物理地址=段地址x16+偏移地址<br>cpu可以使用不同的段地址和偏移地址形成同一个物理地址<br>7.8086cpu有4个段寄存器：CS DS SS ES<br>8.jmp 段地址：偏移地址  功能是用指令中给出的段地址修改CS，偏移地址修改IP.<br>jmp 某一合法寄存器    功能是用寄存器中的值修改ip.<br>9.debug的功能<br>R查看、改变cpu寄存器的内容<br>D查看内存中的内容<br>E改写内容内存中的内容<br>U将内存中的机器指令翻译成汇编指令<br>T执行一天机器指令<br>A以汇编指令的格式在内存中写入一条机器指令    </p>
@@ -463,7 +463,7 @@ window.onload = function()
 <p>参考书籍：<br><a href="https://book.douban.com/subject/25726019/" target="_blank" rel="noopener">https://book.douban.com/subject/25726019/</a></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/761c3e82.html" rel="next" title="实验吧web题">
     Prev: 实验吧web题
   </a>
@@ -471,7 +471,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/49ca178a.html" rel="next" title="metasploit学习小记">
     Next: metasploit学习小记
   </a>
@@ -697,7 +697,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -873,7 +873,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -895,7 +895,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

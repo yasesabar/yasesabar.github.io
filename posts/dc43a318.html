@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-02-28T12:40:00.000Z"><a href="/posts/dc43a318.html">2018-02-28</a></time>
+            <time class="red-link-context" datetime="2018-02-28T12:40:00.000Z"><a href="/posts/dc43a318.html">2018-02-28</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -415,12 +415,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#md5-collision"><span class="section table-of-contents-text">md5 collision</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#层层递进"><span class="section table-of-contents-text">层层递进</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#AAencode"><span class="section table-of-contents-text">AAencode</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#你从哪里来"><span class="section table-of-contents-text">你从哪里来</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#Download"><span class="section table-of-contents-text">Download~!</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#sql-injection-3"><span class="section table-of-contents-text">sql injection 3</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#x00"><span class="section table-of-contents-text">/x00</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#bypass-again"><span class="section table-of-contents-text">bypass again</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#变量覆盖"><span class="section table-of-contents-text">变量覆盖</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#上传绕过"><span class="section table-of-contents-text">上传绕过</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#sql注入1"><span class="section table-of-contents-text">sql注入1</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#pass-check"><span class="section table-of-contents-text">pass check</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#起个名字真难"><span class="section table-of-contents-text">起个名字真难</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#重置密码"><span class="section table-of-contents-text">重置密码</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#php反序列化"><span class="section table-of-contents-text">php反序列化</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#sql-injection-4"><span class="section table-of-contents-text">sql injection 4</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#综合题"><span class="section table-of-contents-text">综合题</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#sql注入2"><span class="section table-of-contents-text">sql注入2</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#综合题2"><span class="section table-of-contents-text">综合题2</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <p>以前做过了，再做一下，大部分都是挺简单的。<br><a id="more"></a></p>
 <h1 id="md5-collision"><a href="#md5-collision" class="headerlink" title="md5 collision"></a>md5 collision</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">md5(!1793422703!,32) = 0e332932043729729062996282883873</span><br><span class="line">md5(QNKCDZO,32) = 0e830400451993494058024219903391</span><br><span class="line">md5(240610708,32) = 0e462097431906509019562988736854</span><br></pre></td></tr></table></figure>
 <p>上面三个加密后的MD5值是相等的，构造<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">？a=240610708</span><br></pre></td></tr></table></figure></p>
@@ -468,7 +468,7 @@ window.onload = function()
 <h1 id="综合题2"><a href="#综合题2" class="headerlink" title="综合题2"></a>综合题2</h1><p>访问<br><code>http://cms.nuptzj.cn/about.php?file=say.php</code><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span><br><span class="line">&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=utf-8&amp;quot; /&amp;gt;</span><br><span class="line">&amp;lt;?php</span><br><span class="line">include &apos;config.php&apos;;</span><br><span class="line">$nice=$_POST[&apos;nice&apos;];</span><br><span class="line">$say=$_POST[&apos;usersay&apos;];</span><br><span class="line">if(!isset($_COOKIE[&apos;username&apos;]))&#123;</span><br><span class="line">setcookie(&apos;username&apos;,$nice);</span><br><span class="line">setcookie(&apos;userpass&apos;,&apos;&apos;);</span><br><span class="line">&#125;</span><br><span class="line">$username=$_COOKIE[&apos;username&apos;];</span><br><span class="line">$userpass=$_COOKIE[&apos;userpass&apos;];</span><br><span class="line">if($nice==&amp;quot;&amp;quot; || $say==&amp;quot;&amp;quot;)&#123;</span><br><span class="line">echo &amp;quot;&amp;lt;script&amp;gt;alert(&apos;昵称或留言内容不能为空！(如果有内容也弹出此框，不是网站问题喔~ 好吧，给个提示：查看页面源码有惊喜！)&apos;);&amp;lt;/script&amp;gt;&amp;quot;;</span><br><span class="line">exit();</span><br><span class="line">&#125;</span><br><span class="line">$con = mysql_connect($db_address,$db_user,$db_pass) or die(&amp;quot;不能连接到数据库！！&amp;quot;.mysql_error());</span><br><span class="line">mysql_select_db($db_name,$con);</span><br><span class="line">$nice=mysql_real_escape_string($nice);</span><br><span class="line">$username=mysql_real_escape_string($username);</span><br><span class="line">$userpass=mysql_real_escape_string($userpass);</span><br><span class="line">$result=mysql_query(&amp;quot;SELECT username FROM admin where username=&apos;$nice&apos;&amp;quot;,$con);</span><br><span class="line">$login=mysql_query(&amp;quot;SELECT * FROM admin where username=&apos;$username&apos; AND userpass=&apos;$userpass&apos;&amp;quot;,$con);</span><br><span class="line">if(mysql_num_rows($result)&amp;gt;0 &amp;amp;&amp;amp; mysql_num_rows($login)&amp;lt;=0)&#123;</span><br><span class="line">echo &amp;quot;&amp;lt;script&amp;gt;alert(&apos;昵称已被使用，请更换！&apos;);&amp;lt;/script&amp;gt;&amp;quot;;</span><br><span class="line">mysql_free_result($login);</span><br><span class="line">mysql_free_result($result);</span><br><span class="line">mysql_close($con);</span><br><span class="line">exit();</span><br><span class="line">&#125;</span><br><span class="line">mysql_free_result($login);</span><br><span class="line">mysql_free_result($result);</span><br><span class="line">$say=mysql_real_escape_string($say);</span><br><span class="line">mysql_query(&amp;quot;insert into message (nice,say,display) values(&apos;$nice&apos;,&apos;$say&apos;,0)&amp;quot;,$con);</span><br><span class="line">mysql_close($con);</span><br><span class="line">echo &apos;&amp;lt;script&amp;gt;alert(&amp;quot;构建和谐社会，留言需要经过管理员审核才可以显示！&amp;quot;);window.location = &amp;quot;./index.php&amp;quot;&amp;lt;/script&amp;gt;&apos;;</span><br><span class="line">?&amp;gt;gt;</span><br></pre></td></tr></table></figure></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/593de28d.html" rel="next" title="moctf平台的web题">
     Prev: moctf平台的web题
   </a>
@@ -476,7 +476,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/53139f85.html" rel="next" title="网络信息安全攻防">
     Next: 网络信息安全攻防
   </a>
@@ -702,7 +702,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -878,7 +878,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -900,7 +900,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

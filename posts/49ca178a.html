@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-03-19T01:45:00.000Z"><a href="/posts/49ca178a.html">2018-03-19</a></time>
+            <time class="red-link-context" datetime="2018-03-19T01:45:00.000Z"><a href="/posts/49ca178a.html">2018-03-19</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -415,12 +415,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#metasploit的基础知识"><span class="section table-of-contents-text">metasploit的基础知识</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#metasploit模块"><span class="section table-of-contents-text">metasploit模块</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <h1 id="metasploit的基础知识"><a href="#metasploit的基础知识" class="headerlink" title="metasploit的基础知识"></a><a href="https://www.offensive-security.com/metasploit-unleashed/" target="_blank" rel="noopener">metasploit的基础知识</a></h1><p>以前一直在使用这个渗透神器，不知道其原理，这次特地借了一本书，来深入理解一下。<br><a id="more"></a><br>1.metasploit框架的体系结构 </p>
 <p><img src="http://p4gdp8beq.bkt.clouddn.com/123456ass.jpg" alt="">  </p>
 <p>模块<br>Exploit: 渗透攻击模块，一段程序，利用目标的安全漏洞进行攻击。<br>Payload: 攻击载荷模块，在成功完成对目标的一次渗透攻击后，在目标主机上运行，获得需要的访问和行动权限。<br>Auxiliary:包含了一系列的辅助支持模块，包括扫描模块、fuzz测试漏洞发掘模块、网络协议欺骗以及其他模块。<br>Encoder: 编码器模块通常对我们的攻击模块进行代码混淆，来逃过目标安全保护机制的检测。<br>基础库：<br>Ruby扩展(REX)：处理几乎所有的核心功能，如设置网络套接字、网络的连接、格式化和所有其他基本功能。<br>MSF核心：提供了基本的应用编程接口和框架的实际核心。<br>MSF基础：对模块提供了友好的应用编程接口   </p>
@@ -440,7 +440,7 @@ window.onload = function()
 <p>未完待续 ……</p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/74313cf1.html" rel="next" title="16位汇编语言学习笔记">
     Prev: 16位汇编语言学习笔记
   </a>
@@ -448,7 +448,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/8a554d22.html" rel="next" title="审计以及漏洞知识点小整理">
     Next: 审计以及漏洞知识点小整理
   </a>
@@ -674,7 +674,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -850,7 +850,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -872,7 +872,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

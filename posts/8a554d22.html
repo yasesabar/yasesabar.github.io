@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-03-17T06:54:00.000Z"><a href="/posts/8a554d22.html">2018-03-17</a></time>
+            <time class="red-link-context" datetime="2018-03-17T06:54:00.000Z"><a href="/posts/8a554d22.html">2018-03-17</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -415,12 +415,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#通用代码审计思路"><span class="section table-of-contents-text">通用代码审计思路</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#1-敏感函数回溯参数"><span class="section table-of-contents-text">1.敏感函数回溯参数</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#2通读全文代码。"><span class="section table-of-contents-text">2通读全文代码。</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#3-根据功能点定向审计"><span class="section table-of-contents-text">3.根据功能点定向审计</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#sql注入漏洞"><span class="section table-of-contents-text">sql注入漏洞</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#1-常见的函数"><span class="section table-of-contents-text">1.常见的函数</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#2-常见注入"><span class="section table-of-contents-text">2.常见注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#3-编码注入"><span class="section table-of-contents-text">3.编码注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#4-sql注入防御"><span class="section table-of-contents-text">4.sql注入防御</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#sql注入的一些绕过技巧"><span class="section table-of-contents-text">sql注入的一些绕过技巧</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#xss漏洞"><span class="section table-of-contents-text">xss漏洞</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#1-xss类型"><span class="section table-of-contents-text">1.xss类型</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#2-xss的利用"><span class="section table-of-contents-text">2.xss的利用</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#3-xss的构造"><span class="section table-of-contents-text">3.xss的构造</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#4-xss的防御"><span class="section table-of-contents-text">4.xss的防御</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#CSRF"><span class="section table-of-contents-text">CSRF</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#1-csrf的攻击和防御"><span class="section table-of-contents-text">1.csrf的攻击和防御</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#文件操作漏洞"><span class="section table-of-contents-text">文件操作漏洞</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#1-文件包含漏洞"><span class="section table-of-contents-text">1.文件包含漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#2-文件读取漏洞"><span class="section table-of-contents-text">2.文件读取漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#3-文件上传漏洞"><span class="section table-of-contents-text">3.文件上传漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#4-文件解析漏洞"><span class="section table-of-contents-text">4.文件解析漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#5-文件删除漏洞"><span class="section table-of-contents-text">5.文件删除漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#6-目录遍历漏洞"><span class="section table-of-contents-text">6.目录遍历漏洞</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#代码执行漏洞"><span class="section table-of-contents-text">代码执行漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#命令执行漏洞"><span class="section table-of-contents-text">命令执行漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#变量覆盖漏洞"><span class="section table-of-contents-text">变量覆盖漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#逻辑处理漏洞"><span class="section table-of-contents-text">逻辑处理漏洞</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#1-等于与存在判断绕过"><span class="section table-of-contents-text">1.等于与存在判断绕过</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#2-越权访问"><span class="section table-of-contents-text">2.越权访问</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#3-支付漏洞"><span class="section table-of-contents-text">3.支付漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#4-密码重置漏洞"><span class="section table-of-contents-text">4.密码重置漏洞</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#会话认证漏洞"><span class="section table-of-contents-text">会话认证漏洞</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#点击劫持"><span class="section table-of-contents-text">点击劫持</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#ssrf"><span class="section table-of-contents-text">ssrf</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#代码注入"><span class="section table-of-contents-text">代码注入</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#1-xml外部实体注入"><span class="section table-of-contents-text">1.xml外部实体注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#2-xpath注入"><span class="section table-of-contents-text">2.xpath注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#3-jsonp注入"><span class="section table-of-contents-text">3.jsonp注入</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#加密算法与随机数"><span class="section table-of-contents-text">加密算法与随机数</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#1-Stream-Ciper-Attack"><span class="section table-of-contents-text">1.Stream Ciper Attack</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#2-ECB模式缺陷"><span class="section table-of-contents-text">2.ECB模式缺陷</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#3-Padding-Oracle-Attack"><span class="section table-of-contents-text">3.Padding Oracle Attack</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#4-伪随机数问题"><span class="section table-of-contents-text">4.伪随机数问题</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#5-Length-Extension-Attack"><span class="section table-of-contents-text">5.Length Extension Attack</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#DDOS攻击"><span class="section table-of-contents-text">DDOS攻击</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <p>趁着这几天清闲，整理一下常见漏洞的知识，既是给自己梳理一下知识体系，也是给自己留个备忘录，省得记忆差，老是忘却。大都是从书本上搬运而来的，整理不佳，大牛略过，勿喷。</p>
 <a id="more"></a> 
 <p>别人的php代码审计知识脑图<br><img src="/posts/../../images/naotu/PHP.png" alt=""></p>
@@ -498,7 +498,7 @@ window.onload = function()
 <p>参考文献:<br><a href="https://book.douban.com/subject/10546925/" target="_blank" rel="noopener">https://book.douban.com/subject/10546925/</a><br><a href="https://book.douban.com/subject/26673087/" target="_blank" rel="noopener">https://book.douban.com/subject/26673087/</a><br><a href="https://book.douban.com/subject/26348894/" target="_blank" rel="noopener">https://book.douban.com/subject/26348894/</a><br><a href="https://github.com/JnuSimba/MiscSecNotes" target="_blank" rel="noopener">https://github.com/JnuSimba/MiscSecNotes</a></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/49ca178a.html" rel="next" title="metasploit学习小记">
     Prev: metasploit学习小记
   </a>
@@ -506,7 +506,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/6faad9f0.html" rel="next" title="owasp juice shop">
     Next: owasp juice shop
   </a>
@@ -732,7 +732,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -908,7 +908,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -930,7 +930,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

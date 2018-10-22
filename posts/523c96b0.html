@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-03-12T05:56:00.000Z"><a href="/posts/523c96b0.html">2018-03-12</a></time>
+            <time class="red-link-context" datetime="2018-03-12T05:56:00.000Z"><a href="/posts/523c96b0.html">2018-03-12</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -415,12 +415,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#渗透基础"><span class="section table-of-contents-text">渗透基础</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#普通的get注入"><span class="section table-of-contents-text">普通的get注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#从图片中找到有用的信息"><span class="section table-of-contents-text">从图片中找到有用的信息</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#你看到了什么"><span class="section table-of-contents-text">你看到了什么</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#告诉你了FLANG是五位数"><span class="section table-of-contents-text">告诉你了FLANG是五位数</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#一个优点小小的特殊的注入"><span class="section table-of-contents-text">一个优点小小的特殊的注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#这关需要RMB购买"><span class="section table-of-contents-text">这关需要RMB购买</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#越权"><span class="section table-of-contents-text">越权</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#CSRF"><span class="section table-of-contents-text">CSRF</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#url跳转"><span class="section table-of-contents-text">url跳转</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#文件下载"><span class="section table-of-contents-text">文件下载</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#我和上题有点像"><span class="section table-of-contents-text">我和上题有点像</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#我系统密码忘记了"><span class="section table-of-contents-text">我系统密码忘记了</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#xss"><span class="section table-of-contents-text">xss</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#存储型xss"><span class="section table-of-contents-text">存储型xss</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#什么？上传不了图片"><span class="section table-of-contents-text">什么？上传不了图片</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#明天双十一"><span class="section table-of-contents-text">明天双十一</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#中级进阶"><span class="section table-of-contents-text">中级进阶</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#出来一点东西"><span class="section table-of-contents-text">出来一点东西</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#提交方式是什么样的"><span class="section table-of-contents-text">提交方式是什么样的</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#我还是一个注入"><span class="section table-of-contents-text">我还是一个注入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#看看pak"><span class="section table-of-contents-text">看看pak</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#时间盲注"><span class="section table-of-contents-text">时间盲注</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#DZ论坛"><span class="section table-of-contents-text">DZ论坛</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#aspcms"><span class="section table-of-contents-text">aspcms</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#phpmyadmin"><span class="section table-of-contents-text">phpmyadmin</span></a></li></ol></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <p>这个靶场不错，可惜的是有些题目复现不出来，有些小问题。<br><a id="more"></a></p>
 <h1 id="渗透基础"><a href="#渗透基础" class="headerlink" title="渗透基础"></a>渗透基础</h1><h2 id="普通的get注入"><a href="#普通的get注入" class="headerlink" title="普通的get注入"></a>普通的get注入</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.3.129/pentest/<span class="built_in">test</span>/sqli/sqltamp.php?gid=1<span class="string">' order by 4 %23</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http://192.168.3.129/pentest/<span class="built_in">test</span>/sqli/sqltamp.php?gid=1<span class="string">' union select 1,2,(select group_concat(table_name) from information_schema.tables where table_schema=database()),4%23</span></span><br></pre></td></tr></table></figure>
@@ -463,7 +463,7 @@ window.onload = function()
 <h2 id="aspcms"><a href="#aspcms" class="headerlink" title="aspcms"></a>aspcms</h2><p>复现失败</p>
 <h2 id="phpmyadmin"><a href="#phpmyadmin" class="headerlink" title="phpmyadmin"></a>phpmyadmin</h2>
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/6faad9f0.html" rel="next" title="owasp juice shop">
     Prev: owasp juice shop
   </a>
@@ -471,7 +471,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/d4a99024.html" rel="next" title="jarvis oj web">
     Next: jarvis oj web
   </a>
@@ -697,7 +697,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -873,7 +873,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -895,7 +895,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

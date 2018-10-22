@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-04-01T14:10:00.000Z"><a href="/posts/c617af63.html">2018-04-01</a></time>
+            <time class="red-link-context" datetime="2018-04-01T14:10:00.000Z"><a href="/posts/c617af63.html">2018-04-01</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -415,12 +415,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-1"><span class="section table-of-contents-text">stage 1</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-2"><span class="section table-of-contents-text">stage 2</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-3"><span class="section table-of-contents-text">stage 3</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-4"><span class="section table-of-contents-text">stage 4</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-5"><span class="section table-of-contents-text">stage 5</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-6"><span class="section table-of-contents-text">stage 6</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-7"><span class="section table-of-contents-text">stage 7</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-8"><span class="section table-of-contents-text">stage 8</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-9"><span class="section table-of-contents-text">stage 9</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-10"><span class="section table-of-contents-text">stage 10</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#stage-11"><span class="section table-of-contents-text">stage 11</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <p>附上网址 <a href="https://xss-quiz.int21h.jp/" target="_blank" rel="noopener">https://xss-quiz.int21h.jp/</a><br><a id="more"></a></p>
 <h1 id="stage-1"><a href="#stage-1" class="headerlink" title="stage 1"></a>stage 1</h1><p>没有过滤直接输入<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;alert(document.domain);&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <h1 id="stage-2"><a href="#stage-2" class="headerlink" title="stage 2"></a>stage 2</h1><p>闭合双引号，闭合标签。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">" onmouseover=alert(document.domain)&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -439,7 +439,7 @@ window.onload = function()
 <p> “s/[\x00-\x20\&lt;>\”\’]//g;”<br> <code>`</code></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/8599fc6c.html" rel="next" title="无线渗透测试小识">
     Prev: 无线渗透测试小识
   </a>
@@ -447,7 +447,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/761c3e82.html" rel="next" title="实验吧web题">
     Next: 实验吧web题
   </a>
@@ -673,7 +673,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -849,7 +849,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -871,7 +871,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

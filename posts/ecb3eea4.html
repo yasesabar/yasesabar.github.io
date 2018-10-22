@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-03-08T11:40:00.000Z"><a href="/posts/ecb3eea4.html">2018-03-08</a></time>
+            <time class="red-link-context" datetime="2018-03-08T11:40:00.000Z"><a href="/posts/ecb3eea4.html">2018-03-08</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -415,12 +415,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#extract变量覆盖"><span class="section table-of-contents-text">extract变量覆盖</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#strcmp比较字符串"><span class="section table-of-contents-text">strcmp比较字符串</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#urldecode二次编码绕过"><span class="section table-of-contents-text">urldecode二次编码绕过</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#MD5函数"><span class="section table-of-contents-text">MD5函数</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#数组返回NULL绕过"><span class="section table-of-contents-text">数组返回NULL绕过</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#sha-函数比较绕过"><span class="section table-of-contents-text">sha()函数比较绕过</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#md5加密相等绕过"><span class="section table-of-contents-text">md5加密相等绕过</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#十六进制与数字比较"><span class="section table-of-contents-text">十六进制与数字比较</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#ereg正则-00截断"><span class="section table-of-contents-text">ereg正则%00截断</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#strpos数组绕过"><span class="section table-of-contents-text">strpos数组绕过</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#密码"><span class="section table-of-contents-text">密码</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#信息查找"><span class="section table-of-contents-text">信息查找</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#简单的个人信息收集"><span class="section table-of-contents-text">简单的个人信息收集</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <p>都做过了，在做一遍，刷理一下思绪。<br><a id="more"></a><br><a href="http://blog.csdn.net/qq_31481187/article/details/60968595" target="_blank" rel="noopener">php函数漏洞详细总结</a></p>
 <h1 id="extract变量覆盖"><a href="#extract变量覆盖" class="headerlink" title="extract变量覆盖"></a>extract变量覆盖</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"><span class="variable">$flag</span>=<span class="string">'xxx'</span>;</span><br><span class="line">extract(<span class="variable">$_GET</span>);</span><br><span class="line"><span class="keyword">if</span>(isset(<span class="variable">$shiyan</span>))</span><br><span class="line">&#123;</span><br><span class="line"><span class="variable">$content</span>=trim(file_get_contents(<span class="variable">$flag</span>));</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$shiyan</span>==<span class="variable">$content</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">echo</span><span class="string">'flag&#123;xxx&#125;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">echo</span><span class="string">'Oh.no'</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <p><a href="http://www.freebuf.com/column/150731.html" target="_blank" rel="noopener">变量覆盖漏洞</a><br><br>构造<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">?shiyan&amp;content=</span><br></pre></td></tr></table></figure></p>
@@ -448,7 +448,7 @@ window.onload = function()
 <h1 id="简单的个人信息收集"><a href="#简单的个人信息收集" class="headerlink" title="简单的个人信息收集"></a>简单的个人信息收集</h1><p>zip压缩包，猜测伪加密，在winhex中打开，找到504B0102从50算起，的第九和第十个字节全部都改成00。成功得到一些信息。然后去社工吧。<br>#</p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/d4a99024.html" rel="next" title="jarvis oj web">
     Prev: jarvis oj web
   </a>
@@ -456,7 +456,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/b1db4319.html" rel="next" title="bugku的web进阶">
     Next: bugku的web进阶
   </a>
@@ -682,7 +682,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -858,7 +858,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -880,7 +880,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

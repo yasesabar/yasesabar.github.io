@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-03-28T10:48:00.000Z"><a href="/posts/761c3e82.html">2018-03-28</a></time>
+            <time class="red-link-context" datetime="2018-03-28T10:48:00.000Z"><a href="/posts/761c3e82.html">2018-03-28</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -415,19 +415,19 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#简单的登录题"><span class="section table-of-contents-text">简单的登录题</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#后台登录"><span class="section table-of-contents-text">后台登录</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#加了料的报错注入"><span class="section table-of-contents-text">加了料的报错注入</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <h1 id="简单的登录题"><a href="#简单的登录题" class="headerlink" title="简单的登录题"></a>简单的登录题</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;?php define(<span class="string">"SECRET_KEY"</span>, <span class="string">'***********'</span>);</span><br><span class="line">define(<span class="string">"METHOD"</span>, <span class="string">"aes-128-cbc"</span>);</span><br><span class="line">error_reporting(0);</span><br><span class="line">include(<span class="string">'conn.php'</span>);</span><br><span class="line"><span class="keyword">function</span> sqliCheck(<span class="variable">$str</span>)&#123;</span><br><span class="line">	<span class="keyword">if</span>(preg_match(<span class="string">"/\\\|,|-|#|=|~|union|like|procedure/i"</span>,<span class="variable">$str</span>))&#123;</span><br><span class="line">		<span class="built_in">return</span> 1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">get_random_iv</span></span>()&#123;</span><br><span class="line">	<span class="variable">$random_iv</span>=<span class="string">''</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="variable">$i</span>=0;<span class="variable">$i</span>&lt;16;<span class="variable">$i</span>++)&#123;</span><br><span class="line">		<span class="variable">$random_iv</span>.=chr(rand(1,255));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> <span class="variable">$random_iv</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> login(<span class="variable">$info</span>)&#123;</span><br><span class="line">	<span class="variable">$iv</span> = get_random_iv();</span><br><span class="line">	<span class="variable">$plain</span> = serialize(<span class="variable">$info</span>);</span><br><span class="line">	<span class="variable">$cipher</span> = openssl_encrypt(<span class="variable">$plain</span>, METHOD, SECRET_KEY, OPENSSL_RAW_DATA, <span class="variable">$iv</span>);</span><br><span class="line">	setcookie(<span class="string">"iv"</span>, base64_encode(<span class="variable">$iv</span>));</span><br><span class="line">	setcookie(<span class="string">"cipher"</span>, base64_encode(<span class="variable">$cipher</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">show_homepage</span></span>()&#123;</span><br><span class="line">	global <span class="variable">$link</span>;</span><br><span class="line">	<span class="keyword">if</span>(isset(<span class="variable">$_COOKIE</span>[<span class="string">'cipher'</span>]) &amp;&amp; isset(<span class="variable">$_COOKIE</span>[<span class="string">'iv'</span>]))&#123;</span><br><span class="line">		<span class="variable">$cipher</span> = base64_decode(<span class="variable">$_COOKIE</span>[<span class="string">'cipher'</span>]);</span><br><span class="line">		<span class="variable">$iv</span> = base64_decode(<span class="variable">$_COOKIE</span>[<span class="string">"iv"</span>]);</span><br><span class="line">		<span class="keyword">if</span>(<span class="variable">$plain</span> = openssl_decrypt(<span class="variable">$cipher</span>, METHOD, SECRET_KEY, OPENSSL_RAW_DATA, <span class="variable">$iv</span>))&#123;</span><br><span class="line">			<span class="variable">$info</span> = unserialize(<span class="variable">$plain</span>) or die(<span class="string">"</span></span><br><span class="line"><span class="string">base64_decode('"</span>.base64_encode(<span class="variable">$plain</span>).<span class="string">"') can't unserialize</span></span><br><span class="line"><span class="string">"</span>);</span><br><span class="line">			<span class="variable">$sql</span>=<span class="string">"select * from users limit "</span>.<span class="variable">$info</span>[<span class="string">'id'</span>].<span class="string">",0"</span>;</span><br><span class="line">			<span class="variable">$result</span>=mysqli_query(<span class="variable">$link</span>,<span class="variable">$sql</span>);</span><br><span class="line">			<span class="keyword">if</span>(mysqli_num_rows(<span class="variable">$result</span>)&gt;0 or die(mysqli_error(<span class="variable">$link</span>)))&#123;</span><br><span class="line">				<span class="variable">$rows</span>=mysqli_fetch_array(<span class="variable">$result</span>);</span><br><span class="line">				<span class="built_in">echo</span> <span class="string">'</span></span><br><span class="line"><span class="string">Hello!'</span>.<span class="variable">$rows</span>[<span class="string">'username'</span>].<span class="string">'</span></span><br><span class="line"><span class="string">'</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="built_in">echo</span> <span class="string">'</span></span><br><span class="line"><span class="string">Hello!</span></span><br><span class="line"><span class="string">'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">			die(<span class="string">"ERROR!"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(isset(<span class="variable">$_POST</span>[<span class="string">'id'</span>]))&#123;</span><br><span class="line">	<span class="variable">$id</span> = (string)<span class="variable">$_POST</span>[<span class="string">'id'</span>];</span><br><span class="line">	<span class="keyword">if</span>(sqliCheck(<span class="variable">$id</span>)) die(<span class="string">"</span></span><br><span class="line"><span class="string">sql inject detected!</span></span><br><span class="line"><span class="string">"</span>);</span><br><span class="line">	<span class="variable">$info</span> = array(<span class="string">'id'</span>=&gt;<span class="variable">$id</span>);</span><br><span class="line">	login(<span class="variable">$info</span>);</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'</span></span><br><span class="line"><span class="string">Hello!</span></span><br><span class="line"><span class="string">'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(isset(<span class="variable">$_COOKIE</span>[<span class="string">"iv"</span>])&amp;&amp;isset(<span class="variable">$_COOKIE</span>[<span class="string">'cipher'</span>]))&#123;</span><br><span class="line">		show_homepage();</span><br><span class="line">	&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">'</span></span><br><span class="line"><span class="string">'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <p><a href="https://www.cnblogs.com/block2016/p/5596676.html" target="_blank" rel="noopener">aes加密算法</a>   </p>
 <h1 id="后台登录"><a href="#后台登录" class="headerlink" title="后台登录"></a>后台登录</h1><p>查看源码可得<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">	&lt;!-- <span class="variable">$password</span>=<span class="variable">$_POST</span>[<span class="string">'password'</span>];</span><br><span class="line">	<span class="variable">$sql</span> = <span class="string">"SELECT * FROM admin WHERE username = 'admin' and password = '"</span>.md5(<span class="variable">$password</span>,<span class="literal">true</span>).<span class="string">"'"</span>;</span><br><span class="line">	<span class="variable">$result</span>=mysqli_query(<span class="variable">$link</span>,<span class="variable">$sql</span>);</span><br><span class="line">		<span class="keyword">if</span>(mysqli_num_rows(<span class="variable">$result</span>)&gt;0)&#123;</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">'flag is :'</span>.<span class="variable">$flag</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">'密码错误!'</span>;</span><br><span class="line">		&#125; --&gt;</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">可以下url连接，就大概猜到考什么了，做过两三次了， 直接提交 </span><br><span class="line">```bash</span><br><span class="line">ffifdyop</span><br></pre></td></tr></table></figure></p>
 <h1 id="加了料的报错注入"><a href="#加了料的报错注入" class="headerlink" title="加了料的报错注入"></a>加了料的报错注入</h1><p>查看源码<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!-- <span class="variable">$sql</span>=<span class="string">"select * from users where username='<span class="variable">$username</span>' and password='<span class="variable">$password</span>'"</span>;  --&gt;</span><br></pre></td></tr></table></figure></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/c617af63.html" rel="next" title="xss闯关小游戏">
     Prev: xss闯关小游戏
   </a>
@@ -435,7 +435,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/74313cf1.html" rel="next" title="16位汇编语言学习笔记">
     Next: 16位汇编语言学习笔记
   </a>
@@ -661,7 +661,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -837,7 +837,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -859,7 +859,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

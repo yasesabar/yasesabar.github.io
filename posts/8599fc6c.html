@@ -41,7 +41,7 @@
 color="100,238,23" opacity='0.7' zIndex="-2" count="100" src="../../js/canvas-nest.min.js"></script>
  
   
-<body style="background: url(../../images/back.jpg); background-repeat: no-repeat;
+<body style="background: url(http://p4gdp8beq.bkt.clouddn.com/back1.png); background-repeat: no-repeat;
   background-size: 100% 100%;">
 
   
@@ -398,7 +398,7 @@ window.onload = function()
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-04-05T11:04:00.000Z"><a href="/posts/8599fc6c.html">2018-04-05</a></time>
+            <time class="red-link-context" datetime="2018-04-05T11:04:00.000Z"><a href="/posts/8599fc6c.html">2018-04-05</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -413,12 +413,12 @@ window.onload = function()
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc red-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#监听wifi"><span class="section table-of-contents-text">监听wifi</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#分析数据包"><span class="section table-of-contents-text">分析数据包</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#WPS加密"><span class="section table-of-contents-text">WPS加密</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#WEP加密模式"><span class="section table-of-contents-text">WEP加密模式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#WPA加密模式"><span class="section table-of-contents-text">WPA加密模式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#WPA-RADIUS加密模式"><span class="section table-of-contents-text">WPA+RADIUS加密模式</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry red-link-context">
                 <h1 id="监听wifi"><a href="#监听wifi" class="headerlink" title="监听wifi"></a>监听wifi</h1><p>无线网络中的信号是以广播模式发送的，所有用户就可以在传送管程中截获到这些信息。<br>1.网卡的工作模式<br>无线网卡是采用无线信号进行数据传输的终端。<br>4种模式：<br>广播模式：它的物理地址是0xffffff的帧为广播帧，工作在广播模式的网卡接受广播帧<br>多播传送：多播传送地址作为目的物理地址的帧可以被组内的其他主机同时接收，而组外主机却接收不到。但是如果将网卡设置为多播传送模式，它可以接收所有的多播传送帧，而不论它是不是组内成员。<br>直接模式：工作在混杂模式下的网卡只接收目的地址是自己mac地址的帧。<br>混杂模式：工作在混杂模式下的网卡，接受所有的流过网卡的帧。通信包捕获程序就是在这种模式下运行的。<br>2.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iwconfig 查看无线接口的配置信息 </span><br><span class="line">ifconfig 查看接口的配置信息</span><br></pre></td></tr></table></figure></p>
 <p>3.Aircrack-ng套件中的小工具<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">aircrack-ng    破解WEP,以及WPA(字典攻击)密钥  </span><br><span class="line">airdecap-ng    通过已经知道密钥来解密WEP或WPA嗅探数据  </span><br><span class="line">airmon-ng      将网卡设定为监听模式 </span><br><span class="line">aireplay-ng    数据包注入工具</span><br><span class="line">airodump-ng    数据包嗅探，将无线网络数据输送到PCAP或IVS文件并显示网络信息</span><br><span class="line">airtun-ng      创建虚拟管道 </span><br><span class="line">airolib-ng     保存、管理ESSID密码列表 </span><br><span class="line">packetforge-ng  创建数据包注入用的加密包 </span><br><span class="line">Tools          混合、转换工具</span><br><span class="line">airbase-ng    软件模拟AP</span><br><span class="line">airdecloak-ng 消除pcap文件中的WEP加密包 </span><br><span class="line">airdriver-ng  无线设备驱动管理工具 </span><br><span class="line">airolib-ng    保存、管理ESSID密码列表、计算对应的密钥 </span><br><span class="line">airserv-ng    允许不同的进程访问无线网卡</span><br><span class="line">buddy-ng     easside-ng文件的描述</span><br><span class="line">esside-ng    和AP接入点通信（无WEP）</span><br><span class="line">tkiptun-ng   WPS/TKIP攻击 </span><br><span class="line">wesside-ng   自动破解WEP密钥</span><br></pre></td></tr></table></figure></p>
 <p>4<br>1）将无线网卡启动监听模式<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">airmon-ng start interface[channel] 启动监听模式</span><br><span class="line">airmon-ng stop interface[channel] 关闭监听模式</span><br></pre></td></tr></table></figure></p>
@@ -471,7 +471,7 @@ window.onload = function()
 <h1 id="WPA-RADIUS加密模式"><a href="#WPA-RADIUS加密模式" class="headerlink" title="WPA+RADIUS加密模式"></a>WPA+RADIUS加密模式</h1><p> <br><br>  <br><br>   <br><br>    <br><br>    参考文章:<br>    <a href="http://www.tup.tsinghua.edu.cn/booksCenter/book_06720901.html" target="_blank" rel="noopener">http://www.tup.tsinghua.edu.cn/booksCenter/book_06720901.html</a></p>
 
                 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/bb6c190a.html" rel="next" title="web渗透技术知识小记">
     Prev: web渗透技术知识小记
   </a>
@@ -479,7 +479,7 @@ window.onload = function()
 
 
 
-<p class="pink-link-context">
+<p class="red-link-context">
     <a href="/posts/c617af63.html" rel="next" title="xss闯关小游戏">
     Next: xss闯关小游戏
   </a>
@@ -705,7 +705,7 @@ var visitor = true;
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             © 2016 example.com, All rights reserved.
             <p class="right" style="margin-top: 0;">Blog powered by <a href="https://hexo.io">Hexo</a> | Theme <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -881,7 +881,7 @@ var visitor = true;
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -903,7 +903,7 @@ var visitor = true;
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"
