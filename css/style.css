@@ -41,7 +41,7 @@ html {
   color: rgba(0,0,0,0.8);
 }
 .container {
-  width: 750px;
+  width: 767px;
 }
 @media (max-width: 767px) {
   .container {
@@ -398,8 +398,8 @@ article header:hover {
   color: #069;
 }
 article .card-content .entry {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.5;
 }
 @media (max-width: 480px) {
   article .card-content .entry {
